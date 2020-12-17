@@ -19,7 +19,7 @@
                         <h6 class="title">Blog name goes here</h6>
                         <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Lorem dolor sed viverra ipsum nunc aliquet</p>
-                        <a href="{{route('single-blog')}}" class="more">Read more</a>
+                        <a href="{{route('single-blog',app()->getLocale())}}" class="more">Read more</a>
                     </div>
                 </div>
                 <div class="each-blog">

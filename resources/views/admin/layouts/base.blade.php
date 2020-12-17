@@ -78,5 +78,11 @@
       ga('create', 'UA-XXXXXXX-9', 'auto');
       ga('send', 'pageview');
     </script>
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+        CKEDITOR.config.extraPlugins="colorbutton";
+    </script>
   </body>
 </html>

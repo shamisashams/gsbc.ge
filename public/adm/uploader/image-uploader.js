@@ -182,11 +182,16 @@
                 // Remove this image from the container
                 $container.remove();
 
+                 let uploadedImages=document.querySelectorAll('.uploaded-image');
                 // If there is no more uploaded files
-                if (!$container.find('.uploaded-image').length) {
+                if (uploadedImages.length===0) {
+                    let imageUploader=document.querySelector('.image-uploader')
+                    //
+                    // let imageInput=imageUploader.querySelector('input');
+                    // imageInput.value="";
 
                     // Remove the 'has-files' class
-                    $container.removeClass('has-files');
+                    imageUploader.classList.remove('has-files');
 
                 }
 

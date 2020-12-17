@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AnswerController;
 use App\Http\Controllers\Admin\DictionaryController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\LocalizationController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthController;
@@ -20,10 +21,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 #Frontend Routes
-Route::get('/', function () {
-    return view('frontend.modules.home.index');
-});
+Route::group([
+    'prefix' => '{locale}',
+    'where' => ['locale' => '[a-zA-Z]{2}'],
+    'middleware' => ['setlocale']
+], function () {
+    Route::get('/', [\App\Http\Controllers\Frontend\NewsController::class, 'index'])->name('/');
 
 Route::get('/about-us', function () {
     return view('frontend.modules.about-us.index');
@@ -57,6 +62,55 @@ Route::get('/media/single-blog', function () {
 Route::get('/contact', function () {
     return view('frontend.modules.contact.index');
 })->name('contact');
+});
+
+
+Route::group([
+    'prefix' => '{locale}',
+    'where' => ['locale' => '[a-zA-Z]{2}'],
+    'middleware' => ['setlocale']
+], function () {
+
+    Route::prefix('admin')->group(function () {
+        Route::middleware('loggedin')->group(function () {
+            Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+            Route::get('login', [AuthController::class, 'loginView'])->name('login-view');
+            Route::post('login', [AuthController::class, 'login'])->name('login');
+        });
+
+        Route::middleware(['auth', 'can:isAdmin'])->group(function () {
+            // Logout action if user is loggedin
+            Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+            Route::get('/', function () {
+                return view('admin.welcome');
+            })->name('adminHome');
+
+
+            // Localizations
+//            Route::resource('localizations', LocalizationController::class)
+//                ->name('index', 'localizationIndex')
+//                ->name('create', 'localizationCreateView')
+//                ->name('store', 'localizationCreate')
+//                ->name('edit', 'localizationEditView')
+//                ->name('update', 'localizationUpdate')
+//                ->name('destroy', 'localizationDestroy')
+//                ->name('show', 'localizationShow');
+
+            Route::resource('news', NewsController::class)
+                ->name('index', 'news')
+                ->name('create', 'createNews')
+                ->name('store', 'saveNews')
+                ->name('edit', 'editNews')
+                ->name('show', 'showNews')
+                ->name('update', 'updateNews');
+        });
+
+    });
+});
+
+
+
 
 
 

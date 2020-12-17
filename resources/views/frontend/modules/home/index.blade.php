@@ -80,81 +80,30 @@
             <h5 class="title">News</h5>
         </div>
         <div class="news-slide">
-            <div class="each-news">
-                <div class="img">
-                    <img src="frontend-assets/gsbc/img/news/1.png">
-                </div>
-                <div class="cont">
-                    <h6 class="h">News Name Lorem Ipsum 1</h6>
-                    <p class="p">Category 1</p>
-                </div>
-                <div class="date">
-                    <img src="frontend-assets/gsbc/img/icons/news/calendar.svg">
-                    <p>Jan 20, 2019</p>
-                </div>
-                <span class="span one"></span>
-                <span class="span two"></span>
-            </div>
-            <div class="each-news">
-                <div class="img">
-                    <img src="frontend-assets/gsbc/img/news/2.png">
-                </div>
-                <div class="cont">
-                    <h6 class="h">News Name Lorem Ipsum 1</h6>
-                    <p class="p">Category 1</p>
-                </div>
-                <div class="date">
-                    <img src="frontend-assets/gsbc/img/icons/news/calendar.svg">
-                    <p>Jan 20, 2019</p>
-                </div>
-                <span class="span one"></span>
-                <span class="span two"></span>
-            </div>
-            <div class="each-news">
-                <div class="img">
-                    <img src="frontend-assets/gsbc/img/news/3.png">
-                </div>
-                <div class="cont">
-                    <h6 class="h">News Name Lorem Ipsum 1</h6>
-                    <p class="p">Category 1</p>
-                </div>
-                <div class="date">
-                    <img src="frontend-assets/gsbc/img/icons/news/calendar.svg">
-                    <p>Jan 20, 2019</p>
-                </div>
-                <span class="span one"></span>
-                <span class="span two"></span>
-            </div>
-            <div class="each-news">
-                <div class="img">
-                    <img src="frontend-assets/gsbc/img/news/4.png">
-                </div>
-                <div class="cont">
-                    <h6 class="h">News Name Lorem Ipsum 1</h6>
-                    <p class="p">Category 1</p>
-                </div>
-                <div class="date">
-                    <img src="frontend-assets/gsbc/img/icons/news/calendar.svg">
-                    <p>Jan 20, 2019</p>
-                </div>
-                <span class="span one"></span>
-                <span class="span two"></span>
-            </div>
-            <div class="each-news">
-                <div class="img">
-                    <img src="frontend-assets/gsbc/img/news/5.png">
-                </div>
-                <div class="cont">
-                    <h6 class="h">News Name Lorem Ipsum 1</h6>
-                    <p class="p">Category 1</p>
-                </div>
-                <div class="date">
-                    <img src="frontend-assets/gsbc/img/icons/news/calendar.svg">
-                    <p>Jan 20, 2019</p>
-                </div>
-                <span class="span one"></span>
-                <span class="span two"></span>
-            </div>
+            @if($news)
+                @foreach($news as $singleNews)
+                    <div class="each-news">
+                        <div class="img">
+                            @if(isset($singleNews->files[0]))
+                                {{$singleNews->files[0]->nam}}
+                                <img src="{{$singleNews->files[0]->path.'/'.$singleNews->files[0]->name}}">
+                            @endif
+                        </div>
+                        <div class="cont">
+                            <h6 class="h">{{(count($singleNews->availableLanguage) > 0) ? $singleNews->availableLanguage[0]->description : ''}}</h6>
+                            <p class="p">{{$singleNews->category}}</p>
+                        </div>
+                        <div class="date">
+                            <img src="frontend-assets/gsbc/img/icons/news/calendar.svg">
+                            <p>{!! $singleNews->created_at !!}</p>
+                        </div>
+                        <span class="span one"></span>
+                        <span class="span two"></span>
+                    </div>
+
+                @endforeach
+            @endif
+
         </div>
         <div class="arrows">
             <button id="prevar-news">

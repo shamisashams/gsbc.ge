@@ -12,15 +12,15 @@ class NewsLanguage extends Model
         'news_id',
         'language_id',
         'title',
-        'description',      
-        'content'
+        'description',
+        'body'
     ];
-    
+
     public function news()
     {
-        return $this->belongsTo('App\Models\News', 'news_id_id');
+        return $this->belongsTo('App\Models\News', 'news_id');
     }
-    
+
     public function language()
     {
         return $this->belongsTo('App\Models\Localization', 'language_id');

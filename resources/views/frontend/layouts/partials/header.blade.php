@@ -1,7 +1,7 @@
 <header class="header">
         <div class="wrapper">
             <div class="top">
-                <a href="/" class="logo">
+                <a href="{{route('/',app()->getLocale())}}" class="logo">
                     <img src="/frontend-assets/gsbc/img/logo/logo.png">
                 </a>
                 <div class="right">
@@ -39,7 +39,7 @@
 
                         <div class="nav-mo">
                             <a href="/gsbc/en" class="nav">Home</a>
-                            <a href="{{route('about-us')}}" class="nav">About us</a>
+                            <a href="{{route('about-us',app()->getLocale())}}" class="nav">About us</a>
                             <div class="drop">
                                 <a href="/gsbc/en/membership" class="nav member">Membership</a>
                             </div>
@@ -63,18 +63,18 @@
             </div>
             <div class="navbar">
                 <a href="/gsbc/en" class="nav">Home</a>
-                <a href="{{route('about-us')}}" class="nav">About us</a>
+                <a href="{{route('about-us',app()->getLocale())}}" class="nav">About us</a>
                 <div class="drop">
-                    <a href="{{route('membership')}}" class="nav member">Membership</a>
+                    <a href="{{route('membership',app()->getLocale())}}" class="nav member">Membership</a>
                     <div class="member-drop-down">
-                        <a href="{{route('membership')}}" class="dd">Members</a>
-                        <a href="{{route('regulations')}}" class="dd">Rules & Regulations</a>
+                        <a href="{{route('membership',app()->getLocale())}}" class="dd">Members</a>
+                        <a href="{{route('regulations',app()->getLocale())}}" class="dd">Rules & Regulations</a>
                     </div>
                 </div>
-                <a href="{{route('events')}}" class="nav">Events</a>
-                <a href="{{route('projects')}}" class="nav">Projects</a>
-                <a href="{{route('media')}}" class="nav">Press & Media</a>
-                <a href="{{route('contact')}}" class="nav">Contact us</a>
+                <a href="{{route('events',app()->getLocale())}}" class="nav">Events</a>
+                <a href="{{route('projects',app()->getLocale())}}" class="nav">Projects</a>
+                <a href="{{route('media',app()->getLocale())}}" class="nav">Press & Media</a>
+                <a href="{{route('contact',app()->getLocale())}}" class="nav">Contact us</a>
             </div>
         </div>
     </header>

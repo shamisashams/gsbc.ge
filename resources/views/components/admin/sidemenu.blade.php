@@ -20,57 +20,19 @@
           <li class="sub-header">
             <span>Options</span>
           </li>
-   
-            <li class="">
-              <a href="{{route('productIndex',app()->getLocale() )}}">
-                    <div class="icon-w">
-                        <div class="os-icon os-icon-life-buoy"></div>
-                    </div>
-                    <span>{{__('admin.products')}}</span></a>
-            </li>
-            <li class="">
-                <a href="{{route('localizationIndex',app()->getLocale() )}}">
-                    <div class="icon-w">
-                        <div class="os-icon os-icon-life-buoy"></div>
-                    </div>
-                    <span>{{__('admin.localizations')}}</span></a>
-            </li>
 
             <li class="">
-                <a href="{{route('featureIndex',app()->getLocale() )}}">
+              <a href="{{route('news',app()->getLocale() )}}">
                     <div class="icon-w">
                         <div class="os-icon os-icon-life-buoy"></div>
                     </div>
-                    <span>{{__('admin.features')}}</span></a>
+                    <span>{{__('admin.news')}}</span></a>
             </li>
             <li>
-              <a href="/{{app()->getLocale()}}/admin/languages" >
-                <div class="icon-w">
-                  <div class="os-icon os-icon-flag"></div>
-                </div>
-                <span>@lang('admin.language')</span></a>
-  
-            </li>
-            <li>
-              <a href="/{{app()->getLocale()}}/admin/answers">
-                <div class="icon-w">
-                  <div class="os-icon os-icon-flag"></div>
-                </div>
-                <span>@lang('admin.answers')</span></a>
-  
-            </li>
-            <li class="">
-                <a href="{{route('userIndex',app()->getLocale() )}}">
-                    <div class="icon-w">
-                        <div class="os-icon os-icon-life-buoy"></div>
-                    </div>
-                    <span>{{__('admin.users')}}</span></a>
-            </li>
-            <li>
-         
 
-       
-      
+
+
+
         </ul>
       </div>
 </div>
