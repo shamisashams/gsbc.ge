@@ -32,27 +32,27 @@ class LanguageComposer
 
     public function languageItems()
     {
-        $localizations = Localization::where('status', true)->get();
-
-        $languages = [];
-        if (count($localizations) > 0) {
-            foreach ($localizations as $localization) {
-                if ($localization->abbreviation == app()->getLocale()) {
-                    $languages['current']= [
-                        'title' => $localization->native,
-                        'url' => '',
-                        'img' => $localization->abbreviation . '.png'
-                    ];
-                    continue;
-                }
-                $languages['data'][]= [
-                    'title' => $localization->native,
-                    'url' => $this->getUrl($localization->abbreviation),
-                    'img' => $localization->abbreviation . '.png'
-                ];
-            }
-        }
-       return $languages;
+//        $localizations = Localization::where('status', true)->get();
+//
+//        $languages = [];
+//        if (count($localizations) > 0) {
+//            foreach ($localizations as $localization) {
+//                if ($localization->abbreviation == app()->getLocale()) {
+//                    $languages['current']= [
+//                        'title' => $localization->native,
+//                        'url' => '',
+//                        'img' => $localization->abbreviation . '.png'
+//                    ];
+//                    continue;
+//                }
+//                $languages['data'][]= [
+//                    'title' => $localization->native,
+//                    'url' => $this->getUrl($localization->abbreviation),
+//                    'img' => $localization->abbreviation . '.png'
+//                ];
+//            }
+//        }
+//       return 'en';
 
     }
 

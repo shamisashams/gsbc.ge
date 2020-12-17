@@ -20,91 +20,44 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group([
-    'prefix' => '{locale}',
-    'where' => ['locale' => '[a-zA-Z]{2}'],
-    'middleware' => ['setlocale']
-], function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
-
-    Route::prefix('admin')->group(function () {
-        Route::middleware('loggedin')->group(function () {
-            Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-            Route::get('login', [AuthController::class, 'loginView'])->name('login-view');
-            Route::post('login', [AuthController::class, 'login'])->name('login');
-        });
-
-        Route::middleware(['auth', 'can:isAdmin'])->group(function () {
-            // Logout action if user is loggedin
-            Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-
-            Route::get('/', function () {
-                return view('admin.welcome');
-            })->name('adminHome');
-
-
-            // Localizations
-            Route::resource('localizations', LocalizationController::class)
-                ->name('index', 'localizationIndex')
-                ->name('create', 'localizationCreateView')
-                ->name('store', 'localizationCreate')
-                ->name('edit', 'localizationEditView')
-                ->name('update', 'localizationUpdate')
-                ->name('destroy', 'localizationDestroy')
-                ->name('show', 'localizationShow');
-
-            // Features
-            Route::resource('features', FeatureController::class)
-                ->name('index', 'featureIndex')
-                ->name('create', 'featureCreateView')
-                ->name('store', 'featureCreate')
-                ->name('edit', 'featureEditView')
-                ->name('update', 'featureUpdate')
-                ->name('destroy', 'featureDestroy')
-                ->name('show', 'featureShow');
-
-            // Language
-            Route::resource('languages', DictionaryController::class)
-                ->name('index', 'DictionaryIndex')
-                ->name('store', 'DictionaryStore')
-                ->name('create', 'DictionaryCreate')
-                ->name('show', 'DictionaryShow')
-                ->name('edit', 'DictionaryEdit')
-                ->name('update', 'DictionaryUpdate')
-                ->name('destroy', 'DictionaryDestroy');
-
-            Route::resource('answers', AnswerController::class)
-                ->name('index', 'AnswerIndex')
-                ->name('store', 'AnswerStore')
-                ->name('show', 'AnswerShow')
-                ->name('create', 'AnswerCreate')
-                ->name('edit', 'AnswerEdit')
-                ->name('update', 'AnswerUpdate')
-                ->name('destroy', 'AnswerDestroy');
-
-            // Products
-            Route::resource('products', ProductController::class)
-                ->name('index', 'productIndex')
-                ->name('create', 'productCreateView')
-                ->name('store', 'productCreate')
-                ->name('edit', 'productEditView')
-                ->name('update', 'productUpdate')
-                ->name('destroy', 'productDestroy')
-                ->name('show', 'productShow');
-
-            // Users
-            Route::resource('users',UserController::class)
-                ->name('index', 'userIndex')
-                ->name('create', 'userCreateView')
-                ->name('store', 'userCreate')
-                ->name('edit', 'userEditView')
-                ->name('update', 'userUpdate')
-                ->name('destroy', 'userDestroy')
-                ->name('show', 'userShow');
-        });
-
-    });
+#Frontend Routes
+Route::get('/', function () {
+    return view('frontend.modules.home.index');
 });
+
+Route::get('/about-us', function () {
+    return view('frontend.modules.about-us.index');
+})->name('about-us');
+
+Route::get('/membership', function () {
+    return view('frontend.modules.membership.index');
+})->name('membership');
+
+Route::get('/regulations', function () {
+    return view('frontend.modules.membership.regulations.index');
+})->name('regulations');
+
+Route::get('/events', function () {
+    return view('frontend.modules.events.index');
+})->name('events');
+
+Route::get('/projects', function () {
+    return view('frontend.modules.projects.tourism.index');
+})->name('projects');
+
+Route::get('/media', function () {
+    return view('frontend.modules.media.index');
+})->name('media');
+
+
+Route::get('/media/single-blog', function () {
+    return view('frontend.modules.media.single-blog.index');
+})->name('single-blog');
+
+Route::get('/contact', function () {
+    return view('frontend.modules.contact.index');
+})->name('contact');
+
+
+
 
