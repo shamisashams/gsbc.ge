@@ -9,7 +9,6 @@
  */
 namespace App\Http\Request\Admin;
 
-use App\Models\Image;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 

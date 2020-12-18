@@ -78,7 +78,7 @@
             {!! Form::close() !!}
             <tbody>
             @if($news)
-                @foreach($news as $singleNews)
+                @foreach($page as $singleNews)
                     <tr>
                         <td class="text-center">{{(count($singleNews->availableLanguage) > 0) ?  $singleNews->availableLanguage[0]->title : ''}}</td>
                         <td class="text-center">{{(count($singleNews->availableLanguage) > 0) ?  $singleNews->availableLanguage[0]->description : ''}}</td>

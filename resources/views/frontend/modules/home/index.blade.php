@@ -85,12 +85,11 @@
                     <div class="each-news">
                         <div class="img">
                             @if(isset($singleNews->files[0]))
-                                {{$singleNews->files[0]->nam}}
                                 <img src="{{$singleNews->files[0]->path.'/'.$singleNews->files[0]->name}}">
                             @endif
                         </div>
                         <div class="cont">
-                            <h6 class="h">{{(count($singleNews->availableLanguage) > 0) ? $singleNews->availableLanguage[0]->description : ''}}</h6>
+                            <h6 class="h">{{(count($singleNews->availableLanguage) > 0) ? $singleNews->availableLanguage[0]->title : ''}}</h6>
                             <p class="p">{{$singleNews->category}}</p>
                         </div>
                         <div class="date">

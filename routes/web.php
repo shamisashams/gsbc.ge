@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AnswerController;
 use App\Http\Controllers\Admin\DictionaryController;
 use App\Http\Controllers\Admin\FeatureController;
+use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\LocalizationController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProductController;
@@ -30,38 +31,35 @@ Route::group([
 ], function () {
     Route::get('/', [\App\Http\Controllers\Frontend\NewsController::class, 'index'])->name('/');
 
-Route::get('/about-us', function () {
-    return view('frontend.modules.about-us.index');
-})->name('about-us');
-
-Route::get('/membership', function () {
-    return view('frontend.modules.membership.index');
-})->name('membership');
-
-Route::get('/regulations', function () {
-    return view('frontend.modules.membership.regulations.index');
-})->name('regulations');
-
-Route::get('/events', function () {
-    return view('frontend.modules.events.index');
-})->name('events');
-
-Route::get('/projects', function () {
-    return view('frontend.modules.projects.tourism.index');
-})->name('projects');
-
-Route::get('/media', function () {
-    return view('frontend.modules.media.index');
-})->name('media');
+    Route::get('/media', [\App\Http\Controllers\Frontend\NewsController::class, 'getNews'])->name('media');
+    Route::get('/media/single-blog/{slug}', [\App\Http\Controllers\Frontend\NewsController::class, 'getSingleNews'])->name('single-blog');
 
 
-Route::get('/media/single-blog', function () {
-    return view('frontend.modules.media.single-blog.index');
-})->name('single-blog');
 
-Route::get('/contact', function () {
-    return view('frontend.modules.contact.index');
-})->name('contact');
+    Route::get('/about-us', function () {
+        return view('frontend.modules.about-us.index');
+    })->name('about-us');
+
+    Route::get('/membership', function () {
+        return view('frontend.modules.membership.index');
+    })->name('membership');
+
+    Route::get('/regulations', function () {
+        return view('frontend.modules.membership.regulations.index');
+    })->name('regulations');
+
+    Route::get('/events', function () {
+        return view('frontend.modules.events.index');
+    })->name('events');
+
+    Route::get('/projects', function () {
+        return view('frontend.modules.projects.tourism.index');
+    })->name('projects');
+
+
+    Route::get('/contact', function () {
+        return view('frontend.modules.contact.index');
+    })->name('contact');
 });
 
 
@@ -103,7 +101,15 @@ Route::group([
                 ->name('store', 'saveNews')
                 ->name('edit', 'editNews')
                 ->name('show', 'showNews')
-                ->name('update', 'updateNews');
+                ->name('update', 'updateNews')
+                ->name('destroy', 'destroyNews');
+
+            Route::resource('page', HomeController::class)
+                ->name('index', 'page')
+                ->name('store', 'savePage')
+                ->name('edit', 'editPage')
+                ->name('show', 'showPage')
+                ->name('update', 'updatePage');
         });
 
     });

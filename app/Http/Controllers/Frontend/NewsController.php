@@ -15,19 +15,33 @@ class NewsController extends Controller
     {
         $this->service = $service;
     }
+
     /**
      * Display a listing of the resource.
      *
+     * @param string $lang
+     * @param Request $request
      * @return \Illuminate\Http\Response
-
      */
-    public function index(string $lang,Request $request)
+    public function index(string $lang, Request $request)
     {
-       $news=News::where(['status' => 1])
-            ->take(5)
-            ->orderBy('created_at', 'desc')
-            ->get();
-        return view('frontend.modules.home.index')->with(['news'=>$news]);
+        $news = $this->service->getLatestNews();
 
+        return view('frontend.modules.home.index')->with(['news' => $news]);
+    }
+
+    public function getNews()
+    {
+        $news = $this->service->getNews();
+        return view('frontend.modules.media.index')->with(['news' => $news]);
+    }
+
+    public function getSingleNews(string $lang, $slug)
+    {
+        $news = $this->service->findBySlug($slug);
+        if (!$news) {
+            abort(404, 'News Not Found');
+        }
+        return view('frontend.modules.media.single-blog.index')->with(['news' => $news]);
     }
 }

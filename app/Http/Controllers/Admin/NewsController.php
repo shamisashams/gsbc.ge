@@ -26,15 +26,15 @@ class NewsController extends AdminController
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View|Response
      */
     public function index(string $lang,Request $request)
     {
         $request->validate([
-            'id' => 'integer|nullable',
             'title' => 'string|max:255|nullable',
             'description' => 'string|max:255|nullable',
             'status' => 'boolean|nullable',
+            'slug' => 'string|nullable',
         ]);
         return view('admin.modules.news.index', [
             'news' => $this->service->getAll($lang,$request)
@@ -44,7 +44,7 @@ class NewsController extends AdminController
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -54,13 +54,13 @@ class NewsController extends AdminController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param NewsRequest  $request
+     * @param string $locale
      */
     public function store(string $locale,NewsRequest $request)
     {
         if (!$this->service->store($locale,$request)) {
-            return redirect(route('createNews',$locale))->with('danger', __admin('admin.failed_created_news'));
+            return redirect(route('createNews',$locale))->with('danger', __('admin.failed_created_news'));
         }
         return redirect(route('news', $locale))->with('success',__('admin.successfully_created_news'));
     }
@@ -83,8 +83,9 @@ class NewsController extends AdminController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\News  $news
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @param string $locale
+     * @return Application|Factory|View|Response
      */
     public function edit(string $locale, int $id)
     {
@@ -106,20 +107,24 @@ class NewsController extends AdminController
     public function update(string $locale,NewsRequest $request, int $id)
     {
         if (!$this->service->update($locale,$id,$request)) {
-            return redirect(route('productIndex',$locale))->with('danger', 'Product does not update.');
+            return redirect(route('news',$locale))->with('danger', __('admin.failed_updated_news'));
         }
 
-        return redirect(route('productIndex', $locale))->with('success', 'Product update successfully.');
+        return redirect(route('news', $locale))->with('success',__('admin.successfully_updated_news') );
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\News  $news
-     * @return \Illuminate\Http\Response
+     * @param string $locale
+     * @param int $id
+     * @return Application|RedirectResponse|Response|Redirector
      */
-    public function destroy(News $news)
+    public function destroy(string $locale, int $id)
     {
-        //
+        if (!$this->service->delete($id)) {
+            return redirect(route('news', $locale))->with('danger', __('admin.failed_deleted_news'));
+        }
+        return redirect(route('news', $locale))->with('success',__('admin.successfully_deleted_news'));
     }
 }

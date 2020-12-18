@@ -42,42 +42,41 @@ class NewsService
      * @return LengthAwarePaginator
      * @throws \Exception
      */
-    public function getAll(string $lang,$request)
+    public function getAll(string $lang, $request)
     {
         $data = $this->model->query();
 
         $localizationID = Localization::getIdByName($lang);
 
-        if ($request->id) {
-            $data = $data->where('id',$request->id);
-        }
-
         if ($request->title) {
             $data = $data->with('language')->whereHas('language', function ($query) use ($localizationID, $request) {
-                $query->where('title','like',"%{$request->title}%")->where('language_id',$localizationID);
+                $query->where('title', 'like', "%{$request->title}%")->where('language_id', $localizationID);
             });
         }
 
-        if ($request->type) {
-            $data = $data->where('type',  $request->type);
+        if ($request->description) {
+            $data = $data->with('language')->whereHas('language', function ($query) use ($localizationID, $request) {
+                $query->where('description', 'like', "%{$request->description}%")->where('language_id', $localizationID);
+            });
         }
 
-        if ($request->position) {
-            $data = $data->where('position', 'like', "%{$request->position}%");
+        if ($request->category) {
+            $data = $data->where('category', $request->type);
         }
 
         if ($request->slug) {
             $data = $data->where('slug', 'like', "%{$request->slug}%");
         }
+
         if ($request->status != null) {
-            $data = $data->where('status',$request->status);
+            $data = $data->where('status', $request->status);
         }
 
 
         // Check if perPage exist and validation by perPageArray [].
-        $perPage = ($request->per_page != null && in_array($request->per_page,$this->perPageArray)) ? $request->per_page : 10;
+        $perPage = ($request->per_page != null && in_array($request->per_page, $this->perPageArray)) ? $request->per_page : 10;
 
-        return $data->orderBy('id', 'DESC')->paginate($perPage);
+        return $data->orderBy('created_at', 'DESC')->paginate($perPage);
     }
 
 
@@ -88,19 +87,17 @@ class NewsService
      * @param array $request
      * @return bool
      */
-    public function store(string $lang,NewsRequest $request)
+    public function store(string $lang, NewsRequest $request)
     {
         $request['status'] = isset($request['status']) ? 1 : 0;
 
         $localizationID = Localization::getIdByName($lang);
 
-
-
         $this->model = new News([
             'category' => $request['category'],
             'status' => $request['status'],
-            'slug'=>$request['slug'],
-            'user_id'=>auth()->user()->id
+            'slug' => $request['slug'],
+            'user_id' => auth()->user()->id
         ]);
 
         $this->model->save();
@@ -118,7 +115,7 @@ class NewsService
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $key => $file) {
                 $imagename = date('Ymhs') . $file->getClientOriginalName();
-                $destination = base_path() . '/storage/app/public/img/news/' . $this->model->id;
+                $destination = 'storage/img/news/' . $this->model->id;
                 $request->file('images')[$key]->move($destination, $imagename);
                 $model->files()->create([
                     'name' => $imagename,
@@ -139,7 +136,7 @@ class NewsService
      * @param array $request
      * @return bool
      */
-    public function update(string $lang,int $id, NewsRequest $request)
+    public function update(string $lang, int $id, NewsRequest $request)
     {
         $request['status'] = isset($request['status']) ? 1 : 0;
 
@@ -147,8 +144,8 @@ class NewsService
         $data->update([
             'category' => $request['category'],
             'status' => $request['status'],
-            'slug'=>$request['slug'],
-            'user_id'=>auth()->user()->id
+            'slug' => $request['slug'],
+            'user_id' => auth()->user()->id
         ]);
 
         $localizationID = Localization::getIdByName($lang);
@@ -171,15 +168,19 @@ class NewsService
             $newsLanguage->save();
         }
 
+
         if (count($data->files) > 0) {
             foreach ($data->files as $file) {
                 if ($request['old_images'] == null) {
+                    if (Storage::exists('public/img/news/' . $data->id . '/' . $file->name)) {
+                        Storage::delete('public/img/news/' . $data->id . '/' . $file->name);
+                    }
                     $file->delete();
                     continue;
                 }
-                if (!in_array($file->id,$request['old_images'])) {
-                    if (Storage::exists('public/news/' . $data->id.'/'.$file->name)) {
-                        Storage::delete('public/news/' . $data->id.'/'.$file->name);
+                if (!in_array($file->id, $request['old_images'])) {
+                    if (Storage::exists('public/img/news/' . $data->id . '/' . $file->name)) {
+                        Storage::delete('public/img/news/' . $data->id . '/' . $file->name);
                     }
                     $file->delete();
 
@@ -190,11 +191,11 @@ class NewsService
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $key => $file) {
                 $imagename = date('Ymhs') . $file->getClientOriginalName();
-                $destination = base_path() . '/storage/app/public/news/' . $data->id;
+                $destination = 'storage/img/news/' . $data->id;
                 $request->file('images')[$key]->move($destination, $imagename);
                 $data->files()->create([
                     'name' => $imagename,
-                    'path' => '/storage/app/public/news/' . $data->id,
+                    'path' => '/storage/img/news/' . $data->id,
                     'format' => $file->getClientOriginalExtension(),
                 ]);
             }
@@ -214,13 +215,40 @@ class NewsService
     {
         $data = $this->find($id);
         if (count($data->language) > 0) {
-            if(!$data->language()->delete()){
-                throwException('Feature languages can not delete.');
+            if (!$data->language()->delete()) {
+                throwException('Product languages can not delete.');
             }
         }
+
+        if (count($data->files) > 0) {
+            if (Storage::exists('public/img/news' . $data->id)) {
+                Storage::deleteDirectory('public/img/news' . $data->id);
+            }
+            $data->files()->delete();
+        }
         if (!$data->delete()) {
-            throwException('Feature  can not delete.');
+            throwException('Product  can not delete.');
         }
         return true;
+    }
+
+    public function getNews()
+    {
+        return $this->model::where(['status' => 1])
+            ->orderBy('created_at', 'desc')
+            ->paginate(2);
+    }
+
+    public function getLatestNews()
+    {
+        return $this->model::where(['status' => 1])
+            ->take(5)
+            ->orderBy('created_at', 'desc')
+            ->get();
+    }
+
+    public function findBySlug($slug)
+    {
+        return $this->model::where(['slug' => $slug, 'status' => 1])->first();
     }
 }
