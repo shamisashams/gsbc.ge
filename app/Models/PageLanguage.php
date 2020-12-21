@@ -9,6 +9,7 @@ class PageLanguage extends Model
 {
     use HasFactory;
 
+    protected $table = 'pages_languages';
     protected $fillable = [
         'page_id',
         'language_id',

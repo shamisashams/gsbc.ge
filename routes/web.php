@@ -29,7 +29,7 @@ Route::group([
     'where' => ['locale' => '[a-zA-Z]{2}'],
     'middleware' => ['setlocale']
 ], function () {
-    Route::get('/', [\App\Http\Controllers\Frontend\NewsController::class, 'index'])->name('/');
+    Route::get('/', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('/');
 
     Route::get('/media', [\App\Http\Controllers\Frontend\NewsController::class, 'getNews'])->name('media');
     Route::get('/media/single-blog/{slug}', [\App\Http\Controllers\Frontend\NewsController::class, 'getSingleNews'])->name('single-blog');
@@ -104,12 +104,10 @@ Route::group([
                 ->name('update', 'updateNews')
                 ->name('destroy', 'destroyNews');
 
-            Route::resource('page', HomeController::class)
-                ->name('index', 'page')
-                ->name('store', 'savePage')
-                ->name('edit', 'editPage')
-                ->name('show', 'showPage')
-                ->name('update', 'updatePage');
+
+            Route::get('/home',[HomeController::class,'index'])->name('adminHome');
+            Route::get('/home/{id}/edit',[HomeController::class,'edit'])->name('editHome');
+            Route::put('/home/{id}',[HomeController::class,'update'])->name('updateHome');
         });
 
     });
