@@ -125,65 +125,201 @@
                         </div>
                     </div>
                     <div class="resorts">
-                        <h6 class="title">Summer Resorts</h6>
-                        <div class="cities">
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/2.png">
-                                <div class="name-overlay">Batumi</div>
-                            </div>
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/3.png">
-                                <div class="name-overlay">Gonio</div>
-                            </div>
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/4.png">
-                                <div class="name-overlay">Anaklia</div>
-                            </div>
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/2.png">
-                                <div class="name-overlay">Batumi</div>
-                            </div>
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/2.png">
-                                <div class="name-overlay">Batumi</div>
-                            </div>
-                        </div>
-                        <h6 class="title">Winter SKI Resorts</h6>
-                        <div class="cities">
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/2.png">
-                                <div class="name-overlay">Batumi</div>
-                            </div>
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/3.png">
-                                <div class="name-overlay">Gonio</div>
-                            </div>
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/4.png">
-                                <div class="name-overlay">Anaklia</div>
-                            </div>
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/2.png">
-                                <div class="name-overlay">Batumi</div>
+                        <div class="sorts">
+                            <h6 class="title">SUMMER RESORTS</h6>
+                            <div class="cities">
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Batumi</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Gonio</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Anaklia</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Kobuleti</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Other Black Sea locations</p>
+                                </div>
                             </div>
                         </div>
-                        <h6 class="title">Four Season Resorts</h6>
-                        <div class="cities">
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/2.png">
-                                <div class="name-overlay">Batumi</div>
+                        <div class="sorts">
+                            <h6 class="title">WINTER SKI RESORTS</h6>
+                            <div class="cities">
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Mestia</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Bakuriani</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Gudauri</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Goderdzi</p>
+                                </div>
                             </div>
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/3.png">
-                                <div class="name-overlay">Gonio</div>
+                        </div>
+                        <div class="sorts">
+                            <h6 class="title">FOUR SEASON RESORTS</h6>
+                            <div class="cities">
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Mestia</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Bakuriani</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Gudauri</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Kazbegi and etc </p>
+                                </div>
                             </div>
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/4.png">
-                                <div class="name-overlay">Anaklia</div>
+                        </div>
+                        <div class="sorts">
+                            <h6 class="title">MEDICAL & WELLNESS RESORTS</h6>
+                            <div class="cities">
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Tskaltubo</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Akhtala</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Borjomi</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Abastumani and etc</p>
+                                </div>
                             </div>
-                            <div class="each-city">
-                                <img src="/frontend-assets/gsbc/img/projects/2.png">
-                                <div class="name-overlay">Batumi</div>
+                        </div>
+                        <div class="sorts">
+                            <h6 class="title">MANUFACTURING:</h6>
+                            <div class="lines">
+                                <div class="cir">
+                                    <span class="cle"></span>
+                                </div>
+                                <p>Growing regional market - Companies operating in Georgia can benefit from the growing regional market and various regional import substitution opportunities</p>
+                            </div>
+                            <div class="lines">
+                                <div class="cir">
+                                    <span class="cle"></span>
+                                </div>
+                                <p>Access to 900 million markets without Customs Duty - Georgia has Free Trade Agreements (FTA) with Turkey and post-soviet countries, and Deep and Comprehensive Free Trade Agreement (DCFTA) with EU</p>
+                            </div>
+                            <div class="lines">
+                                <div class="cir">
+                                    <span class="cle"></span>
+                                </div>
+                                <p>Competitive labor costs - the average monthly salary in manufacturing industry was 355 USD (2015) including white and blue-collar workers</p>
+                            </div>
+                            <div class="lines">
+                                <div class="cir">
+                                    <span class="cle"></span>
+                                </div>
+                                <p>Low utility costs - currently up to 80% of power is generated via hydropower plants, leading to cheaper energy cost. Standard cost for 1 kwh is 6 USD cents for 30-110 kV high voltage electricity</p>
+                            </div>
+                            <div class="lines">
+                                <div class="cir">
+                                    <span class="cle"></span>
+                                </div>
+                                <p>4 Free Industrial Zones (FIZ) - In FIZ, businesses are exempt from all taxes except Personal Income Tax (20%), which is paid from employees’ salaries</p>
+                            </div>
+                        </div>
+                        <div class="sorts">
+                            <h6 class="title">MANUFACTURING:</h6>
+                            <div class="sectors">
+                                <div class="sec">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Chemical</p>
+                                </div>
+                                <div class="sec">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Plastics</p>
+                                </div>
+                                <div class="sec">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Construction Materials</p>
+                                </div>
+                                <div class="sec">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Ceramic products - tiles, sanitary ware, refractory bricks</p>
+                                </div>
+                                <div class="sec">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Glass</p>
+                                </div>
+                                <br>
+                                <div class="sec">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Furniture and etc</p>
+                                </div>
                             </div>
                         </div>
                     </div>
