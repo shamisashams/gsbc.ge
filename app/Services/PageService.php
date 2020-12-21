@@ -71,7 +71,7 @@ class PageService
                 'page_id' => $this->model->id,
                 'language_id' => $localizationID,
                 'title' => $request['title'],
-                'description'=>null,
+                'description' => null,
                 'body' => $request['body'],
             ]);
         } else {
@@ -86,8 +86,8 @@ class PageService
         if (count($data->files) > 0) {
             foreach ($data->files as $file) {
                 if ($request['old_images'] == null) {
-                    if (Storage::exists('public/img/news/' . $data->id . '/' . $file->name)) {
-                        Storage::delete('public/img/news/' . $data->id . '/' . $file->name);
+                    if (Storage::exists('public/img/pages/' . $data->id . '/' . $file->name)) {
+                        Storage::delete('public/img/pages/' . $data->id . '/' . $file->name);
                     }
                     $file->delete();
                     continue;
@@ -119,16 +119,19 @@ class PageService
     }
 
 
-    public function getWelcomeContent(){
-        return $this->model::where(['status' => 1,'type'=>'welcome'])->first();
+    public function getWelcomeContent()
+    {
+        return $this->model::where(['status' => 1, 'type' => 'welcome'])->first();
     }
 
-    public function getAboutContent(){
-        return $this->model::where(['status' => 1,'type'=>'about'])->first();
+    public function getAboutContent()
+    {
+        return $this->model::where(['status' => 1, 'type' => 'about'])->first();
     }
 
-    public function getWhyChooseUs(){
-        return $this->model::where(['status' => 1,'type'=>'choose-us'])->first();
+    public function getWhyChooseUs()
+    {
+        return $this->model::where(['status' => 1, 'type' => 'choose-us'])->first();
     }
 
 

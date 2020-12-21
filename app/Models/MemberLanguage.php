@@ -5,19 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DictionaryLanguage extends Model
+class MemberLanguage extends Model
 {
     use HasFactory;
+    protected $table = 'members_languages';
+
     protected $fillable = [
-        'dictionary_id',
+        'member_id',
         'language_id',
-        'value'
+        'title',
+        'description',
+        'body'
     ];
-    public function dictionary()
+
+    public function news()
     {
-        return $this->belongsTo('App\Models\Dictionary', 'dictionary_id');
+        return $this->belongsTo('App\Models\Member', 'member_id');
     }
-    
+
     public function language()
     {
         return $this->belongsTo('App\Models\Localization', 'language_id');

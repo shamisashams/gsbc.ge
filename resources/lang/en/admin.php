@@ -22,6 +22,11 @@ return [
     'failed_deleted_news' => 'News was not deleted',
     'successfully_deleted_news' => 'News was successfully deleted',
     'failed_updated_page' => 'Page was not updated',
-    'successfully_updated_page'=>'Page was successfully updated'
+    'successfully_updated_page'=>'Page was successfully updated',
+    'members'=>'Members',
+    'create_member'=>'Create Member',
+    'successfully_created_member' => 'Member was successfully created',
+    'failed_created_member' => 'Member was not created',
+    'member_update' => 'Update Member'
 
 ];
