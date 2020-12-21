@@ -4,8 +4,8 @@
         <div class="overlay">
             <div class="wrapper">
                 <div class="content">
-                    <p class="title">Welcome to GSBC</p>
-                    <p class="para">To promote business relationship between Georgia and The Kingdom of Saudi Arabia</p>
+                    <p class="title">{{(count($welcome->availableLanguage) > 0) ?  $welcome->availableLanguage[0]->title : ''}}</p>
+                    <p class="para">{!!(count($welcome->availableLanguage) > 0) ?  $welcome->availableLanguage[0]->body : ''!!}</p>
                     <a href="#" class="contact">
                         CONTACT NOW
                         <img class="arrow" src="frontend-assets/gsbc/img/icons/showcase/right-arrow.svg">
@@ -19,16 +19,16 @@
         <div class="wrapper">
             <div class="content">
                 <div class="text">
-                    <p class="title">About GSBC</p>
-                    <p class="para">We can provide corporate governance, helping clients manage the responsibilities of
-                        running a corporation in financial field. Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia.</p>
+                    <p class="title">{{(count($about->availableLanguage) > 0) ?  $about->availableLanguage[0]->title : ''}}</p>
+                    <p class="para">{{(count($about->availableLanguage) > 0) ?  $about->availableLanguage[0]->body : ''}}</p>
 
                     <img src="frontend-assets/gsbc/img/icons/showcase/just-signature.png">
                     <p class="geo-gs">CEO, GSBC</p>
                 </div>
                 <div class="image">
-                    <img src="frontend-assets/gsbc/img/icons/showcase/handshake.png">
+                    @if(isset($about->files[0]))
+                    <img src="{{$about->files[0]->path.'/'.$about->files[0]->name}}">
+                        @endif
                 </div>
             </div>
         </div>
@@ -143,7 +143,7 @@
         <div class="wrapper">
             <div class="content">
                 <div class="img">
-                    <img src="frontend-assets/gsbc/img/why-us/1.png">
+                    <img src="{{$chooseUs->files[0]->path.'/'.$chooseUs->files[0]->name}}">
                     <div class="abs-img">
                         <div class="overlay"></div>
                     </div>
@@ -151,13 +151,15 @@
                 <div class="context">
                     <div class="heading">
                         <p class="expert">WHAT WE ARE EXPERT AT</p>
-                        <h5 class="title">Why Clients Choose US</h5>
+                        <h5 class="title">{{(count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->title : ''}}</h5>
                     </div>
-                    <p class="blue">We can provide corporate governance, helping clients manage the responsibilities of
-                        running a corporation in financial field.</p>
-                    <p class="p">Far far away, behind the word mountains, far from the countries Vokalia and
-                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the
-                        coast of the Semantics, a large language ocean. A small river named Duden flows.</p>
+                        {!! (count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->body : '' !!}
+
+{{--                    <p class="blue">We can provide corporate governance, helping clients manage the responsibilities of--}}
+{{--                        running a corporation in financial field.</p>--}}
+{{--                    <p class="p">Far far away, behind the word mountains, far from the countries Vokalia and--}}
+{{--                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the--}}
+{{--                        coast of the Semantics, a large language ocean. A small river named Duden flows.</p>--}}
                     <a href="#" class="learn">
                         <p>Learn More</p>
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

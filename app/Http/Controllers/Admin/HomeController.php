@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Request\Admin\NewsRequest;
+use App\Http\Request\Admin\PageRequest;
 use App\Services\NewsService;
 use App\Services\PageService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
 
 class HomeController extends AdminController
 {
@@ -26,7 +30,7 @@ class HomeController extends AdminController
      * @return Application|Factory|View|Response
      */
 
-    public function index(string $lang,string $type,Request $request)
+    public function index(string $lang,Request $request)
     {
 //        $request->validate([
 //            'title' => 'string|max:255|nullable',
@@ -36,7 +40,7 @@ class HomeController extends AdminController
 //        ]);
         $slug='home';
         return view('admin.modules.page.index', [
-            'pages' => $this->service->getAll($lang,$slug,$type,$request)
+            'pages' => $this->service->getAll($lang,$slug,$request)
         ]);
     }
 
@@ -78,21 +82,31 @@ class HomeController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(string $locale, int $id)
     {
-        //
+        $page = $this->service->find($id);
+
+        return view('admin.modules.page.update',[
+            'page' => $page,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param PageRequest  $request
+     * @param string $locale
+     * @param int $id
+     * @return Application|RedirectResponse|Response|Redirector
      */
-    public function update(Request $request, $id)
+    public function update(string $locale,PageRequest $request, int $id)
     {
-        //
+        if (!$this->service->update($locale,$id,$request)) {
+            return redirect(route('adminHome',$locale))->with('danger', __('admin.failed_updated_page'));
+        }
+
+
+        return redirect(route('adminHome', $locale))->with('success',__('admin.successfully_updated_page') );
     }
 
     /**

@@ -16,20 +16,6 @@ class NewsController extends Controller
         $this->service = $service;
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @param string $lang
-     * @param Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function index(string $lang, Request $request)
-    {
-        $news = $this->service->getLatestNews();
-
-        return view('frontend.modules.home.index')->with(['news' => $news]);
-    }
-
     public function getNews()
     {
         $news = $this->service->getNews();

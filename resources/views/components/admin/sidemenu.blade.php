@@ -31,11 +31,11 @@
 
 
             <li class="">
-                <a href="{{route('page',[app()->getLocale(),'type=welcome'])}}">
+                <a href="{{route('adminHome',[app()->getLocale()])}}">
                     <div class="icon-w">
                         <div class="os-icon os-icon-life-buoy"></div>
                     </div>
-                    <span>{{__('admin.pages')}}</span></a>
+                    <span>{{__('admin.home_page')}}</span></a>
             </li>
 
             <li>

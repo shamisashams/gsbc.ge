@@ -4,7 +4,6 @@
     <div class="controls-above-table">
         <div class="row">
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-success" href="{{route('createNews',app()->getLocale())}}">@lang('admin.create_news')</a>
             </div>
             <div class="col-sm-10 per-page-column">
                 <div class="per-page-container">
@@ -18,9 +17,8 @@
             <thead>
             <tr>
                 <th>Title</th>
-                <th>Description</th>
                 <th>Slug</th>
-                <th>Category</th>
+                <th>Type</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
@@ -34,14 +32,6 @@
                     @endif
                 </th>
                 <th>
-                    {{ Form::text('description',Request::get('description'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
-                    @if ($errors->has('description'))
-                        <span class="help-block">
-                        {{ $errors->first('description') }}
-                        </span>
-                    @endif
-                </th>
-                <th>
                     {{ Form::text('slug',Request::get('slug'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
                     @if ($errors->has('slug'))
                         <span class="help-block">
@@ -50,17 +40,10 @@
                     @endif
                 </th>
                 <th>
-                    {{ Form::select('category',[
-                        '' => 'All',
-                        'input' => 'Input',
-                        'textarea' => 'Textarea',
-                        'checkbox' => 'Checkbox',
-                        'radio' => 'Radio',
-                        'select' => 'Select'
-                        ],Request::get('type'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
-                    @if ($errors->has('category'))
+                    {{ Form::text('type',Request::get('type'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
+                    @if ($errors->has('type'))
                         <span class="help-block">
-                        {{ $errors->first('category') }}
+                        {{ $errors->first('type') }}
                         </span>
                     @endif
                 </th>
@@ -77,36 +60,28 @@
             </thead>
             {!! Form::close() !!}
             <tbody>
-            @if($news)
-                @foreach($page as $singleNews)
+            @if($pages)
+                @foreach($pages as $page)
                     <tr>
-                        <td class="text-center">{{(count($singleNews->availableLanguage) > 0) ?  $singleNews->availableLanguage[0]->title : ''}}</td>
-                        <td class="text-center">{{(count($singleNews->availableLanguage) > 0) ?  $singleNews->availableLanguage[0]->description : ''}}</td>
-                        <td class="text-center">{{$singleNews->slug}}</td>
-                        <td class="text-center">{{$singleNews->category}}</td>
+                        <td class="text-center">{{(count($page->availableLanguage) > 0) ?  $page->availableLanguage[0]->title : ''}}</td>
+                        <td class="text-center">{{$page->slug}}</td>
+                        <td class="text-center">{{$page->type}}</td>
                         <td class="text-center">
-                            @if($singleNews->status)
+                            @if($page->status)
                                 <span class="text-green">Active</span>
                             @else
                                 <span class="text-red">Not Active</span>
                             @endif
                         </td>
                         <td class="row-actions d-flex">
-                            <a href="{{route('showNews',[app()->getLocale(),$singleNews->id])}}">
+                            <a href="{{route('showNews',[app()->getLocale(),$page->id])}}">
                                 <i class="os-icon os-icon-documents-07"></i>
                             </a>
-                            <a href="{{route('editNews', [app()->getLocale(), $singleNews->id])}}">
+                            <a href="{{route('editHome', [app()->getLocale(), $page->id])}}">
                                 <i class="os-icon os-icon-ui-49">
 
                                 </i>
                             </a>
-                            {!! Form::open(['url' => route('destroyNews',[app()->getLocale(),$singleNews->id]),'method' =>'delete']) !!}
-                                <button class="delete-icon" onclick="return confirm('Are you sure, you want to delete this item?!');" type="submit">
-                                    <i
-                                        class="os-icon os-icon-ui-15">
-                                    </i>
-                                </button>
-                            {!! Form::close() !!}
 
                         </td>
                     </tr>
@@ -115,6 +90,6 @@
             </tbody>
         </table>
     </div>
-    {{ $news->links('admin.vendor.pagination.custom') }}
+{{--    {{ $news->links('admin.vendor.pagination.custom') }}--}}
 
 @endsection
