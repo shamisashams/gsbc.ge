@@ -5,13 +5,9 @@ namespace App\Services;
 use App\Http\Request\Admin\MemberRequest;
 use App\Http\Request\Admin\NewsRequest;
 use App\Http\Request\Admin\ProductRequest;
-use App\Models\Feature;
-use App\Models\FeatureLanguage;
 use App\Models\Localization;
 use App\Models\Member;
 use App\Models\MemberLanguage;
-use App\Models\News;
-use App\Models\NewsLanguage;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Storage;
 use function PHPUnit\Framework\throwException;
@@ -96,7 +92,7 @@ class MemberService
         $this->model->save();
 
         $this->model->language()->create([
-            'news_id' => $this->model->id,
+            'member_id' => $this->model->id,
             'language_id' => $localizationID,
             'title' => $request['title'],
             'description' => $request['description'],
@@ -212,8 +208,8 @@ class MemberService
         }
 
         if (count($data->files) > 0) {
-            if (Storage::exists('public/img/members' . $data->id)) {
-                Storage::deleteDirectory('public/img/members' . $data->id);
+            if (Storage::exists('public/img/members/' . $data->id)) {
+                Storage::deleteDirectory('public/img/members/' . $data->id);
             }
             $data->files()->delete();
         }
@@ -223,23 +219,10 @@ class MemberService
         return true;
     }
 
-    public function getNews()
+    public function getMembers()
     {
         return $this->model::where(['status' => 1])
-            ->orderBy('created_at', 'desc')
-            ->paginate(2);
-    }
+            ->orderBy('created_at', 'desc')->get();
 
-    public function getLatestNews()
-    {
-        return $this->model::where(['status' => 1])
-            ->take(5)
-            ->orderBy('created_at', 'desc')
-            ->get();
-    }
-
-    public function findBySlug($slug)
-    {
-        return $this->model::where(['slug' => $slug, 'status' => 1])->first();
     }
 }

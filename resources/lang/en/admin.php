@@ -27,6 +27,10 @@ return [
     'create_member'=>'Create Member',
     'successfully_created_member' => 'Member was successfully created',
     'failed_created_member' => 'Member was not created',
+    'failed_updated_member' => 'Member was not updated',
+    'successfully_updated_member' => 'Member was successfully updated',
+    'failed_deleted_member' => 'Member was not deleted',
+    'successfully_deleted_member' => 'Member was successfully deleted',
     'member_update' => 'Update Member'
 
 ];

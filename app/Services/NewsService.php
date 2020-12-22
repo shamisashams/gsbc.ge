@@ -28,7 +28,7 @@ class NewsService
      * Get Feature by id.
      *
      * @param int $id
-     * @return Feature
+     * @return News
      */
     public function find(int $id)
     {
@@ -94,7 +94,6 @@ class NewsService
         $localizationID = Localization::getIdByName($lang);
 
         $this->model = new News([
-            'category' => $request['category'],
             'status' => $request['status'],
             'slug' => $request['slug'],
             'user_id' => auth()->user()->id
@@ -142,7 +141,6 @@ class NewsService
 
         $data = $this->find($id);
         $data->update([
-            'category' => $request['category'],
             'status' => $request['status'],
             'slug' => $request['slug'],
             'user_id' => auth()->user()->id
@@ -221,8 +219,8 @@ class NewsService
         }
 
         if (count($data->files) > 0) {
-            if (Storage::exists('public/img/news' . $data->id)) {
-                Storage::deleteDirectory('public/img/news' . $data->id);
+            if (Storage::exists('public/img/news/' . $data->id)) {
+                Storage::deleteDirectory('public/img/news/' . $data->id);
             }
             $data->files()->delete();
         }

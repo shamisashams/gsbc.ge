@@ -35,7 +35,6 @@ class NewsRequest extends FormRequest
             'title' => ['required', 'max:255'],
             'description' => ['required', 'max:512'],
             'body' => 'required',
-            'category' => 'required',
 //            'image' => ['image', Rule::requiredIf(function () {
 //                $image = Image::where('imageable_id', $this->news)->first();
 //                return $image ? false : true;

@@ -35,15 +35,14 @@ Route::group([
     Route::get('/media', [\App\Http\Controllers\Frontend\NewsController::class, 'getNews'])->name('media');
     Route::get('/media/single-blog/{slug}', [\App\Http\Controllers\Frontend\NewsController::class, 'getSingleNews'])->name('single-blog');
 
+    Route::get('/membership', [\App\Http\Controllers\Frontend\MemberController::class, 'getMembers'])->name('membership');
+    Route::get('/change-localization', [\App\Http\Controllers\Frontend\HomeController::class, 'changeLocalization'])->name('changeLocalization');
 
 
     Route::get('/about-us', function () {
         return view('frontend.modules.about-us.index');
     })->name('about-us');
 
-    Route::get('/membership', function () {
-        return view('frontend.modules.membership.index');
-    })->name('membership');
 
     Route::get('/regulations', function () {
         return view('frontend.modules.membership.regulations.index');

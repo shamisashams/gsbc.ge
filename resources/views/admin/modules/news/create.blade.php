@@ -37,20 +37,6 @@
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <div class="form-group {{ $errors->has('category') ? ' has-error' : '' }}">
-                                    {{ Form::label('category', 'Category', []) }}
-                                    {{ Form::select('category',[
-                                        '1' => 'Fundamental',
-                                        '2' => 'Analusis',
-                                    ],'',  ['class' => 'form-control', 'no','placeholder'=>'Please Select Category']) }}
-                                    @if ($errors->has('category'))
-                                        <span class="help-block">
-                                            {{ $errors->first('category') }}
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('slug') ? ' has-error' : '' }}">
                                     {{ Form::label('slug', 'Slug', []) }}
