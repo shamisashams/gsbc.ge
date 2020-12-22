@@ -114,13 +114,13 @@ $(document).ready(function () {
 
   var imagedata = [];
   var getUrl = window.location;
-  var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[0];
+  var baseUrl = getUrl.protocol + "//" + getUrl.host + getUrl.pathname.split('/')[0];
 
   if (oldImages && oldImages.length > 0) {
     oldImages.forEach(function (el, key) {
-      imagedata.push({
+        imagedata.push({
         id: el.id,
-        src: "".concat(baseUrl, "storage/img/news/").concat(el.fileable_id, "/").concat(el.name)
+        src: "".concat(baseUrl, el.path+'/').concat(el.name)
       });
     });
     $('.input-images').imageUploader({

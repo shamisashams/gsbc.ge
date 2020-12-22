@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DictionaryController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\LocalizationController;
+use App\Http\Controllers\Admin\MemberController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
@@ -103,6 +104,15 @@ Route::group([
                 ->name('show', 'showNews')
                 ->name('update', 'updateNews')
                 ->name('destroy', 'destroyNews');
+
+            Route::resource('members', MemberController::class)
+                ->name('index', 'member')
+                ->name('create', 'createMember')
+                ->name('store', 'saveMember')
+                ->name('edit', 'editMember')
+                ->name('show', 'showMember')
+                ->name('update', 'updateMember')
+                ->name('destroy', 'destroyMember');
 
 
             Route::get('/home',[HomeController::class,'index'])->name('adminHome');

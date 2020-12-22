@@ -2,24 +2,27 @@
 
 namespace App\Services;
 
+use App\Http\Request\Admin\MemberRequest;
 use App\Http\Request\Admin\NewsRequest;
 use App\Http\Request\Admin\ProductRequest;
 use App\Models\Feature;
 use App\Models\FeatureLanguage;
 use App\Models\Localization;
+use App\Models\Member;
+use App\Models\MemberLanguage;
 use App\Models\News;
 use App\Models\NewsLanguage;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Storage;
 use function PHPUnit\Framework\throwException;
 
-class NewsService
+class MemberService
 {
     protected $model;
 
     protected $perPageArray = [10, 20, 30, 50, 100];
 
-    public function __construct(News $model)
+    public function __construct(Member $model)
     {
         $this->model = $model;
     }
@@ -28,7 +31,7 @@ class NewsService
      * Get Feature by id.
      *
      * @param int $id
-     * @return Feature
+     * @return Member
      */
     public function find(int $id)
     {
@@ -60,14 +63,6 @@ class NewsService
             });
         }
 
-        if ($request->category) {
-            $data = $data->where('category', $request->type);
-        }
-
-        if ($request->slug) {
-            $data = $data->where('slug', 'like', "%{$request->slug}%");
-        }
-
         if ($request->status != null) {
             $data = $data->where('status', $request->status);
         }
@@ -87,16 +82,14 @@ class NewsService
      * @param array $request
      * @return bool
      */
-    public function store(string $lang, NewsRequest $request)
+    public function store(string $lang, MemberRequest $request)
     {
         $request['status'] = isset($request['status']) ? 1 : 0;
 
         $localizationID = Localization::getIdByName($lang);
 
-        $this->model = new News([
-            'category' => $request['category'],
+        $this->model = new Member([
             'status' => $request['status'],
-            'slug' => $request['slug'],
             'user_id' => auth()->user()->id
         ]);
 
@@ -115,11 +108,11 @@ class NewsService
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $key => $file) {
                 $imagename = date('Ymhs') . $file->getClientOriginalName();
-                $destination = 'storage/img/news/' . $this->model->id;
+                $destination = 'storage/img/members/' . $this->model->id;
                 $request->file('images')[$key]->move($destination, $imagename);
                 $model->files()->create([
                     'name' => $imagename,
-                    'path' => '/storage/img/news/' . $model->id,
+                    'path' => '/storage/img/members/' . $model->id,
                     'format' => $file->getClientOriginalExtension(),
                 ]);
             }
@@ -136,25 +129,23 @@ class NewsService
      * @param array $request
      * @return bool
      */
-    public function update(string $lang, int $id, NewsRequest $request)
+    public function update(string $lang, int $id, MemberRequest $request)
     {
         $request['status'] = isset($request['status']) ? 1 : 0;
 
         $data = $this->find($id);
         $data->update([
-            'category' => $request['category'],
             'status' => $request['status'],
-            'slug' => $request['slug'],
             'user_id' => auth()->user()->id
         ]);
 
         $localizationID = Localization::getIdByName($lang);
 
-        $newsLanguage = NewsLanguage::where(['news_id' => $data->id, 'language_id' => $localizationID])->first();
+        $newsLanguage = MemberLanguage::where(['member_id' => $data->id, 'language_id' => $localizationID])->first();
 
         if ($newsLanguage == null) {
             $data->language()->create([
-                'news_id' => $this->model->id,
+                'member_id' => $this->model->id,
                 'language_id' => $localizationID,
                 'title' => $request['title'],
                 'description' => $request['description'],
@@ -172,15 +163,15 @@ class NewsService
         if (count($data->files) > 0) {
             foreach ($data->files as $file) {
                 if ($request['old_images'] == null) {
-                    if (Storage::exists('public/img/news/' . $data->id . '/' . $file->name)) {
-                        Storage::delete('public/img/news/' . $data->id . '/' . $file->name);
+                    if (Storage::exists('public/img/members/' . $data->id . '/' . $file->name)) {
+                        Storage::delete('public/img/members/' . $data->id . '/' . $file->name);
                     }
                     $file->delete();
                     continue;
                 }
                 if (!in_array($file->id, $request['old_images'])) {
-                    if (Storage::exists('public/img/news/' . $data->id . '/' . $file->name)) {
-                        Storage::delete('public/img/news/' . $data->id . '/' . $file->name);
+                    if (Storage::exists('public/img/members/' . $data->id . '/' . $file->name)) {
+                        Storage::delete('public/img/members/' . $data->id . '/' . $file->name);
                     }
                     $file->delete();
 
@@ -191,11 +182,11 @@ class NewsService
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $key => $file) {
                 $imagename = date('Ymhs') . $file->getClientOriginalName();
-                $destination = 'storage/img/news/' . $data->id;
+                $destination = 'storage/img/members/' . $data->id;
                 $request->file('images')[$key]->move($destination, $imagename);
                 $data->files()->create([
                     'name' => $imagename,
-                    'path' => '/storage/img/news/' . $data->id,
+                    'path' => '/storage/img/members/' . $data->id,
                     'format' => $file->getClientOriginalExtension(),
                 ]);
             }
@@ -216,18 +207,18 @@ class NewsService
         $data = $this->find($id);
         if (count($data->language) > 0) {
             if (!$data->language()->delete()) {
-                throwException('News languages can not delete.');
+                throwException('Member languages can not delete.');
             }
         }
 
         if (count($data->files) > 0) {
-            if (Storage::exists('public/img/news' . $data->id)) {
-                Storage::deleteDirectory('public/img/news' . $data->id);
+            if (Storage::exists('public/img/members' . $data->id)) {
+                Storage::deleteDirectory('public/img/members' . $data->id);
             }
             $data->files()->delete();
         }
         if (!$data->delete()) {
-            throwException('News  can not delete.');
+            throwException('Member  can not delete.');
         }
         return true;
     }
