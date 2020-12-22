@@ -1670,9 +1670,7 @@ img {
 }
 
 .project-bodies .projects-info .why-invest .reasons .flex {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    
 }
 
 .project-bodies .projects-info .why-invest .reasons .flex .each {
@@ -1682,19 +1680,17 @@ img {
 }
 
 .project-bodies .projects-info .why-invest .reasons .flex .each .cir {
-    width: 20px;
-    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: solid 1px #3a3e7f;
     margin-right: 7px;
+    margin-top: 7px;
 }
 
 .project-bodies .projects-info .why-invest .reasons .flex .each .cir .cle {
-    width: 12px;
-    height: 12px;
+    width: 7px;
+    height: 7px;
     margin: auto;
     border-radius: 50%;
     background-color: #3a3e7f;
@@ -1707,12 +1703,12 @@ img {
     line-height: 20px;
 }
 
-.project-bodies .projects-info .why-invest .reasons .flex .left .each p {
+/*.project-bodies .projects-info .why-invest .reasons .flex .left .each p {
     max-width: 341px;
 }
 .project-bodies .projects-info .why-invest .reasons .flex .right .each p {
     max-width: 173px;
-}
+}*/
 
 .project-bodies .projects-info .resorts .sorts .title {
     font-family: PlayfairDisplay-Roman;
@@ -1723,19 +1719,19 @@ img {
 }
 
 .project-bodies .projects-info .resorts .sorts .cir {
-    width: 20px;
-    height: 20px;
+    width: 7px;
+    height: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: solid 1px #3a3e7f;
     margin-right: 7px;
+    border-radius: 50%;
+    background-color: #3a3e7f;
 }
 
 .project-bodies .projects-info .resorts .sorts .cir .cle {
-    width: 12px;
-    height: 12px;
+    
     margin: auto;
     border-radius: 50%;
     background-color: #3a3e7f;
@@ -1748,8 +1744,6 @@ img {
 }
 
 .project-bodies .projects-info .resorts .sorts .cities {
-    display: flex;
-    align-items: center;
     margin-bottom: 15px;
 }
 
@@ -1757,7 +1751,7 @@ img {
 .project-bodies .projects-info .resorts .sorts .cities .city {
     display: flex;
     align-items: center;
-    margin-right: 19px;
+    margin-bottom: 10px;
 }
 
 .project-bodies .projects-info .resorts .sorts .lines {
@@ -1771,14 +1765,13 @@ img {
 }
 
 .project-bodies .projects-info .resorts .sorts .sectors {
-    display: flex;
-    align-items: center;
+    
 }
 
 .project-bodies .projects-info .resorts .sorts .sectors .sec {
     display: flex;
     align-items: center;
-    margin-right: 19px;
+    margin-bottom: 10px;
 }
 
 
