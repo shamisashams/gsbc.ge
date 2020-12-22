@@ -42,12 +42,12 @@
                 <div class="col3">
                     <p class="head">Links</p>
                     <div class="link-grid">
-                        <a class="link">Category 1</a>
-                        <a class="link">Category 2</a>
-                        <a class="link">Category 3</a>
-                        <a class="link">Category 4</a>
-                        <a class="link">Category 5</a>
-                        <a class="link">Category 6</a>
+                        <a class="link" href="{{route('/',app()->getLocale())}}">Home</a>
+                        <a class="link" href="{{route('about-us',app()->getLocale())}}">About us</a>
+                        <a class="link" href="{{route('membership',app()->getLocale())}}">Membership</a>
+                        <a class="link" href="{{route('events',app()->getLocale())}}">Events</a>
+                        <a class="link" href="{{route('projects',app()->getLocale())}}">Projects</a>
+                        <a class="link" href="{{route('media',app()->getLocale())}}">Press & Media</a>
                     </div>
                 </div>
                 <div id="map">

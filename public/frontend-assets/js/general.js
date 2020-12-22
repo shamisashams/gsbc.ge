@@ -94,7 +94,23 @@ $(window).ready(function () {
         });
     };
     init();
+    function setPanel(e) {
+        let button = e.target;
+        let title = button.previousElementSibling.textContent;
+        let text = e.target.parentElement.nextElementSibling.innerHTML;
+        let quickPanel = document.querySelector('.quick-view-panel');
+        let content = quickPanel.querySelector('.content');
+        let contentChild = content.children;
 
+        let contextDiv = e.target.parentElement.parentElement.parentElement;
+        let src = contextDiv.previousElementSibling.firstElementChild.src;
+        let img = contentChild[0];
+        img.src = src;
+        let textContent = contentChild[1];
+        textContent.children[0].textContent = title;
+
+        textContent.children[1].innerHTML = text;
+    }
 
 });
 

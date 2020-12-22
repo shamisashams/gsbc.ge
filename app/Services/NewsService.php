@@ -234,7 +234,7 @@ class NewsService
     {
         return $this->model::where(['status' => 1])
             ->orderBy('created_at', 'desc')
-            ->paginate(2);
+            ->paginate(8);
     }
 
     public function getLatestNews()

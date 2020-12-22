@@ -45,7 +45,7 @@
                 <div class="navbar-mobile">
 
                     <div class="nav-mo">
-                        <a href="/gsbc/en" class="nav">Home</a>
+                        <a href="/" class="nav">Home</a>
                         <a href="{{route('about-us',app()->getLocale())}}" class="nav">About us</a>
                         <div class="drop">
                             <a href="/gsbc/en/membership" class="nav member">Membership</a>
@@ -77,7 +77,7 @@
         </div>
         <div class="bottom">
             <div class="navbar">
-                <a href="/gsbc/en" class="nav">Home</a>
+                <a href="/" class="nav">Home</a>
                 <a href="{{route('about-us',app()->getLocale())}}" class="nav">About us</a>
                 <div class="drop">
                     <a href="{{route('membership',app()->getLocale())}}" class="nav member">Membership</a>

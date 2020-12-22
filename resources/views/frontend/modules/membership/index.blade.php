@@ -28,7 +28,7 @@
                                         <a class="story btn-view" href="#">Full Story</a>
                                     </div>
                                     <span class="body-text"
-                                       hidden>
+                                          hidden>
                                         {!!(count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->body : ''!!}</span>
                                     <p class="para">{{(count($member->availableLanguage) > 0) ?  $member->availableLanguage[0]->description : ''}}</p>
                                 </div>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="content">
-                    <img src="/frontend-assets/gsbc/img/biography/1.png">
+                <img src="/frontend-assets/gsbc/img/biography/1.png">
                 <div class="text">
                     <h2 class="name">opkpo</h2>
                     <span class="">    </span>
@@ -59,30 +59,4 @@
         </div>
     </div>
 
-
-    <script>
-        $('.btn-view').on('click', function (e) {
-            setPanel(e);
-        });
-        function setPanel(e) {
-            let button = e.target;
-            let title = button.previousElementSibling.textContent;
-            let text = e.target.parentElement.nextElementSibling.textContent;
-            let quickPanel = document.querySelector('.quick-view-panel');
-            let content = quickPanel.querySelector('.content');
-            let contentChild=content.children;
-
-            let contextDiv=e.target.parentElement.parentElement.parentElement;
-            let src=contextDiv.previousElementSibling.firstElementChild.src;
-
-            let img=contentChild[0];
-            img.firstElementChild.src=src;
-            let textContent = contentChild[1];
-
-            textContent.children[0].textContent = title;
-
-            console.log(textContent.children[1]);
-            textContent.children[1].textContent=text;
-        }
-    </script>
 @endsection
