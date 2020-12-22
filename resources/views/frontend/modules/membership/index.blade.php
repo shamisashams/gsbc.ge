@@ -151,9 +151,7 @@
                 Quick View Loading...
             </div>
             <div class="content">
-                <div class="img">
-                    <img src="/frontend-assets/gsbc/img/projects/1.png">
-                </div>
+                    <img src="/frontend-assets/gsbc/img/biography/1.png">
                 <div class="text">
                     <h2 class="name">Member Name</h2>
                     <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
