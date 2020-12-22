@@ -37,6 +37,7 @@ $(window).ready(function () {
             $(window).scrollTop(0);
             $('#quick-view-pop-up').fadeToggle();
             $('#quick-view-pop-up').css({"top": "200px", "left": "calc(50% - 437px)"});
+            $('#quick-view-pop-up').css({"top":"200px", "left":"50%"});
             $('.mask').fadeToggle();
         });
         $('.mask').on('click', function () {
@@ -97,6 +98,13 @@ $(window).ready(function () {
 
 });
 
+// popup img width
+
+// var imgWidth = $("img").width();
+
+// $("#quick-view-pop-up").css("width", imgWidth+"px")
+
+
 
 // navbar on mobile
 
@@ -107,3 +115,6 @@ menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle('close-i');
     mainNavigation.classList.toggle('show-nav');
 })
+
+
+

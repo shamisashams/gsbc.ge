@@ -52,9 +52,9 @@
                     <p class="blue">Choosing Right Advisor Can Save Million Dollars</p>
                     <p class="para">Continuous Increase of International Visitors – 23% average annual growth of international visitors for last five years</p>
                     <div class="why-invest">
-                        <div class="img">
+                        <!-- <div class="img">
                             <img src="/frontend-assets/gsbc/img/projects/5.png">
-                        </div>
+                        </div> -->
                         <div class="reasons">
                             <h6 class="title"> Why to Invest?</h6>
                             <div class="flex">
@@ -281,7 +281,7 @@
                             </div>
                         </div>
                         <div class="sorts">
-                            <h6 class="title">MANUFACTURING:</h6>
+                            <h6 class="title">Sectors of Manufacturing: </h6>
                             <div class="sectors">
                                 <div class="sec">
                                     <div class="cir">
@@ -313,7 +313,6 @@
                                     </div>
                                     <p>Glass</p>
                                 </div>
-                                <br>
                                 <div class="sec">
                                     <div class="cir">
                                         <span class="cle"></span>
