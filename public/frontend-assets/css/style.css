@@ -1748,7 +1748,7 @@ img {
 }
 
 .project-bodies .projects-info .why-invest .reasons .flex {
-    
+
 }
 
 .project-bodies .projects-info .why-invest .reasons .flex .each {
@@ -1809,7 +1809,7 @@ img {
 }
 
 .project-bodies .projects-info .resorts .sorts .cir .cle {
-    
+
     margin: auto;
     border-radius: 50%;
     background-color: #3a3e7f;
@@ -1843,7 +1843,7 @@ img {
 }
 
 .project-bodies .projects-info .resorts .sorts .sectors {
-    
+
 }
 
 .project-bodies .projects-info .resorts .sorts .sectors .sec {
@@ -2028,9 +2028,11 @@ img {
     border-radius: 0;
 }
 */
-#quick-view-pop-up .content .img img {
+#quick-view-pop-up .content img {
     width: 100%;
     height: 100%;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
 }
 
 #quick-view-pop-up .content .text {
