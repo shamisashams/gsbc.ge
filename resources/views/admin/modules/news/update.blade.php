@@ -40,24 +40,6 @@
                         <div class="row">
                             <div class="col-6">
                                 <div
-                                    class="form-group {{ $errors->has('category') ? ' has-error' : '' }}">
-                                    {{ Form::label('category', 'Category', []) }}
-                                    {{ Form::select('category',[
-                                        '1' => 'Fundamental',
-                                        '2' => 'Analysis',
-                                        'checkbox' => 'Checkbox',
-                                        'radio' => 'Radio',
-                                        'select' => 'Select'
-                                    ],$news->category,  ['class' => 'form-control', 'no']) }}
-                                    @if ($errors->has('category'))
-                                        <span class="help-block">
-                                            {{ $errors->first('category') }}
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div
                                     class="form-group {{ $errors->has('slug') ? ' has-error' : '' }}">
                                     {{ Form::label('slug', 'Slug', []) }}
                                     {{ Form::text('slug', $news->slug, ['class' => 'form-control', 'no','placeholder'=>'Enter Title']) }}

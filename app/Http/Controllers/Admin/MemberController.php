@@ -116,8 +116,8 @@ class MemberController extends AdminController
     public function destroy(string $locale, int $id)
     {
         if (!$this->service->delete($id)) {
-            return redirect(route('member', $locale))->with('danger', __('admin.failed_deleted_news'));
+            return redirect(route('member', $locale))->with('danger', __('admin.failed_deleted_member'));
         }
-        return redirect(route('member', $locale))->with('success',__('admin.successfully_deleted_news'));
+        return redirect(route('member', $locale))->with('success',__('admin.successfully_deleted_member'));
     }
 }

@@ -4,8 +4,10 @@
         <div class="overlay">
             <div class="wrapper">
                 <div class="content">
-                    <p class="title">{{(count($welcome->availableLanguage) > 0) ?  $welcome->availableLanguage[0]->title : ''}}</p>
-                    <p class="para">{!!(count($welcome->availableLanguage) > 0) ?  $welcome->availableLanguage[0]->body : ''!!}</p>
+                    @if($welcome)
+                        <p class="title">{{(count($welcome->availableLanguage) > 0) ?  $welcome->availableLanguage[0]->title : ''}}</p>
+                        <p class="para">{!!(count($welcome->availableLanguage) > 0) ?  $welcome->availableLanguage[0]->body : ''!!}</p>
+                    @endif
                     <a href="#" class="contact">
                         CONTACT NOW
                         <img class="arrow" src="frontend-assets/gsbc/img/icons/showcase/right-arrow.svg">
@@ -19,16 +21,17 @@
         <div class="wrapper">
             <div class="content">
                 <div class="text">
-                    <p class="title">{{(count($about->availableLanguage) > 0) ?  $about->availableLanguage[0]->title : ''}}</p>
-                    <p class="para">{{(count($about->availableLanguage) > 0) ?  $about->availableLanguage[0]->body : ''}}</p>
-
+                    @if($about)
+                        <p class="title">{{(count($about->availableLanguage) > 0) ?  $about->availableLanguage[0]->title : ''}}</p>
+                        <p class="para">{{(count($about->availableLanguage) > 0) ?  $about->availableLanguage[0]->body : ''}}</p>
+                    @endif
                     <img src="frontend-assets/gsbc/img/icons/showcase/just-signature.png">
                     <p class="geo-gs">CEO, GSBC</p>
                 </div>
                 <div class="image">
-                    @if(isset($about->files[0]))
-                    <img src="{{$about->files[0]->path.'/'.$about->files[0]->name}}">
-                        @endif
+                    @if($about && isset($about->files[0]))
+                        <img src="{{$about->files[0]->path.'/'.$about->files[0]->name}}">
+                    @endif
                 </div>
             </div>
         </div>
@@ -153,13 +156,13 @@
                         <p class="expert">WHAT WE ARE EXPERT AT</p>
                         <h5 class="title">{{(count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->title : ''}}</h5>
                     </div>
-                        {!! (count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->body : '' !!}
+                    {!! (count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->body : '' !!}
 
-{{--                    <p class="blue">We can provide corporate governance, helping clients manage the responsibilities of--}}
-{{--                        running a corporation in financial field.</p>--}}
-{{--                    <p class="p">Far far away, behind the word mountains, far from the countries Vokalia and--}}
-{{--                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the--}}
-{{--                        coast of the Semantics, a large language ocean. A small river named Duden flows.</p>--}}
+                    {{--                    <p class="blue">We can provide corporate governance, helping clients manage the responsibilities of--}}
+                    {{--                        running a corporation in financial field.</p>--}}
+                    {{--                    <p class="p">Far far away, behind the word mountains, far from the countries Vokalia and--}}
+                    {{--                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the--}}
+                    {{--                        coast of the Semantics, a large language ocean. A small river named Duden flows.</p>--}}
                     <a href="#" class="learn">
                         <p>Learn More</p>
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

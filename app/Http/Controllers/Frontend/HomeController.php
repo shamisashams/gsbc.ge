@@ -31,15 +31,21 @@ class HomeController extends Controller
 
         $welcome = $this->service->getWelcomeContent();
 
-        $about=$this->service->getAboutContent();
+        $about = $this->service->getAboutContent();
 
-        $whyChooseUs=$this->service->getWhyChooseUs();
+        $whyChooseUs = $this->service->getWhyChooseUs();
 
         $news = $service->getLatestNews();
 
-        return view('frontend.modules.home.index')->with(['welcome' => $welcome, 'about'=>$about,'chooseUs'=>$whyChooseUs,'news' => $news]);
+        return view('frontend.modules.home.index')->with(['welcome' => $welcome, 'about' => $about, 'chooseUs' => $whyChooseUs, 'news' => $news]);
     }
 
 
+    public function changeLocalization(Request $request, $locale)
+    {
+        $path = $request->input('path');
+        $url = $locale . substr($path, 2);
+        return redirect($url);
+    }
 
 }

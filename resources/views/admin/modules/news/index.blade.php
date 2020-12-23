@@ -20,7 +20,6 @@
                 <th>Title</th>
                 <th>Description</th>
                 <th>Slug</th>
-                <th>Category</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
@@ -50,21 +49,6 @@
                     @endif
                 </th>
                 <th>
-                    {{ Form::select('category',[
-                        '' => 'All',
-                        'input' => 'Input',
-                        'textarea' => 'Textarea',
-                        'checkbox' => 'Checkbox',
-                        'radio' => 'Radio',
-                        'select' => 'Select'
-                        ],Request::get('type'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
-                    @if ($errors->has('category'))
-                        <span class="help-block">
-                        {{ $errors->first('category') }}
-                        </span>
-                    @endif
-                </th>
-                <th>
                     {{ Form::select('status',['' => 'All','1' => 'Active','0' => 'Not Active'],Request::get('status'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
                     @if ($errors->has('status'))
                         <span class="help-block">
@@ -83,7 +67,6 @@
                         <td class="text-center">{{(count($singleNews->availableLanguage) > 0) ?  $singleNews->availableLanguage[0]->title : ''}}</td>
                         <td class="text-center">{{(count($singleNews->availableLanguage) > 0) ?  $singleNews->availableLanguage[0]->description : ''}}</td>
                         <td class="text-center">{{$singleNews->slug}}</td>
-                        <td class="text-center">{{$singleNews->category}}</td>
                         <td class="text-center">
                             @if($singleNews->status)
                                 <span class="text-green">Active</span>
