@@ -8,7 +8,7 @@
                 </h6>
 
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-6">
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
@@ -31,7 +31,7 @@
                             </tr>
                             <tr>
                                 <th>Status</th>
-                                <td>{{$news->status ? 'True' : 'False'}}</td>
+                                <td>{{$news->status ? 'Active' : 'Not Active'}}</td>
                             </tr>
                             <tr>
                                 <th>Body</th>

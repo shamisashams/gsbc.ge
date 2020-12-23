@@ -2,7 +2,7 @@
 @section('content')
     <section class="about-showcase">
         <div class="overlay">
-            <p class="title">Renewable Energy</p>
+            <p class="title">Logistics</p>
             <p class="under">CAPTION PLACED HERE</p>
         </div>
     </section>
@@ -47,12 +47,12 @@
                 </div>
                 <div class="projects-info">
                     <div class="first-img">
-                        <img src="/frontend-assets/gsbc/img/projects/1.png">
+                        <img src="/frontend-assets/gsbc/img/projects/logistics.png">
                     </div>
                     <p class="blue">Choosing Right Advisor Can Save Million Dollars</p>
                     <p class="para">Continuous Increase of International Visitors – 23% average annual growth of international visitors for last five years</p>
                     <!-- <div class="why-invest">
-                        
+
                     <div class="resorts">
                         <div class="sorts">
                             <h6 class="title">OVERVIEW OF GEORGIA’S ENERGY SECTOR</h6>
@@ -76,7 +76,7 @@
                                     </div>
                                     <p>Georgia is surrounded by countries with a projected structural power deficit or expensive power generation, opening up attractive export opportunities</p>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="sorts">
@@ -100,7 +100,7 @@
                                     </div>
                                     <p>In addition to hydro, there is considerable generation potential from wind, solar and other renewable sources</p>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="sorts">
@@ -215,7 +215,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         </div>
                     </div> -->
                 </div>

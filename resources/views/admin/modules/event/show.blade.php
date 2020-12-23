@@ -4,7 +4,7 @@
         <div class="content-box">
             <div class="element-wrapper">
                 <h6 class="element-header">
-                    {{ (count($news->availableLanguage) > 0) ? $news->availableLanguage[0]->title : ''}}
+                    {{ (count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->title : ''}}
                 </h6>
 
                 <div class="row">
@@ -14,37 +14,29 @@
                             <tr>
                                 <th>Title</th>
                                 <td>
-                                    {{ (count($news->availableLanguage) > 0) ? $news->availableLanguage[0]->title : ''}}
+                                    {{ (count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->title : ''}}
                                 </td>
                             </tr>
                             <tr>
                                 <th>Description</th>
-                                <td>{{(count($news->availableLanguage) > 0) ? $news->availableLanguage[0]->description : ''}}</td>
+                                <td>{{(count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->description : ''}}</td>
                             </tr>
                             <tr>
-                                <th>slug</th>
-                                <td>{{$news->slug}}</td>
+                                <th>Start Date</th>
+                                <td>{{date('d-M-Y H:i:s', strtotime($event->start_date))}}</td>
                             </tr>
                             <tr>
-                                <th>Category</th>
-                                <td>{{$news->category}}</td>
-                            </tr>
-                            <tr>
-                                <th>Status</th>
-                                <td>{{$news->status ? 'True' : 'False'}}</td>
-                            </tr>
-                            <tr>
-                                <th>Body</th>
-                                <td>{!! (count($news->availableLanguage) > 0) ? $news->availableLanguage[0]->body : ''!!}</td>
+                                <th>End Date</th>
+                                <td>{{date('d-M-Y H:i:s', strtotime($event->end_date))}}</td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                @if($news->files)
+                @if($event->files)
                     <div class="row">
                         <div class="col-6">
-                            @foreach($news->files as $file)
+                            @foreach($event->files as $file)
                                 <img width="250px" src="{{$file->path.'/'.$file->name}}">
                                 <br>
                             @endforeach

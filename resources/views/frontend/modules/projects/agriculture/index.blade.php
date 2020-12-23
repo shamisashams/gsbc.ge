@@ -47,7 +47,7 @@
                 </div>
                 <div class="projects-info">
                     <div class="first-img">
-                        <img src="/frontend-assets/gsbc/img/projects/1.png">
+                        <img src="/frontend-assets/gsbc/img/projects/agriculture.png">
                     </div>
                     <p class="blue">Choosing Right Advisor Can Save Million Dollars</p>
                     <p class="para">Continuous Increase of International Visitors – 23% average annual growth of international visitors for last five years</p>
@@ -55,7 +55,7 @@
                         <!-- <div class="img">
                             <img src="/frontend-assets/gsbc/img/projects/5.png">
                         </div> -->
-                        
+
                     </div>
                     <div class="resorts">
                         <div class="sorts">

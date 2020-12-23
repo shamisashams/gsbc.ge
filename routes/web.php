@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AnswerController;
-use App\Http\Controllers\Admin\DictionaryController;
-use App\Http\Controllers\Admin\FeatureController;
+
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\LocalizationController;
 use App\Http\Controllers\Admin\MemberController;
@@ -10,6 +8,7 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Admin\EventController;
 use App\Models\Dictionary;
 use Illuminate\Support\Facades\Route;
 
@@ -104,7 +103,7 @@ Route::group([
 
             Route::get('/', function () {
                 return view('admin.welcome');
-            })->name('adminHome');
+            })->name('cleanAdminHome');
 
 
             // Localizations
@@ -134,6 +133,16 @@ Route::group([
                 ->name('show', 'showMember')
                 ->name('update', 'updateMember')
                 ->name('destroy', 'destroyMember');
+
+
+            Route::resource('events', EventController::class)
+                ->name('index', 'adminEvent')
+                ->name('create', 'createEvent')
+                ->name('store', 'saveEvent')
+                ->name('edit', 'editEvent')
+                ->name('show', 'showEvent')
+                ->name('update', 'updateEvent')
+                ->name('destroy', 'destroyEvent');
 
 
             Route::get('/home',[HomeController::class,'index'])->name('adminHome');

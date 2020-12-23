@@ -47,7 +47,7 @@
                 </div>
                 <div class="projects-info">
                     <div class="first-img">
-                        <img src="/frontend-assets/gsbc/img/projects/1.png">
+                        <img src="/frontend-assets/gsbc/img/projects/renewable_energy.png">
                     </div>
                     <p class="blue">Choosing Right Advisor Can Save Million Dollars</p>
                     <p class="para">Continuous Increase of International Visitors – 23% average annual growth of international visitors for last five years</p>
@@ -55,7 +55,7 @@
                         <!-- <div class="img">
                             <img src="/frontend-assets/gsbc/img/projects/5.png">
                         </div> -->
-                        
+
                     <div class="resorts">
                         <div class="sorts">
                             <h6 class="title">OVERVIEW OF GEORGIA’S ENERGY SECTOR</h6>
@@ -79,7 +79,7 @@
                                     </div>
                                     <p>Georgia is surrounded by countries with a projected structural power deficit or expensive power generation, opening up attractive export opportunities</p>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="sorts">
@@ -103,7 +103,7 @@
                                     </div>
                                     <p>In addition to hydro, there is considerable generation potential from wind, solar and other renewable sources</p>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="sorts">
@@ -218,7 +218,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         </div>
                     </div>
                 </div>

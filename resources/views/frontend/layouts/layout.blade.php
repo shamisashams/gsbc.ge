@@ -20,6 +20,8 @@
     <!-- jQueryUI -->
     <script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" charset="utf-8"></script>
 
+
+
 {{--    <link rel="stylesheet" href="bower_components/flex-calendar.css">--}}
 {{--    <script type="text/javascript" src="bower_components/angular-translate/angular-translate.min.js.js"></script>--}}
 {{--    <script type="text/javascript" src="bower_components/flex-calendar.js"></script>--}}
@@ -45,6 +47,14 @@
 
 <script src="{{asset('frontend-assets/js/general.js')}}"></script>
 <script src="{{asset('frontend-assets/js/slide.js')}}"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
+
 
 {{--<script src="{{asset('frontend-assets/js/affiliate.js')}}"></script>--}}
 {{--<script src="{{asset('frontend-assets/js/slide.js')}}"></script>--}}

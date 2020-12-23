@@ -133,4 +133,83 @@ menuIcon.addEventListener('click', () => {
 })
 
 
+$(document).ready(function () {
+
+    var SITEURL = "{{url('/')}}";
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    var calendar = $('#calendar').fullCalendar({
+        editable: false,
+        events: [{
+            title:'Exams',
+            start:"2020-12-13 10:00:00",
+            end:"2020-12-16 13:00:00",
+            allDay:false
+        }],
+        displayEventTime: true,
+        eventRender: function (event, element, view) {
+            console.log(event);
+            if (event.allDay === 'true') {
+                event.allDay = true;
+            } else {
+                event.allDay = false;
+            }
+        },
+        selectable: false,
+        selectHelper: false,
+        select: function (start, end, allDay) {
+            var title = prompt('Event Title:');
+
+            if (title) {
+                var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+                var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+
+                $.ajax({
+                    url: SITEURL + "booking/create",
+                    data: 'title=' + title + '&amp;start=' + start + '&amp;end=' + end,
+                    type: "POST",
+                    success: function (data) {
+                        displayMessage("Added Successfully");
+                    }
+                });
+                console.log(start);
+                console.log(allDay);
+                calendar.fullCalendar('renderEvent',
+                    {
+                        title: title,
+                        start: start,
+                        end: end,
+                        allDay: allDay
+                    },
+                    true
+                );
+            }
+            calendar.fullCalendar('unselect');
+        },
+
+        eventDrop: function (event, delta) {
+            var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+            var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+            $.ajax({
+                url: SITEURL + 'booking/update',
+                data: 'title=' + event.title + '&amp;start=' + start + '&amp;end=' + end + '&amp;id=' + event.id,
+                type: "POST",
+                success: function (response) {
+                    displayMessage("Updated Successfully");
+                }
+            });
+        },
+    });
+});
+
+function displayMessage(message) {
+    $(".response").html("<div class='success'>"+message+"</div>");
+    setInterval(function() { $(".success").fadeOut(); }, 1000);
+}
+
+
 

@@ -1,7 +1,7 @@
 <div >
     <div style="position: relative; height:100%" class="menu-w color-scheme-light color-style-default menu-position-side menu-side-left menu-layout-compact sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link" style="height: 100%">
         <div class="logo-w">
-          <a class="logo" href="index.html">
+          <a class="logo" href="{{route('cleanAdminHome',app()->getLocale())}}">
             <div class="logo-element"></div>
             <div class="logo-label">
               Clean Admin
@@ -44,6 +44,15 @@
                         <div class="os-icon os-icon-life-buoy"></div>
                     </div>
                     <span>{{__('admin.members')}}</span></a>
+            </li>
+
+
+            <li class="">
+                <a href="{{route('adminEvent',[app()->getLocale()])}}">
+                    <div class="icon-w">
+                        <div class="os-icon os-icon-life-buoy"></div>
+                    </div>
+                    <span>{{__('admin.events')}}</span></a>
             </li>
             <li>
 

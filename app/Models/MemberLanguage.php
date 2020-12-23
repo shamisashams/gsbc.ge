@@ -18,7 +18,7 @@ class MemberLanguage extends Model
         'body'
     ];
 
-    public function news()
+    public function member()
     {
         return $this->belongsTo('App\Models\Member', 'member_id');
     }

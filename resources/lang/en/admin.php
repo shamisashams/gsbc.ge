@@ -31,6 +31,22 @@ return [
     'successfully_updated_member' => 'Member was successfully updated',
     'failed_deleted_member' => 'Member was not deleted',
     'successfully_deleted_member' => 'Member was successfully deleted',
-    'member_update' => 'Update Member'
+    'member_update' => 'Update Member',
+    'events'=>'Events',
+    'create_event'=>'Create Event',
+    'failed_created_event' => 'Event was not created',
+    'successfully_created_event' => 'Event was successfully created',
+    'event_update'=>'Update Event',
+    'successfully_updated_event' => 'Event was successfully updated',
+    'failed_updated_event' => 'Event was not updated',
+    'event_start_date'=>'Start Date',
+    'event_end_date'=>'End Date',
+    'successfully_deleted_event' => 'Event was successfully deleted',
+    'failed_deleted_event' => 'Event was not deleted',
+
+
+
+
+
 
 ];

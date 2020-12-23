@@ -23,39 +23,6 @@
                 <th>Actions</th>
             </tr>
             <tr>
-                <th>
-                    {{ Form::text('title',Request::get('title'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
-                    @if ($errors->has('title'))
-                        <span class="help-block">
-                        {{ $errors->first('title') }}
-                        </span>
-                    @endif
-                </th>
-                <th>
-                    {{ Form::text('slug',Request::get('slug'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
-                    @if ($errors->has('slug'))
-                        <span class="help-block">
-                        {{ $errors->first('slug') }}
-                        </span>
-                    @endif
-                </th>
-                <th>
-                    {{ Form::text('type',Request::get('type'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
-                    @if ($errors->has('type'))
-                        <span class="help-block">
-                        {{ $errors->first('type') }}
-                        </span>
-                    @endif
-                </th>
-                <th>
-                    {{ Form::select('status',['' => 'All','1' => 'Active','0' => 'Not Active'],Request::get('status'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
-                    @if ($errors->has('status'))
-                        <span class="help-block">
-                        {{ $errors->first('status') }}
-                        </span>
-                    @endif
-                </th>
-                <th></th>
             </tr>
             </thead>
             {!! Form::close() !!}

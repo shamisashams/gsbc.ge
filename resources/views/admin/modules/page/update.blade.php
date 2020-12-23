@@ -32,7 +32,7 @@
                                     class="form-group {{ $errors->has('body') ? ' has-error' : '' }}">
                                     {{ Form::label('body', 'Body', []) }}
                                     {{ Form::textarea('body', (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->body : '',
-                                     ['id'=>$page->type=="choose-us"?"article-ckeditor":"",'class' => 'form-control', 'no','placeholder'=>'Enter Slug']) }}
+                                     ['class' => 'form-control', 'no','placeholder'=>'Enter Slug']) }}
                                     @if ($errors->has('body'))
                                         <span class="help-block">
                                     {{ $errors->first('body') }}
@@ -53,23 +53,24 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="element-wrapper">
-                    <h6 class="element-header" style="padding-top: 16px;">
-                    </h6>
-                    <div class="element-box">
-                        <div class="form-group">
-                            <div class="input-images"></div>
-                            @if ($errors->has('images'))
-                                <span class="help-block">
+            @if($page->type!=="welcome")
+                <div class="col-lg-6">
+                    <div class="element-wrapper">
+                        <h6 class="element-header" style="padding-top: 16px;">
+                        </h6>
+                        <div class="element-box">
+                            <div class="form-group">
+                                <div class="input-images"></div>
+                                @if ($errors->has('images'))
+                                    <span class="help-block">
                                             {{ $errors->first('images') }}
                                         </span>
-                            @endif
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
+            @endif
         </div>
     </div>
     {!! Form::close() !!}
