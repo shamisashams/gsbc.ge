@@ -339,7 +339,6 @@ img {
     align-items: center;
     justify-content: flex-start;
     border-radius: 6px;
-    background-color: rgba(54, 57, 89, .85);
 }
 
 .header .navbar .nav {
@@ -1664,7 +1663,7 @@ img {
 }
 
 .project-bodies .content .project-links .links .each:hover .line {
-    background-color: #3a3e7f;
+    box-shadow: inset 4px 0 0 0 #3a3e7f;
     margin-right: 25px;
 }
 .project-bodies .content .project-links .links .each:hover p {
@@ -2675,7 +2674,16 @@ img {
     }
 }
 
-@media(max-width: 550px) {
+@media(max-width: 620px) {
+
+    .header .languages.mobile {
+        display: flex;
+        margin-right: 10px;
+    }
+
+    .header .bottom {
+        display: none;
+    }
 
     .header .top .right .member {
         display: none;

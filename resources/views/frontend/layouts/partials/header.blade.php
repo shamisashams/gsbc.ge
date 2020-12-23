@@ -72,6 +72,22 @@
                         <p>Become a Member</p>
                     </a>
                 </div>
+                <div class="languages mobile">
+                        <a href="#" class="lang selected">
+                            <img src="/frontend-assets/gsbc/img/flags/uk.svg">
+                        </a>
+                        <div class="lg-dd">
+                            <a href="#" class="lang">
+                                <img src="/frontend-assets/gsbc/img/flags/ge.svg">
+                            </a>
+                            <a href="#" class="lang">
+                                <img src="/frontend-assets/gsbc/img/flags/sa.svg">
+                            </a>
+                            <a href="#" class="lang">
+                                <img src="/frontend-assets/gsbc/img/flags/ru.svg">
+                            </a>
+                        </div>
+                    </div>
                 <button class="menu menu-icon "><span></span></button>
             </div>
         </div>
