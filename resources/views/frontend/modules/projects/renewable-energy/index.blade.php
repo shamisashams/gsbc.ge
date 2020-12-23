@@ -13,32 +13,32 @@
                 <div class="project-links">
                     <p class="title">Projects</p>
                     <div class="links">
-                        <a href="#" class="each">
+                        <a href="{{route('realestate',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>Real estate & Hospitality</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="#" class="each">
+                        <a href="{{route('agriculture',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>Agriculture & Food processing</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="#" class="each">
+                        <a href="{{route('construction',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>Construction</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="#" class="each active">
+                        <a href="{{route('renewableenergy',app()->getLocale())}}" class="each active">
                             <span class="line"></span>
                             <p>Renewable Energy</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="#" class="each">
+                        <a href="{{route('logistics',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>Logistics</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="#" class="each">
+                        <a href="{{route('projects',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>Tourism</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
@@ -55,34 +55,33 @@
                         <!-- <div class="img">
                             <img src="/frontend-assets/gsbc/img/projects/5.png">
                         </div> -->
-                        <div class="reasons">
+                        
+                    <div class="resorts">
+                        <div class="sorts">
                             <h6 class="title">OVERVIEW OF GEORGIA’S ENERGY SECTOR</h6>
                             <h6 class="title">CURRENT MARKET AND STRONG DEMAND GROWTH PROSPECTS</h6>
-                            <div class="flex">
-                                <div class="left">
-                                    <div class="each">
-                                        <div class="cir">
-                                            <span class="cle"></span>
-                                        </div>
-                                        <p>In 2015 electricity generation reached 10.8 TWh, of which hydropower accounted for 78% and thermal - 22%</p>
+                            <div class="cities">
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
                                     </div>
-                                    <div class="each">
-                                        <div class="cir">
-                                            <span class="cle"></span>
-                                        </div>
-                                        <p>Domestic Demand growth , which is expected to grow in line with GDP, requires an extension of power generation by around 65% until 2025</p>
+                                    <p>In 2015 electricity generation reached 10.8 TWh, of which hydropower accounted for 78% and thermal - 22%</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
                                     </div>
-                                    <div class="each">
-                                        <div class="cir">
-                                            <span class="cle"></span>
-                                        </div>
-                                        <p>Georgia is surrounded by countries with a projected structural power deficit or expensive power generation, opening up attractive export opportunities</p>
+                                    <p>Domestic Demand growth , which is expected to grow in line with GDP, requires an extension of power generation by around 65% until 2025</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
                                     </div>
-                                    
+                                    <p>Georgia is surrounded by countries with a projected structural power deficit or expensive power generation, opening up attractive export opportunities</p>
+                                </div>
+                                
                             </div>
                         </div>
-                    </div>
-                    <div class="resorts">
                         <div class="sorts">
                             <h6 class="title">HUGE UNTAPPED POTENTIAL</h6>
                             <div class="cities">

@@ -1194,8 +1194,8 @@ img {
 }
 
 .footer .top .content .col2 .social-media img {
-    width: 11px;
-    height: 9px;
+    width: 15px;
+    height: 15px;
 }
 
 .footer .top .content .col3 .head {
@@ -1208,9 +1208,9 @@ img {
 
 .footer .top .content .col3 .link-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 40px;
-    grid-row-gap: 19px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 15px;
 }
 
 .footer .top .content .col3 .link-grid .link {

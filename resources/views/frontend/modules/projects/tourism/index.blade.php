@@ -13,32 +13,32 @@
                 <div class="project-links">
                     <p class="title">Projects</p>
                     <div class="links">
-                        <a href="#" class="each">
+                        <a href="{{route('realestate',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>Real estate & Hospitality</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="#" class="each">
+                        <a href="{{route('agriculture',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>Agriculture & Food processing</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="#" class="each">
+                        <a href="{{route('construction',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>Construction</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="#" class="each">
+                        <a href="{{route('renewableenergy',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>Renewable Energy</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="#" class="each">
+                        <a href="{{route('logistics',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>Logistics</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="#" class="each active">
+                        <a href="{{route('projects',app()->getLocale())}}" class="each active">
                             <span class="line"></span>
                             <p>Tourism</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">

@@ -2,7 +2,7 @@
 @section('content')
     <section class="about-showcase">
         <div class="overlay">
-            <p class="title">AGRICULTURE AND FOOD PROCESSING</p>
+            <p class="title">Renewable Energy</p>
             <p class="under">CAPTION PLACED HERE</p>
         </div>
     </section>
@@ -18,7 +18,7 @@
                             <p>Real estate & Hospitality</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="{{route('agriculture',app()->getLocale())}}" class="each active">
+                        <a href="{{route('agriculture',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>Agriculture & Food processing</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
@@ -33,7 +33,7 @@
                             <p>Renewable Energy</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="{{route('logistics',app()->getLocale())}}" class="each">
+                        <a href="{{route('logistics',app()->getLocale())}}" class="each active">
                             <span class="line"></span>
                             <p>Logistics</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
@@ -51,217 +51,173 @@
                     </div>
                     <p class="blue">Choosing Right Advisor Can Save Million Dollars</p>
                     <p class="para">Continuous Increase of International Visitors – 23% average annual growth of international visitors for last five years</p>
-                    <div class="why-invest">
-                        <!-- <div class="img">
-                            <img src="/frontend-assets/gsbc/img/projects/5.png">
-                        </div> -->
+                    <!-- <div class="why-invest">
                         
-                    </div>
                     <div class="resorts">
                         <div class="sorts">
-                            <h6 class="title">MARKET SIZE:</h6>
+                            <h6 class="title">OVERVIEW OF GEORGIA’S ENERGY SECTOR</h6>
+                            <h6 class="title">CURRENT MARKET AND STRONG DEMAND GROWTH PROSPECTS</h6>
                             <div class="cities">
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>Rapidly growing local and regional demand</p>
+                                    <p>In 2015 electricity generation reached 10.8 TWh, of which hydropower accounted for 78% and thermal - 22%</p>
                                 </div>
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>Strong preference of consumers toward Georgian products</p>
+                                    <p>Domestic Demand growth , which is expected to grow in line with GDP, requires an extension of power generation by around 65% until 2025</p>
                                 </div>
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>DCFTA (Deep and Comprehensive Free Trade Agreement) with EU</p>
+                                    <p>Georgia is surrounded by countries with a projected structural power deficit or expensive power generation, opening up attractive export opportunities</p>
                                 </div>
-                                <div class="city">
-                                    <div class="cir">
-                                        <span class="cle"></span>
-                                    </div>
-                                    <p>FTA with Turkey and CIS countries</p>
-                                </div>
+                                
                             </div>
                         </div>
-
                         <div class="sorts">
-                            <h6 class="title">ADVANTAGES:</h6>
+                            <h6 class="title">HUGE UNTAPPED POTENTIAL</h6>
                             <div class="cities">
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>Ecological clean environment</p>
+                                    <p>75% of economically viable hydropower potential not yet exploited (Approximately 25 TWh)</p>
                                 </div>
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>22 microclimates varying from cool and dry to warm and humid</p>
+                                    <p>Over 60 potential HPP projects on the Pre-feasibility Study Level with Financial and Technical projection are available for investors</p>
                                 </div>
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>Longer than normal harvesting season and a wide range of growing conditions</p>
+                                    <p>In addition to hydro, there is considerable generation potential from wind, solar and other renewable sources</p>
                                 </div>
-                                <div class="city">
-                                    <div class="cir">
-                                        <span class="cle"></span>
-                                    </div>
-                                    <p>Large quantity of renewable water, rich and pesticide-free soil</p>
-                                </div>
-                                <div class="city">
-                                    <div class="cir">
-                                        <span class="cle"></span>
-                                    </div>
-                                    <p>Cheap labor and low utility costs</p>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="sorts">
-                            <h6 class="title">SUPPORT FROM THE GOVERNMENT:</h6>
+                            <h6 class="title">LIBERALIZED AND DEREGULATED MARKET</h6>
                             <div class="cities">
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>Financial support</p>
+                                    <p>Renewable projects are based on Build-Own-Operate (BOO) principle</p>
                                 </div>
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>Technical support In</p>
+                                    <p>No tariff set for the newly built Renewable energy Plants - investor is free to choose the market and negotiate the price</p>
                                 </div>
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>Infrastructural support</p>
+                                    <p>New and simplified rules for development of renewable energy projects</p>
                                 </div>
                             </div>
                         </div>
                         <div class="sorts">
-                            <h6 class="title">INVESTMENT OPPORTUNITIES:</h6>
+                            <h6 class="title">INVESTMENT OPPORTUNITIES HYDRO POWER</h6>
                             <div class="cities">
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>HIGH-TECH GREENHOUSE FARMING</p>
+                                    <p>Georgia is one of the top countries in terms of water resources per capita</p>
                                 </div>
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>WINE AND SPIRITS</p>
+                                    <p>Today 78% of total electricity is generated from Hydro Power Plants</p>
                                 </div>
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>DAIRY PRODUCTS</p>
+                                    <p>Georgia could produce additional 25 TWh annually with hydro resources alone.</p>
                                 </div>
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>FISH FARMING, AQUACULTURE</p>
+                                    <p>There are over 60 potential HPP projects on the Pre-feasibility Study Level with Financial and Technical projection ready for investors</p>
                                 </div>
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>FRESH AND MINERAL WATERS</p>
+                                    <p>New HPPs have priority access to transmission line to Turkey</p>
                                 </div>
                                 <div class="city">
                                     <div class="cir">
                                         <span class="cle"></span>
                                     </div>
-                                    <p>LIVESTOCK AND POULTRY FARMING</p>
+                                    <p>Generation and Export activities are exempted from VAT</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>HPPs smaller than 13 MW don’t need generation license</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>HPPs smaller than 2 MW don’t need the Environmental Impact Permit OTHER RENEWABLE SOURCES WIND</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Wind potential of Georgia is estimated at 4 TWh</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Wind power is very important because of higher generation during winter.</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>It’s estimated that share of wind power in total generation will reach 10% by year 2025. GEOTHERMAL</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>Georgian geothermal water reserves reach 250 mln. m3 per year.</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>There are more than 250 natural and artificial water channels where the average temperature of geothermal waters ranges from 30 to 110 C SOLAR</p>
+                                </div>
+                                <div class="city">
+                                    <div class="cir">
+                                        <span class="cle"></span>
+                                    </div>
+                                    <p>In most regions of the country there are 250-280 sunny days in a year, which is approximately 6,000-6,780 hours per year</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="sorts">
-                            <h6 class="title">LOGISTICS:</h6>
-                            <h6 class="title">TRANS-CAUCASIAN ROUTE</h6>
-                            <div class="cities">
-                                <div class="city">
-                                    <div class="cir">
-                                        <span class="cle"></span>
-                                    </div>
-                                    <p> Attractive gateway between Europe and Central Asia</p>
-                                </div>
-                                <div class="city">
-                                    <div class="cir">
-                                        <span class="cle"></span>
-                                    </div>
-                                    <p>Leveraging its location, Georgia’s transport economy can benefit from large addressable transit flows, growing economies and landlocked resources</p>
-                                </div>
-                                <div class="city">
-                                    <div class="cir">
-                                        <span class="cle"></span>
-                                    </div>
-                                    <p>Ports are cost-competitive vs. alternative routes</p>
-                                </div>
-                                <div class="city">
-                                    <div class="cir">
-                                        <span class="cle"></span>
-                                    </div>
-                                    <p>FDI inflows in the transport and communication sector have primarily targeted transport infrastructure</p>
-                                </div>
-                                <div class="city">
-                                    <div class="cir">
-                                        <span class="cle"></span>
-                                    </div>
-                                    <p>Around 60% of all types of overland international freight throughput are transits</p>
-                                </div>
-                            </div>
+                        
                         </div>
-                        <div class="sorts">
-                            <h6 class="title">TRANSPORT INFRASTRUCTURE</h6>
-                            <div class="lines">
-                                <div class="cir">
-                                    <span class="cle"></span>
-                                </div>
-                                <p>Rapidly developing road infrastructure</p>
-                            </div>
-                            <div class="lines">
-                                <div class="cir">
-                                    <span class="cle"></span>
-                                </div>
-                                <p>Deep-sea port with natural drafts for PanaMax vessel</p>
-                            </div>
-                            <div class="lines">
-                                <div class="cir">
-                                    <span class="cle"></span>
-                                </div>
-                                <p>Direct connection with European and Central Asian railway networks (Baku-Tbilisi-Kars project)</p>
-                            </div>
-                        </div>
-                        <div class="sorts">
-                            <h6 class="title">OPPORTUNITIES</h6>
-                            <div class="sectors">
-                                <div class="sec">
-                                    <div class="cir">
-                                        <span class="cle"></span>
-                                    </div>
-                                    <p>Containerization and logistical centers</p>
-                                </div>
-                                <div class="sec">
-                                    <div class="cir">
-                                        <span class="cle"></span>
-                                    </div>
-                                    <p>Warehousing and storage facilities</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

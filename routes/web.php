@@ -56,6 +56,28 @@ Route::group([
         return view('frontend.modules.projects.tourism.index');
     })->name('projects');
 
+    Route::prefix('projects')->group(function () {
+        Route::get('/agriculture', function () {
+            return view('frontend.modules.projects.agriculture.index');
+        })->name('agriculture');
+
+        Route::get('/real-estate', function () {
+            return view('frontend.modules.projects.real-estate.index');
+        })->name('realestate');
+
+        Route::get('/renewable-energy', function () {
+            return view('frontend.modules.projects.renewable-energy.index');
+        })->name('renewableenergy');
+
+        Route::get('/construction', function () {
+            return view('frontend.modules.projects.construction.index');
+        })->name('construction');
+
+        Route::get('/logistics', function () {
+            return view('frontend.modules.projects.logistics.index');
+        })->name('logistics');
+    });
+
 
     Route::get('/contact', function () {
         return view('frontend.modules.contact.index');
