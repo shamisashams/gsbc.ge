@@ -32,8 +32,8 @@ class PageRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'max:255'],
-            'body' => 'required',
+            'title' => ['required', 'max:25'],
+            'body' => ['required','max:255'],
 //            'image' => ['image', Rule::requiredIf(function () {
 //                $image = Image::where('imageable_id', $this->news)->first();
 //                return $image ? false : true;
