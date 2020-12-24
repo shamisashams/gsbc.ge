@@ -14,6 +14,7 @@ use App\Models\MemberLanguage;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Storage;
 use function PHPUnit\Framework\throwException;
+use DB;
 
 class EventService
 {
@@ -68,6 +69,20 @@ class EventService
 
         return $data->orderBy('created_at', 'DESC')->paginate($perPage);
     }
+
+
+    public function getForCalendar(string $lang, $request)
+    {
+        $localizationID = Localization::getIdByName($lang);
+
+        $data = DB::table('events')->select('start_date as start','end_date as end','title')
+            ->leftJoin('events_languages','event_id','=','events.id')
+            ->where('language_id',$localizationID)
+        ->get();
+
+        return $data;
+    }
+
 
 
     /**
