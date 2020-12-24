@@ -150,7 +150,9 @@
         <div class="wrapper">
             <div class="content">
                 <div class="img">
+                    @if(isset($chooseUs->files[0]))
                     <img src="{{$chooseUs->files[0]->path.'/'.$chooseUs->files[0]->name}}">
+                    @endif
                     <div class="abs-img">
                         <div class="overlay"></div>
                     </div>
