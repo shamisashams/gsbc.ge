@@ -7,8 +7,8 @@
     <section class="membership-body">
         <div class="wrapper">
             <div class="heading">
-                <p class="small">MEMBERSHIP</p>
-                <h5 class="large">Members</h5>
+                <p class="small">{{__('frontend.member_membership')}}</p>
+                <h5 class="large">{{__('frontend.members')}}</h5>
             </div>
             <div class="members-grid">
                 @if($members)

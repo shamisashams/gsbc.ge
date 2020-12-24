@@ -40,6 +40,21 @@
                                     @endif
                                 </div>
                             </div>
+                            @if($page->type==="choose-us")
+                                <div class="col-12">
+                                    <div
+                                        class="form-group {{ $errors->has('body_2') ? ' has-error' : '' }}">
+                                        {{ Form::label('body_2', 'Body 2', []) }}
+                                        {{ Form::textarea('body_2', (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->body_2 : '',
+                                         ['class' => 'form-control', 'no','placeholder'=>'Enter Slug']) }}
+                                        @if ($errors->has('body_2'))
+                                            <span class="help-block">
+                                    {{ $errors->first('body_2') }}
+                                </span>
+                                        @endif
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                         <div class="form-check">
                             <label class="form-check-label"><input class="form-check-input"

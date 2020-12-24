@@ -29,11 +29,11 @@ class HomeController extends Controller
     {
         $service = new NewsService(new News());
 
-        $welcome = $this->service->getWelcomeContent();
+        $welcome = $this->service->getWelcomeContent($lang);
 
-        $about = $this->service->getAboutContent();
+        $about = $this->service->getAboutContent($lang);
 
-        $whyChooseUs = $this->service->getWhyChooseUs();
+        $whyChooseUs = $this->service->getWhyChooseUs($lang);
 
         $news = $service->getLatestNews();
 

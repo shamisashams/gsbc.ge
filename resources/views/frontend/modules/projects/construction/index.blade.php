@@ -2,7 +2,7 @@
 @section('content')
     <section class="about-showcase">
         <div class="overlay">
-            <p class="title">Construction</p>
+            <p class="title">{{__('frontend.construction')}}</p>
             <p class="under">CAPTION PLACED HERE</p>
         </div>
     </section>
@@ -11,36 +11,36 @@
         <div class="wrapper">
             <div class="content">
                 <div class="project-links">
-                    <p class="title">Projects</p>
+                    <p class="title">{{__('frontend.projects')}}</p>
                     <div class="links">
                         <a href="{{route('realestate',app()->getLocale())}}" class="each">
                             <span class="line"></span>
-                            <p>Real estate & Hospitality</p>
+                            <p>{{__('frontend.real_estate')}}</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
                         <a href="{{route('agriculture',app()->getLocale())}}" class="each">
                             <span class="line"></span>
-                            <p>Agriculture & Food processing</p>
+                            <p>{{__('frontend.agriculture')}}</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="{{route('construction',app()->getLocale())}}" class="each active">
+                        <a href="{{route('construction',app()->getLocale())}}" class="each">
                             <span class="line"></span>
-                            <p>Construction</p>
+                            <p>{{__('frontend.construction')}}</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
                         <a href="{{route('renewableenergy',app()->getLocale())}}" class="each">
                             <span class="line"></span>
-                            <p>Renewable Energy</p>
+                            <p>{{__('frontend.renewable_energy')}}</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
                         <a href="{{route('logistics',app()->getLocale())}}" class="each">
                             <span class="line"></span>
-                            <p>Logistics</p>
+                            <p>{{__('frontend.logistics')}}</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="{{route('projects',app()->getLocale())}}" class="each">
+                        <a href="{{route('projects',app()->getLocale())}}" class="each active">
                             <span class="line"></span>
-                            <p>Tourism</p>
+                            <p>{{__('frontend.tourism')}}</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
                     </div>

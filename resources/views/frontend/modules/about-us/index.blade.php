@@ -2,8 +2,8 @@
 @section('content')
     <section class="about-showcase">
         <div class="overlay">
-            <p class="title">About Us</p>
-            <p class="under">STORY ABOUT GSBC</p>
+            <p class="title">{{__('frontend.about-us')}}</p>
+            <p class="under">{{__('frontend.story_about_gsbc')}}</p>
         </div>
     </section>
 
@@ -18,12 +18,12 @@
                 </div>
                 <div class="context">
                     <div class="heading">
-                        <p class="expert">ABOUT GSBC</p>
-                        <h5 class="title">Our Gorgeous History</h5>
+                        <p class="expert">{{__('frontend.about_gsbc')}}</p>
+                        <h5 class="title">{{__('frontend.gorgeous_history')}}</h5>
                     </div>
-                    <p class="blue">Georgia Saudi Business Council was founded in Tbilisi to promote Saudi-Georgian business relationships and support the realization of investment opportunities between our two countries, and is committed to supporting the development of Investment opportunities between Georgia and Saudi Arabia.</p>
-                    <p class="p">The main aim of the charter is to support investors and stakeholders simplify Investment in each country, provide full package of services in Georgia and Saudi Arabia.</p>
-                    <p class="p">GSBC, based in Tbilisi and linking in frequently with our members in Riyadh, Jeddah and other parts of Saudi Arabia, will be made up of representatives from both the public and private sectors in the Republic of Georgia and the Kingdom of Saudi Arabia.</p>
+                    <p class="blue">{{__('frontend.history_text1')}}</p>
+                    <p class="p">{{__('frontend.history_text2')}}</p>
+                    <p class="p">{{__('frontend.history_text3')}}</p>
                     <img class="sign" src="/frontend-assets/gsbc/img/icons/showcase/just-signature.png">
                 </div>
             </div>
@@ -31,8 +31,8 @@
     </section>
 
     <div class="in-nothing">
-        <p class="small">WHAT WE ARE EXPERT AT</p>
-        <h3 class="large">Why Clients Choose US</h3>
+        <p class="small">{{__('frontend.what_we_are_expert_at')}}</p>
+        <h3 class="large">{{__('frontend.why_client_choose_us')}}</h3>
     </div>
 
     <section class="pros">
@@ -63,8 +63,8 @@
     <section class="gsbc-board">
         <div class="wrapper">
             <div class="heading">
-                <p class="expert">WHAT WE ARE EXPERT AT</p>
-                <h3 class="large">GSBC BOARD</h3>
+                <p class="expert">{{__('frontend.what_we_are_expert_at')}}</p>
+                <h3 class="large">{{__('frontend.gsbc_board')}}</h3>
             </div>
             <div class="board-slide">
                 <div class="each-board">

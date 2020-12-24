@@ -1,5 +1,12 @@
 @extends('frontend.layouts.layout')
 @section('content')
+<style>
+
+    .fc .fc-col-header-cell-cushion { /* needs to be same precedence */
+        padding-top: 5px; /* an override! */
+        padding-bottom: 5px; /* an override! */
+    }
+</style>
     <head>
         <title>Laravel 7 Fullcalendar Ajax Example Tutorial - XpertPhp</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -11,8 +18,8 @@
     <section class="events-body">
         <div class="wrapper">
             <div class="heading">
-                <p class="small">ABOUT GSBC</p>
-                <h5 class="large">Events</h5>
+                <p class="small">{{__('frontend.about_gsbc')}}</p>
+                <h5 class="large">{{__('frontend.events')}}</h5>
             </div>
            {{-- <div class="event-calendar">--}}
 {{--                <!-- Git Repo: https://github.com/Russian60/flex-calendar -->--}}
@@ -48,10 +55,9 @@
         });
 
         var calendar = $('#calendar').fullCalendar({
-            editable: true,
+            editable: false,
             events: SITEURL + "/getEvents",
             displayEventTime: true,
-            editable: true,
             eventRender: function (event, element, view) {
                 if (event.allDay === 'true') {
                     event.allDay = true;
@@ -59,7 +65,7 @@
                     event.allDay = false;
                 }
             },
-            selectable: true,
+            selectable: false,
             selectHelper: true,
             select: function (start, end, allDay) {
 

@@ -9,7 +9,7 @@
                     <p class="para">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
                 </div>
                 <div class="col2">
-                    <p class="head">CONTACT INFO</p>
+                    <p class="head">{{__('frontend.contact_info')}}</p>
                     <div class="flexes">
                         <div class="flex">
                             <img src="/frontend-assets/gsbc/img/icons/footer/call.svg">
@@ -21,7 +21,7 @@
                         </div>
                         <div class="flex">
                             <img src="/frontend-assets/gsbc/img/icons/footer/clock.svg">
-                            <p>Everyday 9:00-17:00</p>
+                            <p>{{__('frontend.everyday')}} 9:00-17:00</p>
                         </div>
                     </div>
                     <div class="social-media">
@@ -40,14 +40,14 @@
                     </div>
                 </div>
                 <div class="col3">
-                    <p class="head">Links</p>
+                    <p class="head">{{__('frontend.links')}}</p>
                     <div class="link-grid">
-                        <a class="link" href="{{route('/',app()->getLocale())}}">Home</a>
-                        <a class="link" href="{{route('about-us',app()->getLocale())}}">About us</a>
-                        <a class="link" href="{{route('membership',app()->getLocale())}}">Membership</a>
-                        <a class="link" href="{{route('events',app()->getLocale())}}">Events</a>
-                        <a class="link" href="{{route('projects',app()->getLocale())}}">Projects</a>
-                        <a class="link" href="{{route('media',app()->getLocale())}}">Press & Media</a>
+                        <a class="link" href="{{route('/',app()->getLocale())}}">{{__('frontend.home')}}</a>
+                        <a class="link" href="{{route('about-us',app()->getLocale())}}">{{__('frontend.about-us')}}</a>
+                        <a class="link" href="{{route('membership',app()->getLocale())}}">{{__('frontend.membership')}}</a>
+                        <a class="link" href="{{route('events',app()->getLocale())}}">{{__('frontend.events')}}</a>
+                        <a class="link" href="{{route('projects',app()->getLocale())}}">{{__('frontend.projects')}}</a>
+                        <a class="link" href="{{route('media',app()->getLocale())}}">{{__('frontend.press_media')}}</a>
                     </div>
                 </div>
                 <div id="map">
@@ -66,7 +66,7 @@
                     <a href="#">Terms</a>
                     <a href="#">Contact</a>
                 </div>
-                <p class="copy">Created by Insite International, Copyright 2020, All Right Reserved</p>
+                <p class="copy">{{__('frontend.created_by')}}</p>
             </div>
         </div>
     </div>

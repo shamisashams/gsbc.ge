@@ -8,8 +8,8 @@
                         <p class="title">{{(count($welcome->availableLanguage) > 0) ?  $welcome->availableLanguage[0]->title : ''}}</p>
                         <p class="para">{!!(count($welcome->availableLanguage) > 0) ?  $welcome->availableLanguage[0]->body : ''!!}</p>
                     @endif
-                    <a href="#" class="contact">
-                        CONTACT NOW
+                    <a href="{{route('contact',app()->getLocale())}}" class="contact">
+                        {{__('frontend.contact_now')}}
                         <img class="arrow" src="frontend-assets/gsbc/img/icons/showcase/right-arrow.svg">
                     </a>
                 </div>
@@ -40,38 +40,38 @@
     <section class="legal-practice">
         <div class="wrapper">
             <div class="heading">
-                <p class="expert">WHAT WE ARE EXPERT AT</p>
-                <h5 class="title">Legal Practices Area</h5>
+                <p class="expert">{{__('frontend.what_we_are_expert_at')}}</p>
+                <h5 class="title">{{__('frontend.legal_practices_area')}}</h5>
             </div>
             <div class="legal-practice-grid">
-                <a href="#" class="legal-links">
+                <a href="{{route('realestate',app()->getLocale())}}" class="legal-links">
                     <img src="frontend-assets/gsbc/img/icons/legal-practice/1.svg">
-                    <p class="p">Real Estate and Hospitality</p>
+                    <p class="p">{{__('frontend.real_estate')}}</p>
                     <span></span>
                 </a>
-                <a href="#" class="legal-links">
+                <a href="{{route('agriculture',app()->getLocale())}}" class="legal-links">
                     <img src="frontend-assets/gsbc/img/icons/legal-practice/2.svg">
-                    <p class="p">Agriculture & Food Processing</p>
+                    <p class="p">{{__('frontend.agriculture')}}</p>
                     <span></span>
                 </a>
                 <a href="#" class="legal-links">
                     <img src="frontend-assets/gsbc/img/icons/legal-practice/3.svg">
-                    <p class="p">Construction</p>
+                    <p class="p">{{__('frontend.construction')}}</p>
                     <span></span>
                 </a>
-                <a href="#" class="legal-links">
+                <a href="{{route('renewableenergy',app()->getLocale())}}" class="legal-links">
                     <img src="frontend-assets/gsbc/img/icons/legal-practice/4.svg">
-                    <p class="p">Renewable Energy</p>
+                    <p class="p">{{__('frontend.renewable_energy')}}</p>
                     <span></span>
                 </a>
-                <a href="#" class="legal-links">
+                <a href="{{route('logistics',app()->getLocale())}}" class="legal-links">
                     <img src="frontend-assets/gsbc/img/icons/legal-practice/5.svg">
-                    <p class="p">Logistics</p>
+                    <p class="p">{{__('frontend.logistics')}}</p>
                     <span></span>
                 </a>
-                <a href="#" class="legal-links">
+                <a href="{{route('projects',app()->getLocale())}}" class="legal-links">
                     <img src="frontend-assets/gsbc/img/icons/legal-practice/6.svg">
-                    <p class="p">Tourism</p>
+                    <p class="p">{{__('frontend.tourism')}}</p>
                     <span></span>
                 </a>
             </div>
@@ -79,8 +79,8 @@
     </section>
     <section class="news-section">
         <div class="heading">
-            <p class="expert">WHAT WE ARE EXPERT AT</p>
-            <h5 class="title">News</h5>
+            <p class="expert">{{__('frontend.what_we_are_expert_at')}}</p>
+            <h5 class="title">{{__('frontend.news')}}</h5>
         </div>
         <div class="news-slide">
             @if($news)
@@ -157,15 +157,16 @@
                 </div>
                 <div class="context">
                     <div class="heading">
-                        <p class="expert">WHAT WE ARE EXPERT AT</p>
+                        <p class="expert">{{__('frontend.what_we_are_expert_at')}}</p>
                         @if($chooseUs)
                             <h5 class="title">{{(count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->title : ''}}</h5>
                         @endif
                     </div>
                     @if($chooseUs)
-                        {!! (count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->body : '' !!}
+                        <p class="blue"> {{ (count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->body : '' }}</p>
+                        <p class="p">{{ (count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->body_2 : '' }}</p>
                     @endif
-                    <a href="#" class="learn">
+                    <a href="{{route('about-us',app()->getLocale())}}" class="learn">
                         <p>Learn More</p>
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0"

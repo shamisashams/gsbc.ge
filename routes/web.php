@@ -76,6 +76,7 @@ Route::group([
         Route::get('/logistics', function () {
             return view('frontend.modules.projects.logistics.index');
         })->name('logistics');
+
     });
 
 

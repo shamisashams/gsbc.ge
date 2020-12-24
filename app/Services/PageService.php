@@ -73,11 +73,13 @@ class PageService
                 'title' => $request['title'],
                 'description' => null,
                 'body' => $request['body'],
+                'body_2' => $request['body_2'],
             ]);
         } else {
             $pageLanguage->title = $request['title'];
             $pageLanguage->description = null;
             $pageLanguage->body = $request['body'];
+            $pageLanguage->body_2 = $request['body_2'];
 
             $pageLanguage->save();
         }
@@ -119,19 +121,29 @@ class PageService
     }
 
 
-    public function getWelcomeContent()
+    public function getWelcomeContent($lang)
     {
-        return $this->model::where(['status' => 1, 'type' => 'welcome'])->first();
+        $localizationID = Localization::getIdByName($lang);
+        return $this->model::where(['status' => 1, 'type' => 'welcome'])->whereHas('language', function ($query) use ($localizationID) {
+            $query->where('language_id', $localizationID);
+        })->first();
     }
 
-    public function getAboutContent()
+    public function getAboutContent($lang)
     {
-        return $this->model::where(['status' => 1, 'type' => 'about'])->first();
+        $localizationID = Localization::getIdByName($lang);
+
+        return $this->model::where(['status' => 1, 'type' => 'about'])->whereHas('language', function ($query) use ($localizationID) {
+            $query->where('language_id', $localizationID);
+        })->first();
     }
 
-    public function getWhyChooseUs()
+    public function getWhyChooseUs($lang)
     {
-        return $this->model::where(['status' => 1, 'type' => 'choose-us'])->first();
+        $localizationID = Localization::getIdByName($lang);
+        return $this->model::where(['status' => 1, 'type' => 'choose-us'])->whereHas('language', function ($query) use ($localizationID) {
+            $query->where('language_id', $localizationID);
+        })->first();
     }
 
 

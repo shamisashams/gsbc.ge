@@ -7,8 +7,8 @@
     <section class="press-media">
         <div class="wrapper">
             <div class="heading">
-                <p class="small">PRESS & MEDIA</p>
-                <h5 class="large">Blog</h5>
+                <p class="small">{{__('frontend.media_press_media')}}</p>
+                <h5 class="large">{{__('frontend.blog')}}</h5>
             </div>
             <div class="media-grid">
                 @if($news)

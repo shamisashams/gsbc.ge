@@ -2335,8 +2335,10 @@ img {
 }
 
 .single-blog .content .first-img img {
-    width: 100%;
+    display: block;
+    margin: 0 auto;
     height: 100%;
+    border-radius: 10px;
 }
 
 .single-blog .content .para {
