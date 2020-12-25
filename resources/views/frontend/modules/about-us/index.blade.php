@@ -39,22 +39,24 @@
         <div class="overlay">
             <div class="wrapper">
                 <div class="content">
-                    <div class="each-pro">
-                        <h1 class="h">1000+</h1>
-                        <p class="p">Client Consultations</p>
-                    </div>
-                    <div class="each-pro">
-                        <h1 class="h">95%</h1>
-                        <p class="p">Successful Cases</p>
-                    </div>
-                    <div class="each-pro">
-                        <h1 class="h">10mlns</h1>
-                        <p class="p">Recovered cost for clients</p>
-                    </div>
-                    <div class="each-pro">
-                        <h1 class="h">30+</h1>
-                        <p class="p">Professional Attorneys</p>
-                    </div>
+                    @if($banner)
+                        <div class="each-pro">
+                            <h1 class="h"> {{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header : ''}}</h1>
+                            <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text : ''}}</p>
+                        </div>
+                        <div class="each-pro">
+                            <h1 class="h">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_1 : ''}}</h1>
+                            <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text_1 : ''}}</p>
+                        </div>
+                        <div class="each-pro">
+                            <h1 class="h"> {{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_2 : ''}}</h1>
+                            <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text_2 : ''}}</p>
+                        </div>
+                        <div class="each-pro">
+                            <h1 class="h">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_3 : ''}}</h1>
+                            <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text_3 : ''}}</p>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
