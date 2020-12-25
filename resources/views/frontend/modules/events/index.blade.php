@@ -46,7 +46,7 @@
 <script>
   $(document).ready(function () {
 
-        var SITEURL = "{{url('/')}}";
+        var SITEURL = "{{route('/',app()->getLocale())}}";
 
         $.ajaxSetup({
           headers: {

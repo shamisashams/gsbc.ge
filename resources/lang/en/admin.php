@@ -43,10 +43,11 @@ return [
     'event_end_date'=>'End Date',
     'successfully_deleted_event' => 'Event was successfully deleted',
     'failed_deleted_event' => 'Event was not deleted',
-
-
-
-
-
-
+    'banner'=>'Banner',
+    'create_banner'=>'Create Banner',
+    'failed_created_banner'=>'Banner was not created',
+    'successfully_created_banner' => 'Banner was successfully created',
+    'banner_update'=>'Update Banner',
+    'successfully_updated_banner' => 'Banner was successfully updated',
+    'failed_updated_banner' => 'Banner was not updated',
 ];

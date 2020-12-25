@@ -16,18 +16,15 @@ class NewsController extends Controller
         $this->service = $service;
     }
 
-    public function getNews()
+    public function getNews(string $lang)
     {
-        $news = $this->service->getNews();
+        $news = $this->service->getNews($lang);
         return view('frontend.modules.media.index')->with(['news' => $news]);
     }
 
     public function getSingleNews(string $lang, $slug)
     {
-        $news = $this->service->findBySlug($slug);
-        if (!$news) {
-            abort(404, 'News Not Found');
-        }
+        $news = $this->service->findBySlug($slug, $lang);
         return view('frontend.modules.media.single-blog.index')->with(['news' => $news]);
     }
 }

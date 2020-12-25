@@ -68,14 +68,14 @@
                 </div>
                 <div class="form">
                     <div class="input-grid">
-                        <input type="text" name="" placeholder="Name">
-                        <input type="text" name="" placeholder="E-Mail">
-                        <input type="tel" name="" placeholder="Phone Number">
+                        <input type="text" name="" placeholder="{{__('frontend.email_form_name')}}">
+                        <input type="text" name="" placeholder="{{__('frontend.email_form_email')}}">
+                        <input type="tel" name="" placeholder="{{__('frontend.email_form_phone')}}">
                         <input type="text" name="" placeholder="Lorem Ipsum">
                     </div>
-                    <textarea placeholder="Type a Message..."></textarea>
+                    <textarea placeholder="{{__('frontend.email_form_message')}}"></textarea>
                     <div class="button">
-                        <button class="send">Send a Message</button>
+                        <button class="send">{{__('frontend.send_message_button')}}</button>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\LocalizationController;
 use App\Http\Controllers\Admin\MemberController;
@@ -55,6 +56,10 @@ Route::group([
     Route::get('/projects', function () {
         return view('frontend.modules.projects.tourism.index');
     })->name('projects');
+
+    Route::get('/biography', function () {
+        return view('frontend.modules.projects.tourism.index');
+    })->name('biography');
 
     Route::prefix('projects')->group(function () {
         Route::get('/agriculture', function () {
@@ -146,10 +151,16 @@ Route::group([
                 ->name('update', 'updateEvent')
                 ->name('destroy', 'destroyEvent');
 
+            Route::resource('banners', BannerController::class)
+                ->except(['create', 'delete', 'store'])
+                ->name('index', 'banner')
+                ->name('edit', 'editBanner')
+                ->name('update', 'updateBanner');
 
-            Route::get('/home',[HomeController::class,'index'])->name('adminHome');
-            Route::get('/home/{id}/edit',[HomeController::class,'edit'])->name('editHome');
-            Route::put('/home/{id}',[HomeController::class,'update'])->name('updateHome');
+
+            Route::get('/home', [HomeController::class, 'index'])->name('adminHome');
+            Route::get('/home/{id}/edit', [HomeController::class, 'edit'])->name('editHome');
+            Route::put('/home/{id}', [HomeController::class, 'update'])->name('updateHome');
         });
 
     });

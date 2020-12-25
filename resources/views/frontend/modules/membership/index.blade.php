@@ -13,28 +13,26 @@
             <div class="members-grid">
                 @if($members)
                     @foreach($members as $member)
-                        @if(count($member->availableLanguage)>0)
-                            <div class="each-member">
-                                <div class="img">
-                                    @if(isset($member->files[0]))
-                                        <img src="{{$member->files[0]->path.'/'.$member->files[0]->name}}">
-                                    @endif
-                                </div>
-                                <div class="context">
-                                    <div class="blurred"></div>
-                                    <div class="text">
-                                        <div class="fx">
-                                            <h6 class="name">{{(count($member->availableLanguage) > 0) ?  $member->availableLanguage[0]->title : ''}}</h6>
-                                            <a class="story btn-view" href="#">Full Story</a>
-                                        </div>
-                                        <span class="body-text"
-                                              hidden>
-                                        {!!(count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->body : ''!!}</span>
-                                        <p class="para">{{(count($member->availableLanguage) > 0) ?  $member->availableLanguage[0]->description : ''}}</p>
+                        <div class="each-member">
+                            <div class="img">
+                                @if(isset($member->files[0]))
+                                    <img src="{{$member->files[0]->path.'/'.$member->files[0]->name}}">
+                                @endif
+                            </div>
+                            <div class="context">
+                                <div class="blurred"></div>
+                                <div class="text">
+                                    <div class="fx">
+                                        <h6 class="name">{{(count($member->availableLanguage) > 0) ?  $member->availableLanguage[0]->title : ''}}</h6>
+                                        <a class="story btn-view" href="#">{{__('frontend.full_story')}}</a>
                                     </div>
+                                    <span class="body-text"
+                                          hidden>
+                                        {!!(count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->body : ''!!}</span>
+                                    <p class="para">{{(count($member->availableLanguage) > 0) ?  $member->availableLanguage[0]->description : ''}}</p>
                                 </div>
                             </div>
-                        @endif
+                        </div>
                     @endforeach
 
                 @endif

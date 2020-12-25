@@ -61,10 +61,9 @@
         <div class="wrapper">
             <div class="content">
                 <div class="navbar">
-                    <a href="#">Home</a>
-                    <a href="#">About</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Contact</a>
+                    <a href="{{route('/',app()->getLocale())}}">{{__('frontend.home')}}</a>
+                    <a href="{{route('about-us',app()->getLocale())}}">{{__('frontend.about-us')}}</a>
+                    <a href="{{route('contact',app()->getLocale())}}">{{__('frontend.contact')}}</a>
                 </div>
                 <p class="copy">{{__('frontend.created_by')}}</p>
             </div>

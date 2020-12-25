@@ -230,23 +230,38 @@ class NewsService
         return true;
     }
 
-    public function getNews()
+    public function getNews($lang)
     {
+        $localizationID = Localization::getIdByName($lang);
+
         return $this->model::where(['status' => 1])
             ->orderBy('created_at', 'desc')
+            ->whereHas('language', function ($query) use ($localizationID) {
+                $query->where('language_id', $localizationID);
+            })
             ->paginate(8);
     }
 
-    public function getLatestNews()
+    public function getLatestNews($lang)
     {
+        $localizationID = Localization::getIdByName($lang);
         return $this->model::where(['status' => 1])
             ->take(5)
             ->orderBy('created_at', 'desc')
+            ->whereHas('language', function ($query) use ($localizationID) {
+                $query->where('language_id', $localizationID);
+            })
             ->get();
     }
 
-    public function findBySlug($slug)
+    public function findBySlug($slug, $lang)
     {
-        return $this->model::where(['slug' => $slug, 'status' => 1])->first();
+        $localizationID = Localization::getIdByName($lang);
+
+        return $this->model::where(['slug' => $slug, 'status' => 1])
+            ->whereHas('language', function ($query) use ($localizationID) {
+                $query->where('language_id', $localizationID);
+            })
+            ->first();
     }
 }
