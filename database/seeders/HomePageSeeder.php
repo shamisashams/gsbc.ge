@@ -125,7 +125,7 @@ class HomePageSeeder extends Seeder
 
         $bannerLanguages = [
             [
-                'banner_id' => 6,
+                'banner_id' => 1,
                 'language_id' => 2,
                 'header' => '1000+',
                 'header_1' => '95%',
@@ -137,7 +137,7 @@ class HomePageSeeder extends Seeder
                 'text_3' => 'Professional Attorneys',
             ],
             [
-                'banner_id' => 6,
+                'banner_id' => 1,
                 'language_id' => 1,
                 'header' => '1000+',
                 'header_1' => '95%',
@@ -149,7 +149,7 @@ class HomePageSeeder extends Seeder
                 'text_3' => 'პროფესიონალი ადვოკატები',
             ],
             [
-                'banner_id' => 6,
+                'banner_id' => 1,
                 'language_id' => 3,
                 'header' => '1000+',
                 'header_1' => '95%',
