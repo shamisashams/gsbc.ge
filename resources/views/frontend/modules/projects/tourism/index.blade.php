@@ -2,7 +2,7 @@
 @section('content')
     <section class="about-showcase">
         <div class="overlay">
-            <p class="title">Tourism</p>
+            <p class="title">{{__('frontend.tourism')}}</p>
             <p class="under">CAPTION PLACED HERE</p>
         </div>
     </section>

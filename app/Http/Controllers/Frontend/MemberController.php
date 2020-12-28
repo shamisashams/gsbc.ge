@@ -17,9 +17,9 @@ class MemberController extends Controller
         $this->service = $service;
     }
 
-    public function getMembers()
+    public function getMembers(string $lang)
     {
-        $members = $this->service->getMembers();
+        $members = $this->service->getMembers($lang);
         return view('frontend.modules.membership.index')->with(['members' => $members]);
     }
 

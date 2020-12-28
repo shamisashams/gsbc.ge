@@ -74,7 +74,7 @@
                     <div class="context">
                         <h6 class="name">GEORGE SVANIDZE</h6>
                         <p class="pos">PRESIDENT</p>
-                        <a href="/frontend-assets/gsbc/en/biography/index.php" class="story" class="story">Full Story</a>
+                        <a href="/frontend-assets/gsbc/en/biography/index.php" class="story" class="story">{{__('frontend.full_story')}}</a>
                     </div>
                 </div>
                 <div class="each-board">
@@ -84,7 +84,7 @@
                     <div class="context">
                         <h6 class="name">MARK HEYNESS DANIELL</h6>
                         <p class="pos">INTERNATIONAL CHAIRMAN</p>
-                        <a href="/frontend-assets/gsbc/en/biography/index.php" class="story">Full Story</a>
+                        <a href="/frontend-assets/gsbc/en/biography/index.php" class="story">{{__('frontend.full_story')}}</a>
                     </div>
                 </div>
                 <div class="each-board">
@@ -94,7 +94,7 @@
                     <div class="context">
                         <h6 class="name">TIKA SVANIDZE VANCKO</h6>
                         <p class="pos">HEAD OF TOURISM DEVELOPMENT DEPARTMENT</p>
-                        <a href="/frontend-assets/gsbc/en/biography/index.php" class="story" class="story">Full Story</a>
+                        <a href="/frontend-assets/gsbc/en/biography/index.php" class="story" class="story">{{__('frontend.full_story')}}</a>
                     </div>
                 </div>
                 <div class="each-board">
@@ -104,7 +104,7 @@
                     <div class="context">
                         <h6 class="name">MARK HEYNESS DANIELL</h6>
                         <p class="pos">INTERNATIONAL CHAIRMAN</p>
-                        <a href="/frontend-assets/gsbc/en/biography/index.php" class="story" class="story">Full Story</a>
+                        <a href="/frontend-assets/gsbc/en/biography/index.php" class="story" class="story">{{__('frontend.full_story')}}</a>
                     </div>
                 </div>
             </div>

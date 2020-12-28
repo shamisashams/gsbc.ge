@@ -5,20 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Banner extends Model
 {
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'start_date',
-        'end_date',
+        'status',
         'created_at',
         'updated_at',
         'deleted_at'
     ];
     public function language()
     {
-        return $this->hasMany('App\Models\EventLanguage', 'event_id');
+        return $this->hasMany('App\Models\BannerLanguage', 'banner_id');
     }
     public function availableLanguage()
     {

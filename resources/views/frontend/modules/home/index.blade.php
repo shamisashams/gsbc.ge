@@ -4,7 +4,10 @@
         <div class="overlay">
             <div class="wrapper">
                 <div class="content">
-                    
+                    @if($welcome)
+                        <p class="title">{{(count($welcome->availableLanguage) > 0) ?  $welcome->availableLanguage[0]->title : ''}}</p>
+                        <p class="para">{!!(count($welcome->availableLanguage) > 0) ?  $welcome->availableLanguage[0]->body : ''!!}</p>
+                    @endif
                     <a href="{{route('contact',app()->getLocale())}}" class="contact">
                         {{__('frontend.contact_now')}}
                         <img class="arrow" src="frontend-assets/gsbc/img/icons/showcase/right-arrow.svg">
@@ -18,12 +21,17 @@
         <div class="wrapper">
             <div class="content">
                 <div class="text">
-                    
+                    @if($about)
+                        <p class="title">{{(count($about->availableLanguage) > 0) ?  $about->availableLanguage[0]->title : ''}}</p>
+                        <p class="para">{{(count($about->availableLanguage) > 0) ?  $about->availableLanguage[0]->body : ''}}</p>
+                    @endif
                     <img src="frontend-assets/gsbc/img/icons/showcase/just-signature.png">
                     <p class="geo-gs">CEO, GSBC</p>
                 </div>
                 <div class="image">
-                    
+                    @if(isset($about->files[0]))
+                        <img src="{{$about->files[0]->path.'/'.$about->files[0]->name}}">
+                    @endif
                 </div>
             </div>
         </div>
@@ -46,7 +54,7 @@
                     <p class="p">{{__('frontend.agriculture')}}</p>
                     <span></span>
                 </a>
-                <a href="#" class="legal-links">
+                <a href="{{route('construction',app()->getLocale())}}" class="legal-links">
                     <img src="frontend-assets/gsbc/img/icons/legal-practice/3.svg">
                     <p class="p">{{__('frontend.construction')}}</p>
                     <span></span>
@@ -75,7 +83,32 @@
             <h5 class="title">{{__('frontend.news')}}</h5>
         </div>
         <div class="news-slide">
-            
+            @if($news)
+                @foreach($news as $singleNews)
+                    <div class="each-news">
+                        <div class="img">
+                            @if(isset($singleNews->files[0]))
+                                <img src="{{$singleNews->files[0]->path.'/'.$singleNews->files[0]->name}}">
+                            @endif
+                        </div>
+                        <div class="cont">
+                            <a style="outline:none"
+                               href="{{route('single-blog',[app()->getLocale(),$singleNews->slug])}}">
+                                <h6 class="h">{{(count($singleNews->availableLanguage) > 0) ? $singleNews->availableLanguage[0]->title : ''}}
+                                </h6>
+                            </a>
+                            <p class="p">{{(count($singleNews->availableLanguage) > 0) ? $singleNews->availableLanguage[0]->description : ''}}</p>
+                        </div>
+                        <div class="date">
+                            <img src="frontend-assets/gsbc/img/icons/news/calendar.svg">
+                            <p>{!! $singleNews->created_at !!}</p>
+                        </div>
+                        <span class="span one"></span>
+                        <span class="span two"></span>
+                    </div>
+
+                @endforeach
+            @endif
 
         </div>
         <div class="arrows">
@@ -92,22 +125,24 @@
         <div class="overlay">
             <div class="wrapper">
                 <div class="content">
-                    <div class="each-pro">
-                        <h1 class="h">1000+</h1>
-                        <p class="p">Client Consultations</p>
-                    </div>
-                    <div class="each-pro">
-                        <h1 class="h">95%</h1>
-                        <p class="p">Successful Cases</p>
-                    </div>
-                    <div class="each-pro">
-                        <h1 class="h">10mlns</h1>
-                        <p class="p">Recovered cost for clients</p>
-                    </div>
-                    <div class="each-pro">
-                        <h1 class="h">30+</h1>
-                        <p class="p">Professional Attorneys</p>
-                    </div>
+                    @if($banner)
+                        <div class="each-pro">
+                            <h1 class="h"> {{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header : ''}}</h1>
+                            <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text : ''}}</p>
+                        </div>
+                        <div class="each-pro">
+                            <h1 class="h">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_1 : ''}}</h1>
+                            <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text_1 : ''}}</p>
+                        </div>
+                        <div class="each-pro">
+                            <h1 class="h"> {{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_2 : ''}}</h1>
+                            <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text_2 : ''}}</p>
+                        </div>
+                        <div class="each-pro">
+                            <h1 class="h">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_3 : ''}}</h1>
+                            <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text_3 : ''}}</p>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -117,7 +152,9 @@
         <div class="wrapper">
             <div class="content">
                 <div class="img">
-                    
+                    @if(isset($chooseUs->files[0]))
+                        <img src="{{$chooseUs->files[0]->path.'/'.$chooseUs->files[0]->name}}">
+                    @endif
                     <div class="abs-img">
                         <div class="overlay"></div>
                     </div>
@@ -125,11 +162,16 @@
                 <div class="context">
                     <div class="heading">
                         <p class="expert">{{__('frontend.what_we_are_expert_at')}}</p>
-                        
+                        @if($chooseUs)
+                            <h5 class="title">{{(count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->title : ''}}</h5>
+                        @endif
                     </div>
-                    
+                    @if($chooseUs)
+                        <p class="blue"> {{ (count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->body : '' }}</p>
+                        <p class="p">{{ (count($chooseUs->availableLanguage) > 0) ? $chooseUs->availableLanguage[0]->body_2 : '' }}</p>
+                    @endif
                     <a href="{{route('about-us',app()->getLocale())}}" class="learn">
-                        <p>Learn More</p>
+                        <p>{{__('frontend.learn_more')}}</p>
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0"
                              viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"

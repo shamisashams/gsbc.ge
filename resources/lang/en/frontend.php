@@ -19,7 +19,7 @@ return [
     'logistics' => 'Logistics',
     'tourism' => 'Tourism',
     'news' => 'News',
-    'become_member' => 'Become Member',
+    'become_member' => 'Subscription',
     'story_about_gsbc' => 'STORY ABOUT GSBC',
     'about_gsbc' => 'ABOUT GSBC',
     'gorgeous_history' => 'Our Gorgeous History',
@@ -35,5 +35,14 @@ return [
     'member_membership'=>'MEMBERSHIP',
     'media_press_media'=>'PRESS & MEDIA',
     'blog'=>'Blog',
-    'our_award_wining'=>'Our award winning selection of organically produced wines'
+    'our_award_wining'=>'Our award winning selection of organically produced wines',
+    'full_story'=>'Full Story',
+    'read_more'=>'Read more',
+    'email_form_name'=>'Name',
+    'email_form_email'=>'E-Mail',
+    'email_form_phone'=>'Phone Number',
+    'email_form_message'=>'Type a Message...',
+    'send_message_button'=>'Send a Message',
+    'contact'=>'Contact',
+    'learn_more'=>'Learn More'
 ];

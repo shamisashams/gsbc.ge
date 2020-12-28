@@ -219,10 +219,16 @@ class MemberService
         return true;
     }
 
-    public function getMembers()
+    public function getMembers($lang)
     {
+        $localizationID = Localization::getIdByName($lang);
+
         return $this->model::where(['status' => 1])
-            ->orderBy('created_at', 'desc')->get();
+            ->orderBy('created_at', 'desc')
+            ->whereHas('language', function ($query) use ($localizationID) {
+                $query->where('language_id', $localizationID);
+            })
+            ->get();
 
     }
 }

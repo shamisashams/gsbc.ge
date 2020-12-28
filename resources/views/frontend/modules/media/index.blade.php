@@ -20,7 +20,7 @@
                             <div class="context">
                                 <h6 class="title">{{(count($singleNews->availableLanguage) > 0) ?  $singleNews->availableLanguage[0]->title : ''}}</h6>
                                 <p class="para">{{(count($singleNews->availableLanguage) > 0) ?  $singleNews->availableLanguage[0]->description : ''}}</p>
-                                <a href="{{route('single-blog',[app()->getLocale(),$singleNews->slug])}}" class="more">Read more</a>
+                                <a href="{{route('single-blog',[app()->getLocale(),$singleNews->slug])}}" class="more">{{__('frontend.read_more')}}</a>
                             </div>
                         </div>
 

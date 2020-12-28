@@ -35,5 +35,15 @@ return [
     'member_membership'=>'წევრობა',
     'media_press_media'=>'პრესა & მედია',
     'blog'=>'ახალი ამბები',
-    'our_award_wining'=>'Our award winning selection of organically produced wines'
+    'our_award_wining'=>'Our award winning selection of organically produced wines',
+    'full_story'=>'მთლიანი ისტორია',
+    'read_more'=>'გაიგე მეტი',
+    'email_form_name'=>'სახელი',
+    'email_form_email'=>'ელ.ფოსთა',
+    'email_form_phone'=>'ტელეფონის ნომერი',
+    'email_form_message'=>'შეიყვანეთ მესიჯი',
+    'send_message_button'=>'გაგზავნა',
+    'contact'=>'დაგვიკავშირდით',
+    'learn_more'=>'გაიგე მეტი'
+
 ];

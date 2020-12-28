@@ -1,8 +1,8 @@
-# wine
+# gsbc
 Install the dependencies.
 
 ```sh
-$ cd wine
+$ cd gsbc
 $ composer install
 $ npm install
 ```
@@ -19,6 +19,8 @@ create .env file by .env.example
 $ php artisan migrate
 
 $ php artisan db:seed --class="LocalizationSeeder"
+
+$ php artisan db:seed --class="HomePageSeeder"
 
 ```
 
