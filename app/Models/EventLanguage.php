@@ -15,6 +15,7 @@ class EventLanguage extends Model
         'language_id',
         'title',
         'description',
+        'location'
     ];
 
     public function event()

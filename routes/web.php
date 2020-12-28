@@ -39,7 +39,7 @@ Route::group([
     Route::get('/change-localization', [\App\Http\Controllers\Frontend\HomeController::class, 'changeLocalization'])->name('changeLocalization');
 
 
-    Route::get('/getEvents', [\App\Http\Controllers\Frontend\EventController::class, 'getEvents'])->name('getEvents');
+//    Route::get('/getEvents', [\App\Http\Controllers\Frontend\EventController::class, 'getEvents'])->name('getEvents');
     Route::get('/about-us', function () {
         return view('frontend.modules.about-us.index');
     })->name('about-us');
@@ -49,9 +49,7 @@ Route::group([
         return view('frontend.modules.membership.regulations.index');
     })->name('regulations');
 
-    Route::get('/events', function () {
-        return view('frontend.modules.events.index');
-    })->name('events');
+    Route::get('/events',[\App\Http\Controllers\Frontend\EventController::class, 'getEvents'])->name('events');
 
     Route::get('/projects', function () {
         return view('frontend.modules.projects.tourism.index');

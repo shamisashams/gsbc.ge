@@ -55,8 +55,22 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="row" style="margin-top:18px">
+                            <div class="col-6">
+                                <div
+                                    class="form-group {{ $errors->has('location') ? ' has-error' : '' }}">
+                                    {{ Form::label('location', __('admin.location'), []) }}
+                                    {{ Form::text('location', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Location']) }}
+                                    @if ($errors->has('location'))
+                                        <span class="help-block">
+                                    {{ $errors->first('location') }}
+                                </span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Create</button>
+                            <button class="btn btn-primary" type="submit"></button>
                         </div>
                     </div>
                 </div>

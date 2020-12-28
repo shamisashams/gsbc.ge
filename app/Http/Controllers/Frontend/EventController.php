@@ -17,8 +17,7 @@ class EventController extends AdminController
 
     public function getEvents(String $lang , Request $request){
 
-        $data  = $this->service->getForCalendar($lang, $request);
-
-        return response()->json($data);
+        $events  = $this->service->getEvents($lang, $request);
+        return view('frontend.modules.events.index')->with(['events' => $events]);
     }
 }

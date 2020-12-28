@@ -4,47 +4,39 @@
         <div class="content-box">
             <div class="element-wrapper">
                 <h6 class="element-header">
-                    {{ (count($news->availableLanguage) > 0) ? $news->availableLanguage[0]->title : ''}}
+                    {{ (count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->title : ''}}
                 </h6>
 
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-6">
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
                                 <th>Title</th>
                                 <td>
-                                    {{ (count($news->availableLanguage) > 0) ? $news->availableLanguage[0]->title : ''}}
+                                    {{ (count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->title : ''}}
                                 </td>
                             </tr>
                             <tr>
                                 <th>Description</th>
-                                <td>{{(count($news->availableLanguage) > 0) ? $news->availableLanguage[0]->description : ''}}</td>
-                            </tr>
-                            <tr>
-                                <th>slug</th>
-                                <td>{{$news->slug}}</td>
-                            </tr>
-                            <tr>
-                                <th>Category</th>
-                                <td>{{$news->category}}</td>
+                                <td>{{(count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->description : ''}}</td>
                             </tr>
                             <tr>
                                 <th>Status</th>
-                                <td>{{$news->status ? 'True' : 'False'}}</td>
+                                <td>{{$member->status ? 'True' : 'False'}}</td>
                             </tr>
                             <tr>
                                 <th>Body</th>
-                                <td>{!! (count($news->availableLanguage) > 0) ? $news->availableLanguage[0]->body : ''!!}</td>
+                                <td>{!! (count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->body : ''!!}</td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                @if($news->files)
+                @if($member->files)
                     <div class="row">
                         <div class="col-6">
-                            @foreach($news->files as $file)
+                            @foreach($member->files as $file)
                                 <img width="250px" src="{{$file->path.'/'.$file->name}}">
                                 <br>
                             @endforeach

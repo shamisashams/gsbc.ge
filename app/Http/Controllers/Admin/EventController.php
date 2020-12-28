@@ -33,6 +33,7 @@ class EventController extends AdminController
         $request->validate([
             'title' => 'string|max:255|nullable',
             'description' => 'string|max:255|nullable',
+            'location'=> 'string|max:255|nullable',
         ]);
         return view('admin.modules.event.index', [
             'events' => $this->service->getAll($lang, $request)
