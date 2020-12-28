@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"></button>
+                            <button class="btn btn-primary" type="submit">{{__('admin.create_button')}}</button>
                         </div>
                     </div>
                 </div>

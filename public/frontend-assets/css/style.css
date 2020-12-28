@@ -22,18 +22,18 @@
 *,
 *::after,
 *::before {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 
-          font-family: "helvanica", sans-serif;
+    font-family: "helvanica", sans-serif;
     scroll-behavior: smooth;
 }
 
 html {
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     /* font-size: 62.5%;  */
 }
 
@@ -423,7 +423,7 @@ img {
 .main-showcase {
     width: 100%;
     height: 919px;
-    background: url(/frontend-assets/gsbc/img/icons/showcase/main-bg.png) no-repeat;
+    background: url(/frontend-assets/gsbc/img/icons/showcase/main-bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -439,7 +439,7 @@ img {
 }
 
 .main-showcase .overlay .content .title {
-    font-size: 75px;
+    font-size: 57px;
     font-weight: normal;
     color: rgb(255, 255, 255);
     position: relative;
@@ -625,7 +625,7 @@ img {
     -webkit-transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
     transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
     -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: -1;
 }
 
@@ -891,15 +891,15 @@ img {
 }
 
 .why-us-section .content .context .blue {
-      font-size: 21px;
-      line-height: 31px;
-      margin-bottom: 20px;
-      color: rgb(58, 62, 127);
+    font-size: 21px;
+    line-height: 31px;
+    margin-bottom: 20px;
+    color: rgb(58, 62, 127);
 }
 
 .why-us-section .content .context .p {
-      font-size: 17px;
-      color: rgb(133, 133, 133);
+    font-size: 17px;
+    color: rgb(133, 133, 133);
 }
 
 .why-us-section .content .context .learn {
@@ -1117,15 +1117,15 @@ img {
 
 .contact-article .right .overlay .articles .each-article .h {
     font-family: PlayfairDisplay-Roman;
-  font-size: 18px;
-  color: rgb(255, 255, 255);
-  margin-bottom: 7px;
-  max-width: 438px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 7px;
+    max-width: 438px;
 }
 
 .contact-article .right .overlay .articles .each-article .p {
-  font-size: 12px;
-  color: rgb(181, 187, 224);
+    font-size: 12px;
+    color: rgb(181, 187, 224);
 }
 
 .footer .top {
@@ -1268,7 +1268,7 @@ img {
 .about-showcase {
     width: 100%;
     height: 652px;
-    background: url(/frontend-assets/gsbc/img/icons/showcase/main-bg.png) no-repeat;
+    background: url(/frontend-assets/gsbc/img/icons/showcase/main-bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     margin-bottom: 90px;
@@ -1464,7 +1464,7 @@ img {
 .showcase-short {
     width: 100%;
     height: 250px;
-    background: url(/frontend-assets/gsbc/img/icons/showcase/main-bg.png) no-repeat;
+    background: url(/frontend-assets/gsbc/img/icons/showcase/main-bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -2594,7 +2594,7 @@ img {
     margin-bottom: 5px;
 }
 
-.events-body .event-grid .event-info .imgs .over .sec, 
+.events-body .event-grid .event-info .imgs .over .sec,
 .events-body .event-grid .event-info .imgs .over .thir {
     margin-left: 47px;
 }
@@ -2625,12 +2625,12 @@ img {
 
 .events-body .event-grid .event-info .caption .date .s {
     font-size: 20px;
-     color: rgb(60, 62, 107);
+    color: rgb(60, 62, 107);
 }
 
 .events-body .event-grid .event-info .caption .date .l {
     font-size: 34px;
-     color: rgb(26, 26, 26);
+    color: rgb(26, 26, 26);
 }
 
 .events-body .event-grid .event-info .caption .dec .title {
@@ -2881,19 +2881,19 @@ img {
         right: -30px;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
         background-color: #000000c5;
         border-top: 1px solid var(--clr-primary);
         -webkit-transition: .4s ease;
         -o-transition: .4s ease;
         transition: .4s ease;
         -webkit-transform: scaleX(0);
-            -ms-transform: scaleX(0);
-                transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        transform: scaleX(0);
         -webkit-transform-origin: right;
-            -ms-transform-origin: right;
-                transform-origin: right;
+        -ms-transform-origin: right;
+        transform-origin: right;
         overflow-y: scroll;
         border-radius: 10px;
         padding: 30px 10px 20px 10px;
@@ -2937,8 +2937,8 @@ img {
 
     .header .navbar-mobile.show-nav {
         -webkit-transform: scaleX(1);
-            -ms-transform: scaleX(1);
-                transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1);
     }
 
 
@@ -3008,7 +3008,7 @@ img {
 }
 
 @media(max-width: 550px) {
-   .footer .top .content {
+    .footer .top .content {
         grid-template-columns: 1fr;
         grid-row-gap: 30px;
     }
@@ -3021,7 +3021,7 @@ img {
 
 @media(max-width: 1300px) {
 
-     .news-section {
+    .news-section {
         height: 383px;
     }
 
@@ -3421,8 +3421,8 @@ img {
         height: 414px;
     }
     .gsbc-board .board-slide .each-board .img {
-    height: 245px;
-}
+        height: 245px;
+    }
 }
 
 @media(max-width: 1000px) {
@@ -3458,7 +3458,7 @@ img {
 
     .in-nothing .large,
     .gsbc-board .heading .large
-     {
+    {
         font-size: 23px;
     }
 
@@ -3590,7 +3590,7 @@ img {
     }
 
     .project-bodies .projects-info .first-img {
-         height: auto;
+        height: auto;
     }
 }
 
@@ -3600,11 +3600,11 @@ img {
     }
 
     .project-bodies .projects-info .why-invest .reasons .flex .left .each p {
-         max-width: none;
+        max-width: none;
     }
 
     .project-bodies .projects-info .why-invest .reasons .flex .right .each p {
-         max-width: none;
+        max-width: none;
     }
 
     .project-bodies .projects-info .resorts .cities {
