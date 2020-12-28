@@ -64,6 +64,12 @@ class EventService
         }
 
 
+        if ($request->location) {
+            $data = $data->with('language')->whereHas('language', function ($query) use ($localizationID, $request) {
+                $query->where('location', 'like', "%{$request->location}%")->where('language_id', $localizationID);
+            });
+        }
+
         // Check if perPage exist and validation by perPageArray [].
         $perPage = ($request->per_page != null && in_array($request->per_page, $this->perPageArray)) ? $request->per_page : 10;
 
@@ -71,16 +77,14 @@ class EventService
     }
 
 
-    public function getForCalendar(string $lang, $request)
+    public function getEvents(string $lang, $request)
     {
         $localizationID = Localization::getIdByName($lang);
 
-        $data = DB::table('events')->select('start_date as start','end_date as end','title')
-            ->leftJoin('events_languages','event_id','=','events.id')
-            ->where('language_id',$localizationID)
-        ->get();
-
-        return $data;
+        return $this->model::whereHas('language', function ($query) use ($localizationID) {
+                $query->where('language_id', $localizationID);
+            })
+            ->orderBy('created_at', 'desc')->paginate(6);
     }
 
 
@@ -113,6 +117,7 @@ class EventService
             'language_id' => $localizationID,
             'title' => $request['title'],
             'description' => $request['description'],
+            'location' => $request['location'],
         ]);
 
         $model = $this->model;
@@ -157,20 +162,22 @@ class EventService
 
         $localizationID = Localization::getIdByName($lang);
 
-        $newsLanguage = EventLanguage::where(['event_id' => $data->id, 'language_id' => $localizationID])->first();
+        $eventLanguage = EventLanguage::where(['event_id' => $data->id, 'language_id' => $localizationID])->first();
 
-        if ($newsLanguage == null) {
+        if ($eventLanguage == null) {
             $data->language()->create([
                 'event_id' => $this->model->id,
                 'language_id' => $localizationID,
                 'title' => $request['title'],
                 'description' => $request['description'],
+                'location' => $request['location'],
             ]);
         } else {
-            $newsLanguage->title = $request['title'];
-            $newsLanguage->description = $request['description'];
+            $eventLanguage->title = $request['title'];
+            $eventLanguage->description = $request['description'];
+            $eventLanguage->location= $request['location'];
 
-            $newsLanguage->save();
+            $eventLanguage->save();
         }
 
 

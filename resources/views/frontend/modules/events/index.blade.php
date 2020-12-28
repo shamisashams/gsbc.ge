@@ -1,12 +1,12 @@
 @extends('frontend.layouts.layout')
 @section('content')
-<style>
+    <style>
 
-    .fc .fc-col-header-cell-cushion { /* needs to be same precedence */
-        padding-top: 5px; /* an override! */
-        padding-bottom: 5px; /* an override! */
-    }
-</style>
+        .fc .fc-col-header-cell-cushion { /* needs to be same precedence */
+            padding-top: 5px; /* an override! */
+            padding-bottom: 5px; /* an override! */
+        }
+    </style>
     <head>
         <title>Laravel 7 Fullcalendar Ajax Example Tutorial - XpertPhp</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -21,118 +21,58 @@
                 <p class="small">{{__('frontend.about_gsbc')}}</p>
                 <h5 class="large">{{__('frontend.events')}}</h5>
             </div>
-           {{-- <div class="event-calendar">--}}
-{{--                <!-- Git Repo: https://github.com/Russian60/flex-calendar -->--}}
-{{--                <div ng-app="app">--}}
-{{--                    <div ng-controller="MainController">--}}
-
-{{--                        <div class="wrapp">--}}
-{{--                            <flex-calendar options="options" events="events"></flex-calendar>--}}
-{{--                        </div>--}}
-{{--                        <br/>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div> --}}
-
-            <div class="container">
-                <div class="response"></div>
-                <div id='calendar'></div>
+            <div class="event-grid">
+                @if($events)
+                    @foreach($events as $event)
+                        <div class="event-info">
+                            <div class="imgs">
+                                <div class="">
+                                    @if(isset($event->files[0]))
+                                        <img src="{{$event->files[0]->path.'/'.$event->files[0]->name}}">
+                                    @endif
+                                </div>
+                                <div class="over">
+                                    <div class="each">
+                                        <img src="/frontend-assets/gsbc/img/events/1.svg">
+                                        <div class="txt">
+                                            <p>{{(count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->location : ''}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="each sec">
+                                        <img src="/frontend-assets/gsbc/img/events/2.svg">
+                                        <div class="txt">
+                                            <p><strong>Starts At</strong></p>
+                                            <p>{{date('H:i:s',strtotime($event->start_date))}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="each thir">
+                                        <img src="/frontend-assets/gsbc/img/events/2.svg">
+                                        <div class="txt">
+                                            <p><strong>Ends At</strong></p>
+                                            <p>{{date('H:i:s',strtotime($event->end_date))}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <div class="date">
+                                    <p class="s">{{date('M',strtotime($event->start_date))}}</p>
+                                    <p class="l">{{date('d',strtotime($event->start_date))}}</p>
+                                </div>
+                                <div class="dec">
+                                    <h6 class="title">{{(count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->title : ''}}</h6>
+                                    <p class="par">{{(count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->description : ''}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
             </div>
+            {{$events->links('frontend.vendor.pagination.events')}}
+
         </div>
     </section>
 
-
-
-<script>
-  $(document).ready(function () {
-
-        var SITEURL = "{{route('/',app()->getLocale())}}";
-
-        $.ajaxSetup({
-          headers: {
-              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          }
-        });
-
-        var calendar = $('#calendar').fullCalendar({
-            editable: false,
-            events: SITEURL + "/getEvents",
-            displayEventTime: true,
-            eventRender: function (event, element, view) {
-                if (event.allDay === 'true') {
-                    event.allDay = true;
-                } else {
-                    event.allDay = false;
-                }
-            },
-            selectable: false,
-            selectHelper: true,
-            select: function (start, end, allDay) {
-
-                // var title = prompt('Event Title:');
-
-                // if (title) {
-                //     var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
-                //     var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
-
-                //     $.ajax({
-                //         url: SITEURL + "booking/create",
-                //         data: 'title=' + title + '&amp;start=' + start + '&amp;end=' + end,
-                //         type: "POST",
-                //         success: function (data) {
-                //             displayMessage("Added Successfully");
-                //         }
-                //     });
-                //     calendar.fullCalendar('renderEvent',
-                //             {
-                //                 title: title,
-                //                 start: start,
-                //                 end: end,
-                //                 allDay: allDay
-                //             },
-                //     true
-                //             );
-                // }
-                // calendar.fullCalendar('unselect');
-            },
-
-            eventDrop: function (event, delta) {
-                        // var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-                        // var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-                        // $.ajax({
-                        //     url: SITEURL + 'booking/update',
-                        //     data: 'title=' + event.title + '&amp;start=' + start + '&amp;end=' + end + '&amp;id=' + event.id,
-                        //     type: "POST",
-                        //     success: function (response) {
-                        //         displayMessage("Updated Successfully");
-                        //     }
-                        // });
-                    },
-            eventClick: function (event) {
-                // var deleteMsg = confirm("Do you really want to delete?");
-                // if (deleteMsg) {
-                //     $.ajax({
-                //         type: "POST",
-                //         url: SITEURL + 'booking/delete',
-                //         data: "&amp;id=" + event.id,
-                //         success: function (response) {
-                //             if(parseInt(response) > 0) {
-                //                 $('#calendar').fullCalendar('removeEvents', event.id);
-                //                 displayMessage("Deleted Successfully");
-                //             }
-                //         }
-                //     });
-                // }
-            }
-
-        });
-  });
-
-  function displayMessage(message) {
-    $(".response").html("<div class='success'>"+message+"</div>");
-    setInterval(function() { $(".success").fadeOut(); }, 1000);
-  }
-</script>
 
 
 @endsection

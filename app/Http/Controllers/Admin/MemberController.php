@@ -65,12 +65,15 @@ class MemberController extends AdminController
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @param string $locale
+     * @return Application|Factory|View|Response
      */
-    public function show($id)
+    public function show(string $locale, int $id)
     {
-        //
+        return view('admin.modules.member.show', [
+            'member' => $this->service->find($id)
+        ]);
     }
 
     /**

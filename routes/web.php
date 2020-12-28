@@ -38,7 +38,8 @@ Route::group([
     Route::get('/membership', [\App\Http\Controllers\Frontend\MemberController::class, 'getMembers'])->name('membership');
     Route::get('/change-localization', [\App\Http\Controllers\Frontend\HomeController::class, 'changeLocalization'])->name('changeLocalization');
 
-    Route::get('/getEvents', [\App\Http\Controllers\Frontend\EventController::class, 'getEvents'])->name('getEvents');
+
+//    Route::get('/getEvents', [\App\Http\Controllers\Frontend\EventController::class, 'getEvents'])->name('getEvents');
     Route::get('/about-us', [\App\Http\Controllers\Frontend\AboutUsController::class, 'index'])->name('about-us');
 
 
@@ -46,9 +47,7 @@ Route::group([
         return view('frontend.modules.membership.regulations.index');
     })->name('regulations');
 
-    Route::get('/events', function () {
-        return view('frontend.modules.events.index');
-    })->name('events');
+    Route::get('/events',[\App\Http\Controllers\Frontend\EventController::class, 'getEvents'])->name('events');
 
     Route::get('/projects', function () {
         return view('frontend.modules.projects.tourism.index');

@@ -4,7 +4,8 @@
     <div class="controls-above-table">
         <div class="row">
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-success" href="{{route('createEvent',app()->getLocale())}}">@lang('admin.create_event')</a>
+                <a class="btn btn-lg btn-success"
+                   href="{{route('createEvent',app()->getLocale())}}">@lang('admin.create_event')</a>
             </div>
             <div class="col-sm-10 per-page-column">
                 <div class="per-page-container">
@@ -21,6 +22,7 @@
                 <th>Description</th>
                 <th>Start Date</th>
                 <th>End Date</th>
+                <th>Location</th>
                 <th>Actions</th>
             </tr>
             <tr>
@@ -42,6 +44,14 @@
                 </th>
                 <th></th>
                 <th></th>
+                <th>
+                    {{ Form::text('location',Request::get('location'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
+                    @if ($errors->has('location'))
+                        <span class="help-block">
+                        {{ $errors->first('location') }}
+                        </span>
+                    @endif
+                </th>
                 <th></th>
             </tr>
             </thead>
@@ -55,6 +65,7 @@
 
                         <td class="text-center">{{date('d-M-Y H:i:s', strtotime($event->start_date))}}</td>
                         <td class="text-center">{{date('d-M-Y H:i:s', strtotime($event->end_date))}}</td>
+                        <td class="text-center">{{(count($event->availableLanguage) > 0) ?  $event->availableLanguage[0]->location : ''}}</td>
 
                         <td class="row-actions d-flex">
                             <a href="{{route('showEvent',[app()->getLocale(),$event->id])}}">
@@ -66,11 +77,13 @@
                                 </i>
                             </a>
                             {!! Form::open(['url' => route('destroyEvent',[app()->getLocale(),$event->id]),'method' =>'delete']) !!}
-                                <button class="delete-icon" onclick="return confirm('Are you sure, you want to delete this item?!');" type="submit">
-                                    <i
-                                        class="os-icon os-icon-ui-15">
-                                    </i>
-                                </button>
+                            <button class="delete-icon"
+                                    onclick="return confirm('Are you sure, you want to delete this item?!');"
+                                    type="submit">
+                                <i
+                                    class="os-icon os-icon-ui-15">
+                                </i>
+                            </button>
                             {!! Form::close() !!}
 
                         </td>

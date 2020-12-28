@@ -27,7 +27,7 @@ class SetLocale
             if (strlen($locale) === 2) {
                 array_shift($segments);
             }
-            array_unshift($segments, $defaultLocale->abbreviation);;
+            array_unshift($segments, $defaultLocale->abbreviation);
             return $this->redirectTo($segments);
         }
         if (!$localization->status) {
