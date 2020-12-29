@@ -15,7 +15,7 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
-                                    {{ Form::label('title', 'Title', []) }}
+                                    {{ Form::label('title',  __('admin.title_create'), []) }}
                                     {{ Form::text('title', (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->title : '', ['class' => 'form-control', 'no','placeholder'=>'Enter Title']) }}
                                     @if ($errors->has('title'))
                                         <span class="help-block">
@@ -30,7 +30,7 @@
                             <div class="col-12">
                                 <div
                                     class="form-group {{ $errors->has('body') ? ' has-error' : '' }}">
-                                    {{ Form::label('body', 'Body', []) }}
+                                    {{ Form::label('body',  __('admin.body_create'), []) }}
                                     {{ Form::textarea('body', (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->body : '',
                                      ['class' => 'form-control', 'no','placeholder'=>'Enter Slug']) }}
                                     @if ($errors->has('body'))
@@ -44,7 +44,7 @@
                                 <div class="col-12">
                                     <div
                                         class="form-group {{ $errors->has('body_2') ? ' has-error' : '' }}">
-                                        {{ Form::label('body_2', 'Body 2', []) }}
+                                        {{ Form::label('body_2',  __('admin.body2_create'), []) }}
                                         {{ Form::textarea('body_2', (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->body_2 : '',
                                          ['class' => 'form-control', 'no','placeholder'=>'Enter Slug']) }}
                                         @if ($errors->has('body_2'))

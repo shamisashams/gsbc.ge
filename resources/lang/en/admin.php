@@ -56,6 +56,7 @@ return [
     'slug'=>'SLUG',
     'status'=>'STATUS',
     'actions'=>'ACTIONS',
+    'type'=>'TYPE',
     'active'=>'Active',
     'not_active'=>'Not Active',
     'title_create'=>'Title',
@@ -63,6 +64,7 @@ return [
     'slug_create'=>'Slug',
     'status_create'=>'Status',
     'body_create'=>'Body',
+    'body2_create'=>'Body2',
     'are_you_sure'=>'Are you sure, you want to delete this item?!',
     'create_button'=>'Create'
 ];

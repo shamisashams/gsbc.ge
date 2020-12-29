@@ -8,8 +8,8 @@
                 <div class="pro">
                     <img src="/frontend-assets/gsbc/img/icons/header/location.svg">
                     <div class="text">
-                        <h6 class="h">Mirza Shapi. st 48</h6>
-                        <p class="p">Tbilisi,Georgia</p>
+                    <h6 class="h">{{__('frontend.street')}}</h6>
+                    <p class="p">{{__('frontend.tbilisi_georgia')}}</p>
                     </div>
                 </div>
                 <div class="pro">

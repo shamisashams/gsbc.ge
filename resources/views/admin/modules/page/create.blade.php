@@ -13,7 +13,7 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
-                                    {{ Form::label('title', 'Title', []) }}
+                                    {{ Form::label('title',  __('admin.title_create'), []) }}
                                     {{ Form::text('title', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Title']) }}
                                     @if ($errors->has('title'))
                                         <span class="help-block">
@@ -25,7 +25,7 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
-                                    {{ Form::label('description', 'Description', []) }}
+                                    {{ Form::label('description',  __('admin.descritpion_create'), []) }}
                                     {{ Form::text('description', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Description']) }}
                                     @if ($errors->has('description'))
                                         <span class="help-block">

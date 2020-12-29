@@ -16,11 +16,11 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>Title</th>
-                <th>Slug</th>
-                <th>Type</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th>{{__('admin.title')}}</th>
+                <th>{{__('admin.slug')}}</th>
+                <th>{{__('admin.type')}}</th>
+                <th>{{__('admin.status')}}</th>
+                <th>{{__('admin.actions')}}</th>
             </tr>
             <tr>
             </tr>
@@ -35,9 +35,9 @@
                         <td class="text-center">{{$page->type}}</td>
                         <td class="text-center">
                             @if($page->status)
-                                <span class="text-green">Active</span>
+                                <span class="text-green">{{__('admin.active')}}</span>
                             @else
-                                <span class="text-red">Not Active</span>
+                                <span class="text-red">{{__('admin.not_active')}}</span>
                             @endif
                         </td>
                         <td class="row-actions d-flex">

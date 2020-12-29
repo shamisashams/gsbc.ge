@@ -44,5 +44,7 @@ return [
     'email_form_message'=>'Type a Message...',
     'send_message_button'=>'Send a Message',
     'contact'=>'Contact',
-    'learn_more'=>'Learn More'
+    'learn_more'=>'Learn More',
+    'tbilisi_georgia'=>'Tbilisi,Georgia',
+    'street'=>'Ioseb Grishashvili. st 11',
 ];

@@ -44,6 +44,7 @@ return [
     'email_form_message'=>'შეიყვანეთ მესიჯი',
     'send_message_button'=>'გაგზავნა',
     'contact'=>'დაგვიკავშირდით',
-    'learn_more'=>'გაიგე მეტი'
-
+    'learn_more'=>'გაიგე მეტი',
+    'tbilisi_georgia'=>'თბილისი,საქართველო',
+    'street'=>'იოსებ გრიშაშვილის ქ.11',
 ];

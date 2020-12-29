@@ -54,7 +54,8 @@ return [
     'title'=>'სათაური',
     'description'=>'დახასიათება',
     'slug'=>'სლუგი',
-    'status'=>'STATUS',
+    'status'=>'სტატუსი',
+    'type'=>'ტიპი',
     'actions'=>'ACTIONS',
     'active'=>'Active',
     'not_active'=>'Not Active',
@@ -64,5 +65,7 @@ return [
     'status_create'=>'Status',
     'body_create'=>'Body',
     'are_you_sure'=>'Are you sure, you want to delete this item?!',
-    'create_button'=>'Create'
+    'create_button'=>'Create',
+    'tbilisi_georgia'=>'თბილისი,საქართველო'
+
 ];

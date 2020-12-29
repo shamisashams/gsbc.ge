@@ -44,5 +44,8 @@ return [
     'email_form_message'=>'Введите сообщение...',
     'send_message_button'=>'Отправить сообщение',
     'contact'=>'Связаться с нами',
-    'learn_more'=>'Узнать больше'
+    'learn_more'=>'Узнать больше',
+    'tbilisi_georgia'=>'Тбилиси,Грузия',
+    'street'=>'ул. Иосеб Гришашвили 11',
+
 ];

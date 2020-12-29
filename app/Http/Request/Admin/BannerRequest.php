@@ -36,10 +36,10 @@ class BannerRequest extends FormRequest
             'header_1' => ['required', 'max:255'],
             'header_2' => ['required', 'max:255'],
             'header_3' => ['required', 'max:255'],
-            'text' => ['required', 'max:255'],
-            'text_1' => ['required', 'max:255'],
-            'text_2' => ['required', 'max:255'],
-            'text_3' => ['required', 'max:255'],
+            'text' => ['max:255'],
+            'text_1' => ['max:255'],
+            'text_2' => ['max:255'],
+            'text_3' => ['max:255'],
 //            'image' => ['image', Rule::requiredIf(function () {
 //                $image = Image::where('imageable_id', $this->news)->first();
 //                return $image ? false : true;
