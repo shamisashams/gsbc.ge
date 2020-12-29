@@ -15,8 +15,8 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
-                                    {{ Form::label('title', 'Title', []) }}
-                                    {{ Form::text('title', (count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->title : '', ['class' => 'form-control', 'no','placeholder'=>'Enter Title']) }}
+                                    {{ Form::label('title', __('admin.title_create'), []) }}
+                                    {{ Form::text('title', (count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->title : '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_title')]) }}
                                     @if ($errors->has('title'))
                                         <span class="help-block">
                                     {{ $errors->first('title') }}
@@ -27,8 +27,8 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
-                                    {{ Form::label('description', 'Description', []) }}
-                                    {{ Form::text('description', (count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->description : '', ['class' => 'form-control', 'no','placeholder'=>'Enter Position']) }}
+                                    {{ Form::label('description', __('admin.description_create'), []) }}
+                                    {{ Form::text('description', (count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->description : '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_description')]) }}
                                     @if ($errors->has('description'))
                                         <span class="help-block">
                                             {{ $errors->first('description') }}
@@ -41,8 +41,8 @@
                             <div class="col-12">
                                 <div
                                     class="form-group {{ $errors->has('body') ? ' has-error' : '' }}">
-                                    {{ Form::label('body', 'Body', []) }}
-                                    {{ Form::textarea('body', (count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->body : '', ['id'=>'article-ckeditor','class' => 'form-control', 'no','placeholder'=>'Enter Slug']) }}
+                                    {{ Form::label('body', __('admin.body_create'), []) }}
+                                    {{ Form::textarea('body', (count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->body : '', ['id'=>'article-ckeditor','class' => 'form-control', 'no','placeholder'=>__('admin.enter_body')]) }}
                                     @if ($errors->has('body'))
                                         <span class="help-block">
                                     {{ $errors->first('body') }}
@@ -54,10 +54,10 @@
                         <div class="form-check">
                             <label class="form-check-label"><input class="form-check-input"
                                                                    {{$member->status ? 'checked' : ''}} name="status"
-                                                                   type="checkbox">Status</label>
+                                                                   type="checkbox">{{__('admin.status_create')}}</label>
                         </div>
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Update</button>
+                            <button class="btn btn-primary" type="submit">{{__('admin.update_button')}}</button>
                         </div>
 
                     </div>

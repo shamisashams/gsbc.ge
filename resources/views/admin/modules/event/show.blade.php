@@ -12,21 +12,21 @@
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
-                                <th>Title</th>
+                                <th>{{__('admin.title_create')}}</th>
                                 <td>
                                     {{ (count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->title : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Description</th>
+                                <th>{{__('admin.description_create')}}</th>
                                 <td>{{(count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->description : ''}}</td>
                             </tr>
                             <tr>
-                                <th>Start Date</th>
+                                <th>{{__('admin.event_start_date')}}</th>
                                 <td>{{date('d-M-Y H:i:s', strtotime($event->start_date))}}</td>
                             </tr>
                             <tr>
-                                <th>End Date</th>
+                                <th>{{__('admin.event_end_date')}}</th>
                                 <td>{{date('d-M-Y H:i:s', strtotime($event->end_date))}}</td>
                             </tr>
                             </tbody>

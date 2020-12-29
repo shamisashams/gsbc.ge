@@ -13,8 +13,8 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
-                                    {{ Form::label('title', 'Title', []) }}
-                                    {{ Form::text('title', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Title']) }}
+                                    {{ Form::label('title',__('admin.title_create'), []) }}
+                                    {{ Form::text('title', '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_title')]) }}
                                     @if ($errors->has('title'))
                                         <span class="help-block">
                                     {{ $errors->first('title') }}
@@ -25,8 +25,8 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
-                                    {{ Form::label('description', 'Description', []) }}
-                                    {{ Form::text('description', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Description']) }}
+                                    {{ Form::label('description',__('admin.description_create'), []) }}
+                                    {{ Form::text('description', '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_description')]) }}
                                     @if ($errors->has('description'))
                                         <span class="help-block">
                                             {{ $errors->first('description') }}
@@ -60,7 +60,7 @@
                                 <div
                                     class="form-group {{ $errors->has('location') ? ' has-error' : '' }}">
                                     {{ Form::label('location', __('admin.location'), []) }}
-                                    {{ Form::text('location', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Location']) }}
+                                    {{ Form::text('location', '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_location')]) }}
                                     @if ($errors->has('location'))
                                         <span class="help-block">
                                     {{ $errors->first('location') }}

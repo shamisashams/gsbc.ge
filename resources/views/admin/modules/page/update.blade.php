@@ -16,7 +16,7 @@
                                 <div
                                     class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
                                     {{ Form::label('title',  __('admin.title_create'), []) }}
-                                    {{ Form::text('title', (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->title : '', ['class' => 'form-control', 'no','placeholder'=>'Enter Title']) }}
+                                    {{ Form::text('title', (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->title : '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_title')]) }}
                                     @if ($errors->has('title'))
                                         <span class="help-block">
                                     {{ $errors->first('title') }}
@@ -32,7 +32,7 @@
                                     class="form-group {{ $errors->has('body') ? ' has-error' : '' }}">
                                     {{ Form::label('body',  __('admin.body_create'), []) }}
                                     {{ Form::textarea('body', (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->body : '',
-                                     ['class' => 'form-control', 'no','placeholder'=>'Enter Slug']) }}
+                                     ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_body')]) }}
                                     @if ($errors->has('body'))
                                         <span class="help-block">
                                     {{ $errors->first('body') }}
@@ -46,7 +46,7 @@
                                         class="form-group {{ $errors->has('body_2') ? ' has-error' : '' }}">
                                         {{ Form::label('body_2',  __('admin.body2_create'), []) }}
                                         {{ Form::textarea('body_2', (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->body_2 : '',
-                                         ['class' => 'form-control', 'no','placeholder'=>'Enter Slug']) }}
+                                         ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_body2')]) }}
                                         @if ($errors->has('body_2'))
                                             <span class="help-block">
                                     {{ $errors->first('body_2') }}
@@ -59,10 +59,10 @@
                         <div class="form-check">
                             <label class="form-check-label"><input class="form-check-input"
                                                                    {{$page->status ? 'checked' : ''}} name="status"
-                                                                   type="checkbox">Status</label>
+                                                                   type="checkbox">{{__('admin.status_create')}}</label>
                         </div>
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Update</button>
+                            <button class="btn btn-primary" type="submit">{{__('admin.update_button')}}</button>
                         </div>
 
                     </div>

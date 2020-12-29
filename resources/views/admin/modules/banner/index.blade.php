@@ -16,15 +16,15 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>Header</th>
-                <th>Header 1</th>
-                <th>Header 2</th>
-                <th>Header 3</th>
-                <th>Text</th>
-                <th>Text 1</th>
-                <th>Text 2</th>
-                <th>Text 3</th>
-                <th>Actions</th>
+                <th>{{__('admin.header')}}</th>
+                <th>{{__('admin.header1')}}</th>
+                <th>{{__('admin.header2')}}</th>
+                <th>{{__('admin.header3')}}</th>
+                <th>{{__('admin.text')}}</th>
+                <th>{{__('admin.text1')}}</th>
+                <th>{{__('admin.text2')}}</th>
+                <th>{{__('admin.text3')}}</th>
+                <th>{{__('admin.actions')}}</th>
             </tr>
             <tr>
                 <th>

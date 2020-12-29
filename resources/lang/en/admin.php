@@ -66,5 +66,30 @@ return [
     'body_create'=>'Body',
     'body2_create'=>'Body2',
     'are_you_sure'=>'Are you sure, you want to delete this item?!',
-    'create_button'=>'Create'
+    'create_button'=>'Create',
+    'enter_description'=>'Enter Description',
+    'enter_title'=>'Enter Title',
+    'enter_body'=>'Enter Body',
+    'update_button'=>'Update',
+    'enter_location'=>'Enter Location',
+    'enter_body2'=>'Enter Body2',
+    'header'=>'Header 1',
+    'header1'=>'Header 2',
+    'header2'=>'Header 3',
+    'header3'=>'Header 4',
+    'text'=>'Text 1',
+    'text1'=>'Text 2',
+    'text2'=>'Text 3',
+    'text3'=>'Text 4',
+    'enter_header'=>'Enter Header 1',
+    'enter_header1'=>'Enter Header 2',
+    'enter_header2'=>'Enter Header 3',
+    'enter_header3'=>'Enter Header 4',
+    'enter_text'=>'Enter Text 1',
+    'enter_text1'=>'Enter Text 2',
+    'enter_text2'=>'Enter Text 3',
+    'enter_text3'=>'Enter Text 4',
+    'enter_slug'=>'Enter Slug'
+
+
 ];

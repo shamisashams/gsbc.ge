@@ -17,10 +17,10 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th>{{__('admin.title')}}</th>
+                <th>{{__('admin.description')}}</th>
+                <th>{{__('admin.status')}}</th>
+                <th>{{__('admin.actions')}}</th>
             </tr>
             <tr>
                 <th>
@@ -59,9 +59,9 @@
                         <td class="text-center">{{(count($member->availableLanguage) > 0) ?  $member->availableLanguage[0]->description : ''}}</td>
                         <td class="text-center">
                             @if($member->status)
-                                <span class="text-green">Active</span>
+                                <span class="text-green">{{__('admin.active')}}</span>
                             @else
-                                <span class="text-red">Not Active</span>
+                                <span class="text-red">{{__('admin.not_active')}}</span>
                             @endif
                         </td>
                         <td class="row-actions d-flex">

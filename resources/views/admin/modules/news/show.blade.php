@@ -12,29 +12,25 @@
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
-                                <th>Title</th>
+                                <th>{{__('admin.title_create')}}</th>
                                 <td>
                                     {{ (count($news->availableLanguage) > 0) ? $news->availableLanguage[0]->title : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Description</th>
+                                <th>{{__('admin.description_create')}}</th>
                                 <td>{{(count($news->availableLanguage) > 0) ? $news->availableLanguage[0]->description : ''}}</td>
                             </tr>
                             <tr>
-                                <th>slug</th>
+                                <th>{{__('admin.slug_create')}}</th>
                                 <td>{{$news->slug}}</td>
                             </tr>
                             <tr>
-                                <th>Category</th>
-                                <td>{{$news->category}}</td>
+                                <th>{{__('admin.status_create')}}</th>
+                                <td>{{$news->status ? __('admin.active') : __('admin.not_active')}}</td>
                             </tr>
                             <tr>
-                                <th>Status</th>
-                                <td>{{$news->status ? 'Active' : 'Not Active'}}</td>
-                            </tr>
-                            <tr>
-                                <th>Body</th>
+                                <th>{{__('admin.body_create')}}</th>
                                 <td>{!! (count($news->availableLanguage) > 0) ? $news->availableLanguage[0]->body : ''!!}</td>
                             </tr>
                             </tbody>

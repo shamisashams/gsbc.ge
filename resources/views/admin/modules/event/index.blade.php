@@ -18,12 +18,12 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <th>Location</th>
-                <th>Actions</th>
+                <th>{{__('admin.title')}}</th>
+                <th>{{__('admin.description')}}</th>
+                <th>{{__('admin.event_start_date')}}</th>
+                <th>{{__('admin.event_end_date')}}</th>
+                <th>{{__('admin.location')}}</th>
+                <th>{{__('admin.actions')}}</th>
             </tr>
             <tr>
                 <th>

@@ -13,8 +13,8 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
-                                    {{ Form::label('title', 'Title', []) }}
-                                    {{ Form::text('title', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Title']) }}
+                                    {{ Form::label('title',__('admin.title_create'), []) }}
+                                    {{ Form::text('title', '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_title')]) }}
                                     @if ($errors->has('title'))
                                         <span class="help-block">
                                     {{ $errors->first('title') }}
@@ -25,8 +25,8 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
-                                    {{ Form::label('description', 'Description', []) }}
-                                    {{ Form::text('description', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Description']) }}
+                                    {{ Form::label('description', __('admin.description_create'), []) }}
+                                    {{ Form::text('description', '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_description')]) }}
                                     @if ($errors->has('description'))
                                         <span class="help-block">
                                             {{ $errors->first('description') }}
@@ -39,8 +39,8 @@
                             <div class="col-12">
                                 <div
                                     class="form-group {{ $errors->has('body') ? ' has-error' : '' }}">
-                                    {{ Form::label('body', 'Body', []) }}
-                                    {{ Form::textarea('body', '', ['id'=>'article-ckeditor','class' => 'form-control', 'no','placeholder'=>'Enter  Body']) }}
+                                    {{ Form::label('body', __('admin.body_create'), []) }}
+                                    {{ Form::textarea('body', '', ['id'=>'article-ckeditor','class' => 'form-control', 'no','placeholder'=>__('admin.enter_body')]) }}
                                     @if ($errors->has('body'))
                                         <span class="help-block">
                                     {{ $errors->first('body') }}
@@ -52,10 +52,10 @@
 
                         <div class="form-check">
                             <label class="form-check-label"><input class="form-check-input" name="status"
-                                                                   type="checkbox">Status</label>
+                                                                   type="checkbox">{{__('admin.status_create')}}</label>
                         </div>
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Create</button>
+                            <button class="btn btn-primary" type="submit">{{__('admin.create_button')}}</button>
                         </div>
                     </div>
                 </div>

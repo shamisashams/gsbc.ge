@@ -15,8 +15,8 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
-                                    {{ Form::label('title', 'Title', []) }}
-                                    {{ Form::text('title', (count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->title : '', ['class' => 'form-control', 'no','placeholder'=>'Enter Title']) }}
+                                    {{ Form::label('title', __('admin.title_create'), []) }}
+                                    {{ Form::text('title', (count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->title : '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_title')]) }}
                                     @if ($errors->has('title'))
                                         <span class="help-block">
                                     {{ $errors->first('title') }}
@@ -27,8 +27,8 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
-                                    {{ Form::label('description', 'Description', []) }}
-                                    {{ Form::text('description', (count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->description : '', ['class' => 'form-control', 'no','placeholder'=>'Enter Position']) }}
+                                    {{ Form::label('description', __('admin.description_create'), []) }}
+                                    {{ Form::text('description', (count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->description : '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_description')]) }}
                                     @if ($errors->has('description'))
                                         <span class="help-block">
                                             {{ $errors->first('description') }}
@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="event_date">{{__('admin.event_start_date')}}</label>
-                                <input class="form-control" id="end_date" name="start_date" type="datetime-local"
+                                <input class="form-control" id="start_date" name="start_date" type="datetime-local"
                                        value="{{$startDate}}">
                                 @if ($errors->has('start_date'))
                                     <span class="help-block">
@@ -64,7 +64,7 @@
                                 <div
                                     class="form-group {{ $errors->has('location') ? ' has-error' : '' }}">
                                     {{ Form::label('location', __('admin.location'), []) }}
-                                    {{ Form::text('location',(count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->location : '', ['class' => 'form-control', 'no','placeholder'=>'Enter Location']) }}
+                                    {{ Form::text('location',(count($event->availableLanguage) > 0) ? $event->availableLanguage[0]->location : '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_location')]) }}
                                     @if ($errors->has('location'))
                                         <span class="help-block">
                                     {{ $errors->first('location') }}
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Update</button>
+                            <button class="btn btn-primary" type="submit">{{__('admin.update_button')}}</button>
                         </div>
 
                     </div>

@@ -12,21 +12,21 @@
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
-                                <th>Title</th>
+                                <th>{{__('admin.title_create')}}</th>
                                 <td>
                                     {{ (count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->title : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Description</th>
+                                <th>{{__('admin.description_create')}}</th>
                                 <td>{{(count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->description : ''}}</td>
                             </tr>
                             <tr>
-                                <th>Status</th>
+                                <th>{{__('admin.status_create')}}</th>
                                 <td>{{$member->status ? 'True' : 'False'}}</td>
                             </tr>
                             <tr>
-                                <th>Body</th>
+                                <th>{{__('admin.body_create')}}</th>
                                 <td>{!! (count($member->availableLanguage) > 0) ? $member->availableLanguage[0]->body : ''!!}</td>
                             </tr>
                             </tbody>
