@@ -1,7 +1,7 @@
 <?php
 return [
     'home' => 'მთავარი',
-    'about-us' => 'ჩვენს შესახებ',
+    'about-us' => 'ჩვენ შესახებ',
     'membership' => 'წევრობა',
     'members' => 'წევრები',
     'rules_regulations' => 'წესები და დებულებები',
@@ -13,10 +13,10 @@ return [
     'what_we_are_expert_at' => 'რაში ვართ ექსპერტები',
     'legal_practices_area' => 'იურიდიული პრაქტიკის სფერო',
     'real_estate' => 'უძრავი ქონება და მასპინძლობა',
-    'agriculture' => 'სოფლის მეურნეობა და საკვების გადამუშავება',
+    'agriculture' => 'სოფლის მეურნეობა',
     'construction' => 'მშენებლობა',
     'renewable_energy' => 'განახლებადი ენერგია',
-    'logistics' => 'ლოგისტიკა',
+    'logistics' => 'ლოჯისტიკა',
     'tourism' => 'ტურიზმი',
     'news' => 'ახალი ამბები',
     'become_member' => 'გახდი წევრი',

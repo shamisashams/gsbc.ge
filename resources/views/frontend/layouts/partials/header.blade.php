@@ -17,7 +17,7 @@
                     <div class="text">
                         <h6 class="h">+995 598 557 889</h6>
                         <p class="p">
-                            info@gsbc.ge
+                            Info@gsbc.ge
                         </p>
                     </div>
                 </div>
