@@ -24,7 +24,7 @@ class BannerLanguage extends Model
         'text_3',
     ];
 
-    public function event()
+    public function banner()
     {
         return $this->belongsTo('App\Models\Banner', 'banner_id');
     }

@@ -54,7 +54,7 @@ Route::group([
     })->name('projects');
 
     Route::get('/biography', function () {
-        return view('frontend.modules.projects.tourism.index');
+        return view('frontend.modules.biography.index');
     })->name('biography');
 
     Route::prefix('projects')->group(function () {
