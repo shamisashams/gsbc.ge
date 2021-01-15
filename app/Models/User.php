@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable,HasRolesAndPermissions;
+    use HasFactory, Notifiable, HasRolesAndPermissions;
 
     /**
      * The attributes that are mass assignable.
@@ -57,5 +57,10 @@ class User extends Authenticatable
     public function files()
     {
         return $this->morphMany('App\Models\File', 'fileable');
+    }
+
+    public function userRoles()
+    {
+        return $this->hasMany(UserRole::class, 'user_id');
     }
 }

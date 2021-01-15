@@ -42,9 +42,7 @@
                     <div class="nav-mo">
                         <a href="{{route('/',app()->getLocale())}}" class="nav">{{__('frontend.home')}}</a>
                         <a href="{{route('about-us',app()->getLocale())}}" class="nav">{{__('frontend.about-us')}}</a>
-                        <div class="drop">
-                            <a href="{{route('membership',app()->getLocale())}}" class="nav member">{{__('frontend.membership')}}</a>
-                        </div>
+                        <a href="{{route('membership',app()->getLocale())}}" class="nav">{{__('frontend.membership')}}</a>
                         <a href="{{route('events',app()->getLocale())}}" class="nav">{{__('frontend.events')}}</a>
                         <a href="{{route('projects',app()->getLocale())}}" class="nav">{{__('frontend.projects')}}</a>
                         <a href="{{route('media',app()->getLocale())}}" class="nav">{{__('frontend.press_media')}}</a>
@@ -101,7 +99,7 @@
         </div>
         <div class="bottom">
             <div class="navbar">
-                <a href="/" class="nav">{{__('frontend.home')}}</a>
+                <a href="{{route('/',app()->getLocale())}}" class="nav">{{__('frontend.home')}}</a>
                 <a href="{{route('about-us',app()->getLocale())}}" class="nav">{{__('frontend.about-us')}}</a>
                 <div class="drop">
                     <a href="{{route('membership',app()->getLocale())}}" class="nav member">{{__('frontend.membership')}}</a>
