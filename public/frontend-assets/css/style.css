@@ -16,7 +16,7 @@
 /*  reset  */
 
 @font-face {
-    font-family: helvanica;
+    font-family: futura-pt;
 }
 
 *,
@@ -27,7 +27,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 
-    font-family: "helvanica", sans-serif;
+    font-family: "futura-pt";
     scroll-behavior: smooth;
 }
 

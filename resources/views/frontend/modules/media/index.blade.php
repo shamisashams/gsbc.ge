@@ -7,7 +7,7 @@
     <section class="press-media">
         <div class="wrapper">
             <div class="heading">
-                <p class="small">{{__('frontend.media_press_media')}}</p>
+                <p class="small">{{__('frontend.press_media')}}</p>
                 <h5 class="large">{{__('frontend.blog')}}</h5>
             </div>
             <div class="media-grid">
