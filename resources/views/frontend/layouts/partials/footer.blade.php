@@ -6,7 +6,7 @@
                     <a href="/gsbc/en" class="logo">
                         <img src="/frontend-assets/gsbc/img/logo/logo.png">
                     </a>
-                    <p class="para">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    <p class="para">{{__('frontend.footer_text')}}</p>
                 </div>
                 <div class="col2">
                     <p class="head">{{__('frontend.contact_info')}}</p>
@@ -17,7 +17,7 @@
                         </div>
                         <div class="flex">
                             <img src="/frontend-assets/gsbc/img/icons/footer/email.svg">
-                            <p>contact@versatilewpthe@gmail.com</p>
+                            <p>Info@gsbc.ge</p>
                         </div>
                         <div class="flex">
                             <img src="/frontend-assets/gsbc/img/icons/footer/clock.svg">

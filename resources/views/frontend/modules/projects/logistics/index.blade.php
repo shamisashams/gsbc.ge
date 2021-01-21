@@ -3,7 +3,7 @@
     <section class="about-showcase">
         <div class="overlay">
             <p class="title">{{__('frontend.logistics')}}</p>
-            <p class="under">CAPTION PLACED HERE</p>
+            <p class="under">{{__('frontend.caption_placed_here')}}</p>
         </div>
     </section>
 
@@ -33,12 +33,12 @@
                             <p>{{__('frontend.renewable_energy')}}</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="{{route('logistics',app()->getLocale())}}" class="each">
+                        <a href="{{route('logistics',app()->getLocale())}}" class="each active">
                             <span class="line"></span>
                             <p>{{__('frontend.logistics')}}</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">
                         </a>
-                        <a href="{{route('projects',app()->getLocale())}}" class="each active">
+                        <a href="{{route('projects',app()->getLocale())}}" class="each">
                             <span class="line"></span>
                             <p>{{__('frontend.tourism')}}</p>
                             <img class="arr" src="/frontend-assets/gsbc/img/icons/arrows/arrow-tailed.svg">

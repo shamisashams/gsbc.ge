@@ -27,12 +27,12 @@
                                 <path d="M115.251,138.757L222.447,35.496c-2.427-1.443-5.252-2.411-8.28-2.411H16.5c-3.943,0-7.556,1.531-10.37,3.866   L115.251,138.757z"  data-original="#000000" style=""/>
                                 <path d="M0,52.1v128.484c0,1.475,0.339,2.897,0.707,4.256l69.738-67.156L0,52.1z"  data-original="#000000" style=""/>
                             </g></svg>
-                            <p>contact@versatilewpthe@gmail.com</p>
+                            <p>Info@gsbc.ge</p>
                     </a>
                     <a href="#" class="contact-info">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 443.294 443.294" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path xmlns="http://www.w3.org/2000/svg" d="m221.647 0c-122.214 0-221.647 99.433-221.647 221.647s99.433 221.647 221.647 221.647 221.647-99.433 221.647-221.647-99.433-221.647-221.647-221.647zm0 415.588c-106.941 0-193.941-87-193.941-193.941s87-193.941 193.941-193.941 193.941 87 193.941 193.941-87 193.941-193.941 193.941z"  data-original="#000000" style="" class=""/><path xmlns="http://www.w3.org/2000/svg" d="m235.5 83.118h-27.706v144.265l87.176 87.176 19.589-19.589-79.059-79.059z"  data-original="#000000" style="" class=""/></g></svg>
 
-                            <p>Everyday 9:00-17:00</p>
+                            <p>{{__('frontend.everyday')}} 9:00-17:00</p>
                     </a>
                     <div class="social-media">
                         <a href="#">

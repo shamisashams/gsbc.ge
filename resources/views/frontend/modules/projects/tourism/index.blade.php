@@ -3,7 +3,7 @@
     <section class="about-showcase">
         <div class="overlay">
             <p class="title">{{__('frontend.tourism')}}</p>
-            <p class="under">CAPTION PLACED HERE</p>
+            <p class="under">{{__('frontend.caption_placed_here')}}</p>
         </div>
     </section>
 
