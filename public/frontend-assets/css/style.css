@@ -1478,6 +1478,7 @@ img {
 .biography-body .content {
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     margin-top: 47px;
     margin-bottom: 92px;
 }
@@ -1488,7 +1489,7 @@ img {
 
 .biography-body .content .left img {
     width: 400px;
-    height: 445px;
+    height: auto;
     margin-bottom: 18px;
 }
 
@@ -1522,7 +1523,7 @@ img {
 }
 
 .biography-body .content .right {
-    max-width: 812px;
+    max-width: 60%;
 }
 
 .biography-body .content .right .bio {
@@ -2768,6 +2769,11 @@ img {
 
 @media(max-width: 1000px) {
 
+
+    .header .bottom {
+        height: 58px;
+    }
+
     .header {
         padding-top: 25px;
     }
@@ -2817,6 +2823,11 @@ img {
 }
 
 @media(max-width: 760px) {
+
+    .header .bottom {
+        height: 50px;
+    }
+
     .header .top .right .pro {
         display: none;
     }
@@ -3633,5 +3644,52 @@ img {
 @media(max-width: 600px) {
     .events-body .event-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+/*biography page*/
+
+@media(max-width: 830px) {
+    .biography-body .content .right .practice-areas .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 620px) {
+    .biography-body .content .left .personal-info .p {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    .biography-body .content .right .bio .para.line {
+        margin-bottom: 30px;    
+    }
+
+    .biography-body .content .right .bio .title {
+        margin-bottom: 14px;
+    }
+
+    .biography-body .content .left .personal-info .name {
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 3px;
+    }
+}
+
+@media(max-width: 500px) {
+    .biography-body .content {
+        flex-direction: column;
+    }
+
+    .biography-body .content .left {
+         margin-right: 0px; 
+         margin-bottom: 30px;
+    }
+
+    .biography-body .content .right {
+        max-width: 100%;
     }
 }
