@@ -122,5 +122,8 @@ return [
     'council_text6'=>'Email: Info@gsbc.ge',
     'key'=>'გასაღები',
     'value'=>'მნიშვნელობა',
-    'setting_update'=>'პარამეტრის განახლება'
+    'setting_update'=>'პარამეტრის განახლება',
+    'successfully_updated_setting' => 'პარამეტრი წარმატებულად განახლდა',
+    'failed_updated_setting'=>'პარამეტრი არ განახლდა'
+
 ];

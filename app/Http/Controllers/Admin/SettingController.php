@@ -128,10 +128,10 @@ class SettingController extends AdminController
 
 
         if (!$this->service->update($locale, $id, $data)) {
-            return redirect(route('settingEditView', $locale,$id))->with('danger', 'Setting does not update.');
+            return redirect(route('settingEditView', $locale,$id))->with('danger', __('admin.failed_updated_setting'));
         }
 
-        return redirect(route('settingIndex', $locale))->with('success', 'Setting update successfully.');
+        return redirect(route('settingIndex', $locale))->with('success', __('admin.successfully_updated_setting'));
 
     }
 }
