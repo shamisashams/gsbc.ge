@@ -23,9 +23,7 @@ s                    <div class="personal-info">
                 <div class="right">
                     <div class="bio">
                         <h6 class="title">{{__('frontend.biography')}}</h6>
-                        <p class="para line">{{__('frontend.svanidze_text')}} </p>
-                        <p class="para line">{{__('frontend.svanidze_text1')}}</p>
-                        <p class="para">{{__('frontend.svanidze_text2')}}</p>
+                        {!! count($council->availableLanguage) > 0 ? $council->availableLanguage[0]->biography: '' !!}
                     </div>
                     <div class="practice-areas">
                         <h6 class="title">{{__('frontend.practice_areas')}}</h6>
