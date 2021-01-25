@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Request\Admin\PageRequest;
 use App\Models\Banner;
 use App\Models\News;
+use App\Models\Setting;
 use App\Services\BannerService;
 use App\Services\NewsService;
 use App\Services\PageService;
+use App\Services\SettingService;
+use Hamcrest\Core\Set;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -55,7 +58,7 @@ class HomeController extends Controller
                     'about' => $about,
                     'chooseUs' => $whyChooseUs,
                     'news' => $news,
-                    'banner' => $banner
+                    'banner' => $banner,
                 ]);
     }
 

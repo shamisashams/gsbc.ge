@@ -1,0 +1,157 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+
+/*  reset  */
+
+
+*,
+*::after,
+*::before {
+    font-family: "PlayfairDisplay-Roman";
+
+}
+
+body {
+    font-family: "PlayfairDisplay-Roman";
+}
+
+.main-showcase .overlay .content .title {
+    font-family: PlayfairDisplay-Roman
+}
+
+.intro .content .text .title {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.intro .content .text .geo-gs {
+    font-family: Poppins;
+}
+
+
+.legal-practice .heading .title {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.legal-practice .legal-practice-grid .legal-links .p {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.news-section .heading .title {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.why-us-section .content .context .heading .title {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.contact-article .left .head {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.contact-article .right .overlay .head {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.contact-article .right .overlay .articles .each-article .h {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.about-showcase .overlay .title {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.about-showcase .overlay .under {
+    font-family: Poppins;
+}
+
+.in-nothing .large {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.gsbc-board .heading .large {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.gsbc-board .board-slide .each-board .context .name {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.biography-body .content .left .personal-info .name {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.biography-body .content .right .bio .title {
+    font-family: PlayfairDisplay-Romanu;
+}
+
+.biography-body .content .right .practice-areas .title {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.project-bodies .content .project-links .title {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.project-bodies .projects-info .blue {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.project-bodies .projects-info .why-invest .reasons .title {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.project-bodies .projects-info .resorts .sorts .title {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.membership-body .heading .large {
+    font-family: PlayfairDisplay-Roman;
+}
+
+#quick-view-pop-up .content .text .name {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.regulation .heading .large {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.press-media .heading .large {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.press-media .media-grid .each-blog .context .title {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.single-blog .heading .large {
+    font-family: PlayfairDisplay-Roman;
+
+}
+
+.contact-body .content .left .title {
+    font-family: PlayfairDisplay-Roman;
+}
+
+.events-body .heading .large {
+    font-family: PlayfairDisplay-Roman;
+}
+
+@media (max-width: 1200px) {
+
+    .intro .content .text .title {
+        font-family: PlayfairDisplay-Roman;
+    }
+}

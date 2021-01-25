@@ -132,38 +132,44 @@ class SettingService
         return true;
     }
 
-    public function getContactInfo($localizationID)
+    public function getContactInfo($lang)
     {
+        $localizationID = Localization::getIdByName($lang);
+
         $contact = Setting::whereHas('language', function ($query) use ($localizationID) {
             $query->where('language_id', $localizationID);
         })->orderBy('created_at')->get();
         return $contact;
     }
 
-    public function facebook($localizationID)
+    public function facebook($lang)
     {
+        $localizationID = Localization::getIdByName($lang);
         return Setting::where(['key' => 'facebook'])->whereHas('language', function ($query) use ($localizationID) {
             $query->where('language_id', $localizationID);
         })->first();
     }
 
-    public function twitter($localizationID)
+    public function twitter($lang)
     {
+        $localizationID = Localization::getIdByName($lang);
         return Setting::where(['key' => 'twitter'])->whereHas('language', function ($query) use ($localizationID) {
             $query->where('language_id', $localizationID);
         })->first();
     }
 
-    public function behance($localizationID)
+    public function behance($lang)
     {
+        $localizationID = Localization::getIdByName($lang);
         return Setting::where(['key' => 'behance'])->whereHas('language', function ($query) use ($localizationID) {
             $query->where('language_id', $localizationID);
         })->first();
 
     }
 
-    public function instagram($localizationID)
+    public function instagram($lang)
     {
+        $localizationID = Localization::getIdByName($lang);
         return Setting::where(['key' => 'instagram'])->whereHas('language', function ($query) use ($localizationID) {
             $query->where('language_id', $localizationID);
         })->first();

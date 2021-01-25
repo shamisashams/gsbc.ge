@@ -37,17 +37,16 @@ class SettingController extends Controller
 
     public function index($lang)
     {
-        $localizationID = Localization::getIdByName($lang);
-
-        $contacts = $this->service->getContactInfo($localizationID);
-        $facebook = $this->service->facebook($localizationID);
-        $twitter = $this->service->twitter($localizationID);
-        $behance = $this->service->behance($localizationID);
-        $instagram = $this->service->instagram($localizationID);
+        $contacts = $this->service->getContactInfo($lang);
+        $facebook = $this->service->facebook($lang);
+        $twitter = $this->service->twitter($lang);
+        $behance = $this->service->behance($lang);
+        $instagram = $this->service->instagram($lang);
 
         return view('frontend.modules.contact.index')
             ->with(
-                ['contacts' => $contacts,
+                [
+                    'contacts' => $contacts,
                     'facebook' => $facebook,
                     'twitter' => $twitter,
                     'behance' => $behance,

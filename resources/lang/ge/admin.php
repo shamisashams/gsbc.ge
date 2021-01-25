@@ -89,6 +89,13 @@ return [
     'enter_text1'=>'შეიყვანეთ ტექსტი 2',
     'enter_text2'=>'შეიყვანეთ ტექტი 3',
     'enter_text3'=>'შეიყვანეთ ტექსტი 4',
-    'enter_slug'=>'შეიყვანეთ სლაგი'
+    'enter_slug'=>'შეიყვანეთ სლაგი',
+    'settings'=>'Settings',
+    'council_text1'=>'Georgia Saudi Business Council',
+    'council_text2'=>'0105, Ioseb Grishashvili St',
+    'council_text3'=>'Tbilisi, Georgia ',
+    'council_text4'=>'www.gsbc.ge,',
+    'council_text5'=>'Tel: +995 598 557 889,',
+    'council_text6'=>'Email: Info@gsbc.ge',
 
 ];

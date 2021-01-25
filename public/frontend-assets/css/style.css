@@ -1241,10 +1241,10 @@ img {
 
 .footer .top .content .col1 .logo img {
     width: 187px;
-    height: 42px;
-    margin-bottom: 28px;
+    height: 102px;
+    margin-top:-17px;
+    margin-left: -15px;
 }
-
 .footer .top .content .col1 .para {
     -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
     font-size: 13px;
@@ -1260,6 +1260,9 @@ img {
     margin-bottom: 38px;
 }
 
+.footer .top .content .col2 .flexes {
+    margin-top:15px;
+}
 .footer .top .content .col2 .flexes .flex {
     display: flex;
     align-items: center;
