@@ -10,11 +10,20 @@ $( document ).ready(function() {
     let getUrl = window.location;
     let baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[0];
     if (oldImages && oldImages.length > 0) {
+
         oldImages.forEach((el, key) => {
-            imagedata.push({
-                id: el.id,
-                src: `${baseUrl}storage/img/news/${el.fileable_id}/${el.name}`
-            })
+            if (el.fileable_type === 'App\\Models\\Council') {
+                imagedata.push({
+                    id: el.id,
+                    src: `${baseUrl}storage/council/${el.fileable_id}/${el.name}`
+                })
+            } else {
+                imagedata.push({
+                    id: el.id,
+                    src: `${baseUrl}storage/img/news/${el.fileable_id}/${el.name}`
+                })
+            }
+
         })
         $('.input-images').imageUploader({
             preloaded: imagedata,
