@@ -89,7 +89,8 @@ return [
     'enter_text1'=>'Enter Text 2',
     'enter_text2'=>'Enter Text 3',
     'enter_text3'=>'Enter Text 4',
-    'enter_slug'=>'Enter Slug'
+    'enter_slug'=>'Enter Slug',
+    'settings'=>'Settings'
 
 
 ];

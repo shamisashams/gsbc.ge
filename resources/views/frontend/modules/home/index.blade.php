@@ -25,8 +25,8 @@
                         <p class="title">{{(count($about->availableLanguage) > 0) ?  $about->availableLanguage[0]->title : ''}}</p>
                         <p class="para">{{(count($about->availableLanguage) > 0) ?  $about->availableLanguage[0]->body : ''}}</p>
                     @endif
-                    <img src="frontend-assets/gsbc/img/icons/showcase/just-signature.png">
-                    <p class="geo-gs">CEO, GSBC</p>
+{{--                    <img src="frontend-assets/gsbc/img/icons/showcase/just-signature.png">--}}
+{{--                    <p class="geo-gs">CEO, GSBC</p>--}}
                 </div>
                 <div class="image">
                     @if(isset($about->files[0]))

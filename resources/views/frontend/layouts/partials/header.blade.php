@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="pro">
-                    <img src="/frontend-assets/gsbc/img/icons/header/location.svg">
+                    <img src="/frontend-assets/gsbc/img/icons/header/phone.svg">
                     <div class="text">
                         <h6 class="h">+995 598 557 889</h6>
                         <p class="p">
@@ -40,13 +40,13 @@
                 <div class="navbar-mobile">
 
                     <div class="nav-mo">
-                        <a href="{{route('/',app()->getLocale())}}" class="nav">{{__('frontend.home')}}</a>
                         <a href="{{route('about-us',app()->getLocale())}}" class="nav">{{__('frontend.about-us')}}</a>
+                        <a href="{{route('projects',app()->getLocale())}}" class="nav">{{__('frontend.projects')}}</a>
                         <a href="{{route('membership',app()->getLocale())}}" class="nav">{{__('frontend.membership')}}</a>
                         <a href="{{route('events',app()->getLocale())}}" class="nav">{{__('frontend.events')}}</a>
-                        <a href="{{route('projects',app()->getLocale())}}" class="nav">{{__('frontend.projects')}}</a>
                         <a href="{{route('media',app()->getLocale())}}" class="nav">{{__('frontend.press_media')}}</a>
                         <a href="{{route('contact',app()->getLocale())}}" class="nav">{{__('frontend.contact-us')}}</a>
+                        {{--                        <a href="{{route('/',app()->getLocale())}}" class="nav">{{__('frontend.home')}}</a>--}}
                     </div>
                     <a href="#" class="member-mo">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -99,8 +99,8 @@
         </div>
         <div class="bottom">
             <div class="navbar">
-                <a href="{{route('/',app()->getLocale())}}" class="nav">{{__('frontend.home')}}</a>
                 <a href="{{route('about-us',app()->getLocale())}}" class="nav">{{__('frontend.about-us')}}</a>
+                <a href="{{route('projects',app()->getLocale())}}" class="nav">{{__('frontend.projects')}}</a>
                 <div class="drop">
                     <a href="{{route('membership',app()->getLocale())}}" class="nav member">{{__('frontend.membership')}}</a>
                     <div class="member-drop-down">
@@ -109,9 +109,11 @@
                     </div>
                 </div>
                 <a href="{{route('events',app()->getLocale())}}" class="nav">{{__('frontend.events')}}</a>
-                <a href="{{route('projects',app()->getLocale())}}" class="nav">{{__('frontend.projects')}}</a>
                 <a href="{{route('media',app()->getLocale())}}" class="nav">{{__('frontend.press_media')}}</a>
                 <a href="{{route('contact',app()->getLocale())}}" class="nav">{{__('frontend.contact-us')}}</a>
+
+
+{{--                <a href="{{route('/',app()->getLocale())}}" class="nav">{{__('frontend.home')}}</a>--}}
             </div>
             <div class="languages main" style="float: right">
                 <a href="#" class="lang selected">

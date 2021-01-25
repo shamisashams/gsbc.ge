@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\LocalizationController;
 use App\Http\Controllers\Admin\MemberController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Admin\EventController;
@@ -37,6 +38,9 @@ Route::group([
 
     Route::get('/membership', [\App\Http\Controllers\Frontend\MemberController::class, 'getMembers'])->name('membership');
     Route::get('/change-localization', [\App\Http\Controllers\Frontend\HomeController::class, 'changeLocalization'])->name('changeLocalization');
+
+
+    Route::get('/contact', [\App\Http\Controllers\Frontend\SettingController::class, 'index'])->name('contact');
 
 
 //    Route::get('/getEvents', [\App\Http\Controllers\Frontend\EventController::class, 'getEvents'])->name('getEvents');
@@ -80,10 +84,6 @@ Route::group([
 
     });
 
-
-    Route::get('/contact', function () {
-        return view('frontend.modules.contact.index');
-    })->name('contact');
 });
 
 
@@ -152,6 +152,14 @@ Route::group([
                 ->name('index', 'banner')
                 ->name('edit', 'editBanner')
                 ->name('update', 'updateBanner');
+
+            Route::resource('settings', SettingController::class)->except('destroy')
+                ->name('index', 'settingIndex')
+                ->name('create', 'settingCreateView')
+                ->name('store', 'settingCreate')
+                ->name('edit', 'settingEditView')
+                ->name('update', 'settingUpdate')
+                ->name('show', 'settingShow');
 
 
             Route::get('/home', [HomeController::class, 'index'])->name('adminHome');

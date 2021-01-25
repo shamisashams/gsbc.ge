@@ -62,6 +62,13 @@
                     </div>
                     <span>{{__('admin.banner')}}</span></a>
             </li>
+            <li class="">
+                <a href="{{route('settingIndex',app()->getLocale() )}}">
+                    <div class="icon-w">
+                        <div class="os-icon os-icon-life-buoy"></div>
+                    </div>
+                    <span>{{__('admin.settings')}}</span></a>
+            </li>
 
             <li>
 
