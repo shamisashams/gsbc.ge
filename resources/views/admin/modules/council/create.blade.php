@@ -108,7 +108,7 @@
                         <select name="practical_areas[]" class="form-control select2" multiple="true">
                             @if(count($practicalAreas) > 0)
                                 @foreach($practicalAreas as $practicalArea)
-                                    <option value="{{$practicalArea->id}}">{{(count($practicalArea->availableLanguage) > 0) ? $practicalArea->availableLanguage[0]->title : $answer->language[0]->title }}</option>
+                                    <option value="{{$practicalArea->id}}">{{(count($practicalArea->availableLanguage) > 0) ? $practicalArea->availableLanguage[0]->title : '' }}</option>
                                 @endforeach
                             @endif
                         </select>
