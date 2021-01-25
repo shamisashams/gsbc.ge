@@ -1617,6 +1617,7 @@ img {
 
 .biography-body .content .right {
     max-width: 60%;
+    min-width: 60%;
 }
 
 .biography-body .content .right .bio {
