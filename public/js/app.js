@@ -114,14 +114,21 @@ $(document).ready(function () {
 
   var imagedata = [];
   var getUrl = window.location;
-  var baseUrl = getUrl.protocol + "//" + getUrl.host + getUrl.pathname.split('/')[0];
+  var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[0];
 
   if (oldImages && oldImages.length > 0) {
     oldImages.forEach(function (el, key) {
+      if (el.fileable_type === 'App\\Models\\Council') {
         imagedata.push({
-        id: el.id,
-        src: "".concat(baseUrl, el.path+'/').concat(el.name)
-      });
+          id: el.id,
+          src: "".concat(baseUrl, "storage/council/").concat(el.fileable_id, "/").concat(el.name)
+        });
+      } else {
+        imagedata.push({
+          id: el.id,
+          src: "".concat(baseUrl, "storage/img/news/").concat(el.fileable_id, "/").concat(el.name)
+        });
+      }
     });
     $('.input-images').imageUploader({
       preloaded: imagedata,
@@ -142,8 +149,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/giorgi/Projects/gsbc/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/giorgi/Projects/gsbc/resources/css/app.css */"./resources/css/app.css");
+__webpack_require__(/*! /var/www/html/gsbc/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/gsbc/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })

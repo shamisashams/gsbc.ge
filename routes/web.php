@@ -2,10 +2,12 @@
 
 
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\CouncilController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\LocalizationController;
 use App\Http\Controllers\Admin\MemberController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\PracticalAreaController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
@@ -57,9 +59,7 @@ Route::group([
         return view('frontend.modules.projects.tourism.index');
     })->name('projects');
 
-    Route::get('/biography', function () {
-        return view('frontend.modules.biography.index');
-    })->name('biography');
+    Route::get('/biography/{slug}', [\App\Http\Controllers\Frontend\AboutUsController::class,'biography'])->name('biography');
 
     Route::prefix('projects')->group(function () {
         Route::get('/agriculture', function () {
@@ -165,6 +165,26 @@ Route::group([
             Route::get('/home', [HomeController::class, 'index'])->name('adminHome');
             Route::get('/home/{id}/edit', [HomeController::class, 'edit'])->name('editHome');
             Route::put('/home/{id}', [HomeController::class, 'update'])->name('updateHome');
+
+            // PracticalArea
+            Route::resource('practical_area', PracticalAreaController::class)
+                ->name('index', 'practicalAreaIndex')
+                ->name('create', 'practicalAreaCreateView')
+                ->name('store', 'practicalAreaCreate')
+                ->name('edit', 'practicalAreaEditView')
+                ->name('update', 'practicalAreaUpdate')
+                ->name('destroy', 'practicalAreaDestroy')
+                ->name('show', 'practicalAreaShow');
+
+            // Council
+            Route::resource('council', CouncilController::class)
+                ->name('index', 'councilIndex')
+                ->name('create', 'councilCreateView')
+                ->name('store', 'councilCreate')
+                ->name('edit', 'councilEditView')
+                ->name('update', 'councilUpdate')
+                ->name('destroy', 'councilDestroy')
+                ->name('show', 'councilShow');
         });
 
     });

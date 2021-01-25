@@ -70,6 +70,21 @@
                     <span>{{__('admin.settings')}}</span></a>
             </li>
 
+            <li class="">
+                <a href="{{route('practicalAreaIndex',[app()->getLocale()])}}">
+                    <div class="icon-w">
+                        <div class="os-icon os-icon-life-buoy"></div>
+                    </div>
+                    <span>{{__('admin.practical_area')}}</span></a>
+            </li>
+            <li class="">
+                <a href="{{route('councilIndex',[app()->getLocale()])}}">
+                    <div class="icon-w">
+                        <div class="os-icon os-icon-life-buoy"></div>
+                    </div>
+                    <span>{{__('admin.council')}}</span></a>
+            </li>
+
             <li>
 
 
