@@ -13,7 +13,7 @@
                     @else
                         <img src="{{url('noimage.png')}}">
                     @endif
-s                    <div class="personal-info">
+                    <div class="personal-info">
                         <h6 class="name">{{count($council->availableLanguage) > 0 ? $council->availableLanguage[0]->full_name: '' }}</h6>
                         <p class="pos">{{count($council->availableLanguage) > 0 ? $council->availableLanguage[0]->position: '' }}</p>
                         <p class="p"><strong>{{__('frontend.email')}}</strong> {{$council->email }}</p>
