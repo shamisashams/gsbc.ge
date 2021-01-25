@@ -62,63 +62,43 @@
         </div>
     </section>
 
-    <section class="gsbc-board">
-        <div class="wrapper">
-            <div class="heading">
-                <p class="expert">{{__('frontend.what_we_are_expert_at')}}</p>
-                <h3 class="large">{{__('frontend.gsbc_board')}}</h3>
-            </div>
-            <div class="board-slide">
-                <div class="each-board">
-                    <div class="img">
-                        <img src="/frontend-assets/gsbc/img/board/1.png">
-                    </div>
-                    <div class="context">
-                        <h6 class="name">{{__('frontend.svanidze_name_upper')}}</h6>
-                        <p class="pos">{{__('frontend.president_upper')}}</p>
-                        <a href="{{route('biography',app()->getLocale())}}" class="story" class="story">{{__('frontend.full_story')}}</a>
-                    </div>
+    @if(count($councils) > 0)
+        <section class="gsbc-board">
+            <div class="wrapper">
+                <div class="heading">
+                    <p class="expert">{{__('frontend.what_we_are_expert_at')}}</p>
+                    <h3 class="large">{{__('frontend.gsbc_board')}}</h3>
                 </div>
-                <div class="each-board">
-                    <div class="img">
-                        <img src="/frontend-assets/gsbc/img/board/2.png">
-                    </div>
-                    <div class="context">
-                        <h6 class="name">{{__('frontend.daniell_name')}}</h6>
-                        <p class="pos">{{__('frontend.chairman')}}</p>
-                        <a href="{{route('biography',app()->getLocale())}}" class="story">{{__('frontend.full_story')}}</a>
-                    </div>
-                </div>
-                <div class="each-board">
-                    <div class="img">
-                        <img src="/frontend-assets/gsbc/img/board/3.png">
-                    </div>
-                    <div class="context">
-                        <h6 class="name">{{__('frontend.tika_name')}}</h6>
-                        <p class="pos">{{__('frontend.head_of_department')}}</p>
-                        <a href="{{route('biography',app()->getLocale())}}" class="story" class="story">{{__('frontend.full_story')}}</a>
-                    </div>
-                </div>
-{{--                <div class="each-board">--}}
-{{--                    <div class="img">--}}
-{{--                        <img src="/frontend-assets/gsbc/img/board/2.png">--}}
-{{--                    </div>--}}
-{{--                    <div class="context">--}}
-{{--                        <h6 class="name">MARK HEYNESS DANIELL</h6>--}}
-{{--                        <p class="pos">INTERNATIONAL CHAIRMAN</p>--}}
-{{--                        <a href="/frontend-assets/gsbc/en/biography/index.php" class="story" class="story">{{__('frontend.full_story')}}</a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-            </div>
-        </div>
-        <div class="arrows">
-            <button id="prevar-board">
-                <img src="/frontend-assets/gsbc/img/icons/arrows/left-arrow.svg">
-            </button>
-            <button id="nextar-board">
-                <img src="/frontend-assets/gsbc/img/icons/arrows/right-arrow.svg">
-            </button>
-        </div>
-    </section>
+                <div class="board-slide">
+                    @foreach($councils as $council)
+                        <div class="each-board">
+                            <div class="img">
+                                @if(count($council->files) > 0)
+                                    <img src="{{url('storage/council/'.$council->id.'/'.$council->files[0]->name)}}">
+                                @else
+                                    <img src="{{url('noimage.png')}}">
+                                @endif
+                            </div>
+                            <div class="context">
+                                <h6 class="name">{{count($council->availableLanguage) > 0 ? $council->availableLanguage[0]->full_name: '' }} </h6>
+                                <p class="pos">{{count($council->availableLanguage) > 0 ? $council->availableLanguage[0]->position : '' }}</p>
+                                <a href="{{route('biography',[app()->getLocale(), $council->slug])}}" class="story"
+                                   class="story">{{__('frontend.full_story')}}</a>
+                            </div>
+                        </div>
 
+                    @endforeach
+                </div>
+            </div>
+            <div class="arrows">
+                <button id="prevar-board">
+                    <img src="/frontend-assets/gsbc/img/icons/arrows/left-arrow.svg">
+                </button>
+                <button id="nextar-board">
+                    <img src="/frontend-assets/gsbc/img/icons/arrows/right-arrow.svg">
+                </button>
+            </div>
+        </section>
+
+    @endif
 @endsection

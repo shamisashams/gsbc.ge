@@ -8,13 +8,16 @@
         <div class="wrapper">
             <div class="content">
                 <div class="left">
-                    <img src="/frontend-assets/gsbc/img/biography/1.png">
-                    <div class="personal-info">
-                        <h6 class="name">{{__('frontend.svanidze_name')}}</h6>
-                        <p class="pos">{{__('frontend.president')}}</p>
-                        <p class="p"><strong>{{__('frontend.email')}}</strong> GS@GSBC.COM</p>
-                        <p class="p"><strong>{{__('frontend.phone')}}</strong> +995 555 555 555</p>
-                        <a href="#" class="vc">{{__('frontend.download')}} VCARD</a>
+                    @if(count($council->files) > 0)
+                        <img src="{{url('storage/council/'.$council->id.'/'.$council->files[0]->name)}}">
+                    @else
+                        <img src="{{url('noimage.png')}}">
+                    @endif
+s                    <div class="personal-info">
+                        <h6 class="name">{{count($council->availableLanguage) > 0 ? $council->availableLanguage[0]->full_name: '' }}</h6>
+                        <p class="pos">{{count($council->availableLanguage) > 0 ? $council->availableLanguage[0]->position: '' }}</p>
+                        <p class="p"><strong>{{__('frontend.email')}}</strong> {{$council->email }}</p>
+                        <p class="p"><strong>{{__('frontend.phone')}}</strong> {{$council->phone }}</p>
                     </div>
                 </div>
                 <div class="right">
@@ -27,36 +30,20 @@
                     <div class="practice-areas">
                         <h6 class="title">{{__('frontend.practice_areas')}}</h6>
                         <div class="grid">
-                            <div class="area">
-                                <div class="cir">
-                                    <span class="cle"></span>
-                                </div>
-                                <p>{{__('frontend.estate_planing')}}</p>
-                            </div>
-                            <div class="area">
-                                <div class="cir">
-                                    <span class="cle"></span>
-                                </div>
-                                <p>{{__('frontend.estate_planing')}}</p>
-                            </div>
-                            <div class="area">
-                                <div class="cir">
-                                    <span class="cle"></span>
-                                </div>
-                                <p>{{__('frontend.estate_planing')}}</p>
-                            </div>
-                            <div class="area">
-                                <div class="cir">
-                                    <span class="cle"></span>
-                                </div>
-                                <p>{{__('frontend.estate_planing')}}</p>
-                            </div>
-                            <div class="area">
-                                <div class="cir">
-                                    <span class="cle"></span>
-                                </div>
-                                <p>{{__('frontend.estate_planing')}}</p>
-                            </div>
+                            @if(count($council->practicalAreas) > 0)
+                                @foreach($council->practicalAreas as $practicalArea)
+                                    @if(count($practicalArea->availableLanguage) > 0)
+                                    <div class="area">
+                                        <div class="cir">
+                                            <span class="cle"></span>
+                                        </div>
+                                        <p>
+                                            {{$practicalArea->availableLanguage[0]->title}}
+                                        </p>
+                                    </div>
+                                    @endif
+                                @endforeach
+                            @endif
                         </div>
 
                     </div>
