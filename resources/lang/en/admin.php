@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id'=>'ID',
     'login' => 'Login',
     'localizations' => 'Localizations',
     'create_localizations' => 'Create Localizations',
@@ -67,6 +68,7 @@ return [
     'body2_create'=>'Body2',
     'are_you_sure'=>'Are you sure, you want to delete this item?!',
     'create_button'=>'Create',
+    'settings'=>'Settings',
     'enter_description'=>'Enter Description',
     'enter_title'=>'Enter Title',
     'enter_body'=>'Enter Body',
@@ -112,13 +114,14 @@ return [
     'successfully_deleted_practical_area' => 'Practical area deleted successfully.',
     'successfully_created_practical_area' => 'Practical area created successfully.',
     'successfully_updated_practical_area' => 'Practical area updated successfully.',
-    'settings'=>'Settings',
     'council_text1'=>'Georgia Saudi Business Council',
     'council_text2'=>'0105, Ioseb Grishashvili St',
     'council_text3'=>'Tbilisi, Georgia ',
     'council_text4'=>'www.gsbc.ge,',
     'council_text5'=>'Tel: +995 598 557 889,',
     'council_text6'=>'Email: Info@gsbc.ge',
-
+    'key'=>'Key',
+    'value'=>'Value',
+    'setting_update'=>'Update Setting'
 
 ];

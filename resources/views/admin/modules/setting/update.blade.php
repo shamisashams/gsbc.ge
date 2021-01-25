@@ -13,7 +13,7 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('key') ? ' has-error' : '' }}">
-                                    {{ Form::label('key', 'Key', []) }}
+                                    {{ Form::label('key', __('admin.key'), []) }}
                                     {{ Form::text('key', $setting->key, ['class' => 'form-control', 'no','placeholder'=>'Enter Title']) }}
                                     @if ($errors->has('key'))
                                         <span class="help-block">
@@ -25,7 +25,7 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('value') ? ' has-error' : '' }}">
-                                    {{ Form::label('value', 'Value', []) }}
+                                    {{ Form::label('value', __('admin.value'), []) }}
                                     {{ Form::text('value', (count($setting->availableLanguage) > 0) ? $setting->availableLanguage[0]->value : '', ['class' => 'form-control', 'no','placeholder'=>'Enter Meta Title']) }}
                                     @if ($errors->has('value'))
                                         <span class="help-block">

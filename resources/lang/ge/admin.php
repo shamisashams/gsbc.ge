@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id'=>'ID',
     'login' => 'შესვლა',
     'localizations' => 'ლოკალიზაცია',
     'create_localizations' => 'ლოკალიზაციის შექმნა',
@@ -67,6 +68,7 @@ return [
     'body2_create'=>'კონტენტი 2',
     'are_you_sure'=>'Are you sure, you want to delete this item?!',
     'create_button'=>'შექმნა',
+    'settings'=>'პარამეტრები',
     'enter_description'=>'შეიყვანეთ აღწერა',
     'enter_title'=>'შეიყვანეთ სათაური',
     'enter_body'=>'შეიყვანეთ კონტენტი',
@@ -112,12 +114,13 @@ return [
     'successfully_created_practical_area' => 'პრაქტიკული სივრცე შეიქმნა წარმატებით.',
     'successfully_updated_practical_area' => 'პრაქტიკული სივრცე რედაქტირდა წარმატებით.',
     'enter_slug'=>'შეიყვანეთ სლაგი',
-    'settings'=>'Settings',
     'council_text1'=>'Georgia Saudi Business Council',
     'council_text2'=>'0105, Ioseb Grishashvili St',
     'council_text3'=>'Tbilisi, Georgia ',
     'council_text4'=>'www.gsbc.ge,',
     'council_text5'=>'Tel: +995 598 557 889,',
     'council_text6'=>'Email: Info@gsbc.ge',
-
+    'key'=>'გასაღები',
+    'value'=>'მნიშვნელობა',
+    'setting_update'=>'პარამეტრის განახლება'
 ];
