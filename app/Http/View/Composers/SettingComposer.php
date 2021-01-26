@@ -37,12 +37,21 @@ class SettingComposer
         $behance = $serviceSetting->behance($lang);
         $instagram = $serviceSetting->instagram($lang);
 
+        $street=$serviceSetting->street($lang);
+        $location=$serviceSetting->location($lang);
+        $phone=$serviceSetting->phone($lang);
+        $email=$serviceSetting->email($lang);
+
         $view->with([
             'contacts' => $contacts,
             'facebook' => $facebook,
             'twitter' => $twitter,
             'behance' => $behance,
-            'instagram' => $instagram
+            'instagram' => $instagram,
+            'street'=>$street,
+            'location'=> $location,
+            'phone'=> $phone,
+            'email'=> $email,
         ]);
 
     }

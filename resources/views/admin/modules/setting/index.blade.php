@@ -4,7 +4,7 @@
     <div class="controls-above-table">
         <div class="row">
             <div class="col-sm-2">
-{{--                <a class="btn btn-lg btn-success" href="{{route('settingCreateView',app()->getLocale())}}">@lang('admin.create_settings')</a>--}}
+                <a class="btn btn-lg btn-success" href="{{route('settingCreateView',app()->getLocale())}}">@lang('admin.create_settings')</a>
             </div>
             <div class="col-sm-10 per-page-column">
                 <div class="per-page-container">

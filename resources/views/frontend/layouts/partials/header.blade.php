@@ -8,16 +8,16 @@
                 <div class="pro">
                     <img src="/frontend-assets/gsbc/img/icons/header/location.svg">
                     <div class="text">
-                    <h6 class="h">{{__('frontend.street')}}</h6>
-                    <p class="p">{{__('frontend.tbilisi_georgia')}}</p>
+                        <h6 class="h">{{$street&&count($street->availableLanguage)>0?$street->availableLanguage[0]->value:""}}</h6>
+                        <p class="p">{{$location&&count($location->availableLanguage)>0?$location->availableLanguage[0]->value:""}}</p>
                     </div>
                 </div>
                 <div class="pro">
                     <img src="/frontend-assets/gsbc/img/icons/header/phone.svg">
                     <div class="text">
-                        <h6 class="h">+995 598 557 889</h6>
+                        <h6 class="h">{{$phone&&count($phone->availableLanguage)>0?$phone->availableLanguage[0]->value:""}}</h6>
                         <p class="p">
-                            Info@gsbc.ge
+                            {{$email&&count($email->availableLanguage)>0?$email->availableLanguage[0]->value:""}}
                         </p>
                     </div>
                 </div>
@@ -35,14 +35,18 @@
                                       data-original="#010002"/>
                             </g>
                         </svg>
-                    <p><button onclick="window.location.href='{{route('contact',app()->getLocale())}}'">{{__('frontend.become_member')}}</button></p>
+                    <p>
+                        <button
+                            onclick="window.location.href='{{route('contact',app()->getLocale())}}'">{{__('frontend.become_member')}}</button>
+                    </p>
                 </a>
                 <div class="navbar-mobile">
 
                     <div class="nav-mo">
                         <a href="{{route('about-us',app()->getLocale())}}" class="nav">{{__('frontend.about-us')}}</a>
                         <a href="{{route('projects',app()->getLocale())}}" class="nav">{{__('frontend.projects')}}</a>
-                        <a href="{{route('membership',app()->getLocale())}}" class="nav">{{__('frontend.membership')}}</a>
+                        <a href="{{route('membership',app()->getLocale())}}"
+                           class="nav">{{__('frontend.membership')}}</a>
                         <a href="{{route('events',app()->getLocale())}}" class="nav">{{__('frontend.events')}}</a>
                         <a href="{{route('media',app()->getLocale())}}" class="nav">{{__('frontend.press_media')}}</a>
                         <a href="{{route('contact',app()->getLocale())}}" class="nav">{{__('frontend.contact-us')}}</a>
@@ -72,28 +76,32 @@
                     </a>
                     <div class="lg-dd">
                         @if(app()->getLocale()!=="en")
-                            <a href="{{route('changeLocalization',['locale'=>'en','path'=>Request::path()])}}" class="lang">
+                            <a href="{{route('changeLocalization',['locale'=>'en','path'=>Request::path()])}}"
+                               class="lang">
                                 <img style="width:50px" src="/frontend-assets/gsbc/img/flags/uk.svg">
                             </a>
                         @endif
 
                         @if(app()->getLocale()!=="ge")
-                            <a href="{{route('changeLocalization',['locale'=>'ge','path'=>Request::path()])}}" class="lang">
+                            <a href="{{route('changeLocalization',['locale'=>'ge','path'=>Request::path()])}}"
+                               class="lang">
                                 <img style="width:50px" src="/frontend-assets/gsbc/img/flags/ge.svg">
                             </a>
                         @endif
                         @if(app()->getLocale()!=='sa')
-                            <a href="{{route('changeLocalization',['locale'=>'sa','path'=>Request::path()])}}" class="lang">
+                            <a href="{{route('changeLocalization',['locale'=>'sa','path'=>Request::path()])}}"
+                               class="lang">
                                 <img style="width:50px" src="/frontend-assets/gsbc/img/flags/sa.svg">
                             </a>
                         @endif
                         @if(app()->getLocale()!=="ru")
-                            <a href="{{route('changeLocalization',['locale'=>'ru','path'=>Request::path()])}}" class="lang">
+                            <a href="{{route('changeLocalization',['locale'=>'ru','path'=>Request::path()])}}"
+                               class="lang">
                                 <img style="width:50px" src="/frontend-assets/gsbc/img/flags/ru.svg">
                             </a>
                         @endif
                     </div>
-                    </div>
+                </div>
                 <button class="menu menu-icon "><span></span></button>
             </div>
         </div>
@@ -102,10 +110,12 @@
                 <a href="{{route('about-us',app()->getLocale())}}" class="nav">{{__('frontend.about-us')}}</a>
                 <a href="{{route('projects',app()->getLocale())}}" class="nav">{{__('frontend.projects')}}</a>
                 <div class="drop">
-                    <a href="{{route('membership',app()->getLocale())}}" class="nav member">{{__('frontend.membership')}}</a>
+                    <a href="{{route('membership',app()->getLocale())}}"
+                       class="nav member">{{__('frontend.membership')}}</a>
                     <div class="member-drop-down">
                         <a href="{{route('membership',app()->getLocale())}}" class="dd">{{__('frontend.members')}}</a>
-                        <a href="{{route('regulations',app()->getLocale())}}" class="dd">{{__('frontend.rules_regulations')}}</a>
+                        <a href="{{route('regulations',app()->getLocale())}}"
+                           class="dd">{{__('frontend.rules_regulations')}}</a>
                     </div>
                 </div>
                 <a href="{{route('events',app()->getLocale())}}" class="nav">{{__('frontend.events')}}</a>
@@ -113,7 +123,7 @@
                 <a href="{{route('contact',app()->getLocale())}}" class="nav">{{__('frontend.contact-us')}}</a>
 
 
-{{--                <a href="{{route('/',app()->getLocale())}}" class="nav">{{__('frontend.home')}}</a>--}}
+                {{--                <a href="{{route('/',app()->getLocale())}}" class="nav">{{__('frontend.home')}}</a>--}}
             </div>
             <div class="languages main" style="float: right">
                 <a href="#" class="lang selected">

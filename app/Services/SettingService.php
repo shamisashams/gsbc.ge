@@ -175,4 +175,34 @@ class SettingService
         })->first();
     }
 
+    public function street($lang)
+    {
+        $localizationID = Localization::getIdByName($lang);
+        return Setting::where(['key' => 'street'])->whereHas('language', function ($query) use ($localizationID) {
+            $query->where('language_id', $localizationID);
+        })->first();
+    }
+
+    public function location($lang){
+        $localizationID = Localization::getIdByName($lang);
+        return Setting::where(['key' => 'location'])->whereHas('language', function ($query) use ($localizationID) {
+            $query->where('language_id', $localizationID);
+        })->first();
+    }
+
+    public function phone($lang){
+        $localizationID = Localization::getIdByName($lang);
+        return Setting::where(['key' => 'phone'])->whereHas('language', function ($query) use ($localizationID) {
+            $query->where('language_id', $localizationID);
+        })->first();
+    }
+
+    public function email($lang){
+        $localizationID = Localization::getIdByName($lang);
+        return Setting::where(['key' => 'contact_email'])->whereHas('language', function ($query) use ($localizationID) {
+            $query->where('language_id', $localizationID);
+        })->first();
+    }
+
+
 }

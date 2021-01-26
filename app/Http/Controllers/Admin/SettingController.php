@@ -50,15 +50,15 @@ class SettingController extends AdminController
 
     }
 
-//    /**
-//     * Show the form for creating a new resource.
-//     *
-//     * @return Application|Factory|View|Response
-//     */
-//    public function create()
-//    {
-//        return view('admin.modules.setting.create');
-//    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Application|Factory|View|Response
+     */
+    public function create()
+    {
+        return view('admin.modules.setting.create');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -67,20 +67,20 @@ class SettingController extends AdminController
      * @param SettingRequest $request
      * @return Application|RedirectResponse|Response|Redirector
      */
-//    public function store(string $locale, SettingRequest $request)
-//    {
-//        $data = $request->only([
-//            'key',
-//            'value'
-//        ]);
-//
-//        if (!$this->service->store($locale,$data)) {
-//            return redirect(route('settingCreateView',$locale))->with('danger', 'Setting does not create.');
-//        }
-//
-//        return redirect(route('settingIndex', $locale))->with('success', 'Setting create successfully.');
-//
-//    }
+    public function store(string $locale, SettingRequest $request)
+    {
+        $data = $request->only([
+            'key',
+            'value'
+        ]);
+
+        if (!$this->service->store($locale,$data)) {
+            return redirect(route('settingCreateView',$locale))->with('danger', 'Setting does not create.');
+        }
+
+        return redirect(route('settingIndex', $locale))->with('success', 'Setting create successfully.');
+
+    }
 
     /**
      * Display the specified resource.
