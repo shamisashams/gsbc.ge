@@ -1813,7 +1813,7 @@ img {
 }
 
 .project-bodies .projects-info .para {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
     color: rgb(85, 85, 85);
     margin-bottom: 25px;
@@ -1873,7 +1873,7 @@ img {
 }
 
 .project-bodies .projects-info .why-invest .reasons .flex .each p {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 500;
     color: rgb(22, 22, 22);
     line-height: 20px;
@@ -1914,7 +1914,7 @@ img {
 }
 
 .project-bodies .projects-info .resorts .sorts p {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 500;
     color: rgb(22, 22, 22);
 }
