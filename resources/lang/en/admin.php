@@ -124,6 +124,9 @@ return [
     'value' => 'Value',
     'setting_update' => 'Update Setting',
     'successfully_updated_setting' => 'Setting updated successfully.',
-    'failed_updated_setting'=>'Setting does not update'
+    'failed_updated_setting'=>'Setting does not update',
+    'first_name'=>'Name',
+    'last_name'=>'Last Name',
+    'position'=>'Position'
 
 ];

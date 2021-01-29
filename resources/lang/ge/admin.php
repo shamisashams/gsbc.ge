@@ -124,6 +124,9 @@ return [
     'value'=>'მნიშვნელობა',
     'setting_update'=>'პარამეტრის განახლება',
     'successfully_updated_setting' => 'პარამეტრი წარმატებულად განახლდა',
-    'failed_updated_setting'=>'პარამეტრი არ განახლდა'
+    'failed_updated_setting'=>'პარამეტრი არ განახლდა',
+    'first_name'=>'სახელი',
+    'last_name'=>'გვარი',
+    'position'=>'პოზიცია'
 
 ];

@@ -122,6 +122,9 @@ return [
     'value' => 'Значение',
     'setting_update' => 'Обновление параметра',
     'successfully_updated_setting' => 'Параметр успешно обновлен',
-    'failed_updated_setting' => 'Параметр не обновлен'
+    'failed_updated_setting' => 'Параметр не обновлен',
+    'first_name' => 'Name',
+    'last_name' => 'Last Name',
+    'position' => 'Position'
 
 ];
