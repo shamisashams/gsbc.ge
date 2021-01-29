@@ -123,10 +123,40 @@ $(document).ready(function () {
           id: el.id,
           src: "".concat(baseUrl, "storage/council/").concat(el.fileable_id, "/").concat(el.name)
         });
-      } else {
+      }
+
+      if (el.fileable_type === 'App\\Models\\Member') {
+        imagedata.push({
+          id: el.id,
+          src: "".concat(baseUrl, "storage/img/members/").concat(el.fileable_id, "/").concat(el.name)
+        });
+      }
+
+      if (el.fileable_type === 'App\\Models\\Event') {
+        imagedata.push({
+          id: el.id,
+          src: "".concat(baseUrl, "storage/img/events/").concat(el.fileable_id, "/").concat(el.name)
+        });
+      }
+
+      if (el.fileable_type === 'App\\Models\\Banner') {
+        imagedata.push({
+          id: el.id,
+          src: "".concat(baseUrl, "storage/img/banner/").concat(el.fileable_id, "/").concat(el.name)
+        });
+      }
+
+      if (el.fileable_type === 'App\\Models\\News') {
         imagedata.push({
           id: el.id,
           src: "".concat(baseUrl, "storage/img/news/").concat(el.fileable_id, "/").concat(el.name)
+        });
+      }
+
+      if (el.fileable_type === 'App\\Models\\Page') {
+        imagedata.push({
+          id: el.id,
+          src: "".concat(baseUrl, "storage/img/pages/").concat(el.fileable_id, "/").concat(el.name)
         });
       }
     });
@@ -149,8 +179,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/gsbc/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/gsbc/resources/css/app.css */"./resources/css/app.css");
+__webpack_require__(/*! /home/giorgi/Projects/gsbc/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/giorgi/Projects/gsbc/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })
