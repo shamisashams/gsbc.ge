@@ -4,8 +4,8 @@
             {{--            <p style="tr">Partners</p>--}}
             <div class="content">
                 <div class="col2">
-                    <a href="/gsbc/en" class="logo">
-                        <img src="/frontend-assets/gsbc/img/logo/logo.png">
+                    <a href="{{route('/',app()->getLocale())}}" class="logo">
+                        <img style="width: 270px" src="/frontend-assets/gsbc/img/logo/gsbc_logo.png">
                     </a>
                     <div class="flexes">
                         @foreach($contacts as $contact)

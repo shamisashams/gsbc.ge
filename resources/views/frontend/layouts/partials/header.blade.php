@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="top">
             <a href="{{route('/',app()->getLocale())}}" class="logo">
-                <img src="/frontend-assets/gsbc/img/logo/logo.png">
+                <img src="/frontend-assets/gsbc/img/logo/gsbc_logo.png">
             </a>
             <div class="right">
                 <div class="pro">
