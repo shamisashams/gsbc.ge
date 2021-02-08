@@ -1240,10 +1240,10 @@ img {
 }
 
 .footer .top .content .col1 .logo img {
-    width: 187px;
+    width: 200px;
     height: 102px;
-    margin-top:-17px;
-    margin-left: -15px;
+    margin-top:10px;
+    margin-left: -25px;
 }
 .footer .top .content .col1 .para {
     -webkit-text-stroke: 1px rgba(0, 0, 0, 0);

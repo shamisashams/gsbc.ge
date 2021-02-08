@@ -9,7 +9,7 @@
             <div class="content">
                 <div class="left">
                     <h2 class="title">{{__('frontend.contact-us')}}</h2>
-                    <p class="para">{{__('frontend.our_award_wining')}}</p>
+{{--                    <p class="para">{{__('frontend.our_award_wining')}}</p>--}}
                     @foreach($contacts as $contact)
                         @if(count($contact->availableLanguage)>0)
                             @if($contact->key==='phone')

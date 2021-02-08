@@ -7,6 +7,10 @@
                     <a href="{{route('/',app()->getLocale())}}" class="logo">
                         <img style="width: 270px" src="/frontend-assets/gsbc/img/logo/gsbc_logo.png">
                     </a>
+                    <p style="margin-top:15px" class="head">{{__('admin.council_text1')}}<br>
+                        {{__('admin.council_text2')}} <br>
+                        {{__('admin.council_text3')}} <br>
+                    </p>
                     <div class="flexes">
                         @foreach($contacts as $contact)
                             @if(count($contact->availableLanguage)>0)
@@ -60,6 +64,7 @@
                     </div>
                 </div>
                 <div class="col1">
+                    <h2 style="color:rgb(172, 172, 172)">Partners</h2>
                     <a href="https://www.gcci.ge" class="logo">
                         @if(app()->getLocale()=="en" ||app()->getLocale()=="ru")
                             <img src="/frontend-assets/gsbc/img/logo/gcci-en.png">
@@ -69,11 +74,6 @@
                                  src="/frontend-assets/gsbc/img/logo/gcci-ge.png">
                         @endif
                     </a>
-                    <p class="head">{{__('admin.council_text1')}}<br>
-                        {{__('admin.council_text2')}} <br>
-                        {{__('admin.council_text3')}} <br>
-                        {{__('admin.council_text4')}}<br>
-                        {{__('admin.council_text5')}}<br> {{__('admin.council_text6')}}</p>
                 </div>
                 <div class="col3">
                     <p class="head">{{__('frontend.links')}}</p>
@@ -88,10 +88,12 @@
                     </div>
                 </div>
                 <div id="map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14951045.121910123!2d36.02896031735017!3d23.812997755360815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e7b33fe7952a41%3A0x5960504bc21ab69b!2sSaudi%20Arabia!5e0!3m2!1sen!2sge!4v1608011908206!5m2!1sen!2sge"
-                        frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                   <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=georgia&t=&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+{{--                    <iframe--}}
+{{--                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14951045.121910123!2d36.02896031735017!3d23.812997755360815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e7b33fe7952a41%3A0x5960504bc21ab69b!2sSaudi%20Arabia!5e0!3m2!1sen!2sge!4v1608011908206!5m2!1sen!2sge"--}}
+{{--                        frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>--}}
                 </div>
+
             </div>
 
         </div>
