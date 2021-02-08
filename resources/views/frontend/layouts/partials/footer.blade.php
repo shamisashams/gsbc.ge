@@ -64,13 +64,13 @@
                     </div>
                 </div>
                 <div class="col1">
-                    <h2 style="color:rgb(172, 172, 172)">Partners</h2>
+                    <h2 style="color:rgb(172, 172, 172)">{{__('frontend.partners')}}</h2>
                     <a href="https://www.gcci.ge" class="logo">
                         @if(app()->getLocale()=="en" ||app()->getLocale()=="ru")
                             <img src="/frontend-assets/gsbc/img/logo/gcci-en.png">
                         @endif
                         @if(app()->getLocale()=="ge")
-                            <img style="height:140px;margin-top:-35px;"
+                            <img style="height:140px;margin-top:-2px;"
                                  src="/frontend-assets/gsbc/img/logo/gcci-ge.png">
                         @endif
                     </a>
