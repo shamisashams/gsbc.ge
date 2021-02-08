@@ -228,7 +228,7 @@ class MemberService
             ->whereHas('language', function ($query) use ($localizationID) {
                 $query->where('language_id', $localizationID);
             })
-            ->get();
+            ->paginate(8);
 
     }
 }

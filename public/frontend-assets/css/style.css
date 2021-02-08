@@ -2328,6 +2328,12 @@ img {
     align-items: center;
     justify-content: center;
 }
+.membership-body .page-nums {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:60px;
+}
 
 .press-media .page-nums .arrow {
     width: 40px;
@@ -2339,10 +2345,27 @@ img {
     justify-content: center;
 }
 
+.membership-body .page-nums .arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ededed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .press-media .page-nums .arrow img {
     width: 12px;
     height: 12px;
 }
+
+.membership-body .page-nums .arrow img {
+    width: 12px;
+    height: 12px;
+}
+
 
 .press-media .page-nums .nums {
     height: 40px;
@@ -2353,7 +2376,30 @@ img {
     margin: 0 17px;
 }
 
+.membership-body .page-nums .nums {
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #ededed;
+    margin: 0 17px;
+}
+
+
 .press-media .page-nums .nums a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: 14px;
+    color: rgb(44, 44, 44);
+    transition: all ease-in-out .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.membership-body .page-nums .nums a {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -2371,7 +2417,16 @@ img {
     color: #fff;
 }
 
+.membership-body .page-nums .nums a.active {
+    background-color: #3a3e7f;
+    color: #fff;
+}
+
 .press-media .page-nums .nums a:hover {
+    background-color: #3a3e7f;
+    color: #fff;
+}
+.membership-body .page-nums .nums a:hover {
     background-color: #3a3e7f;
     color: #fff;
 }

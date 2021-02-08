@@ -36,8 +36,9 @@
                     @endforeach
 
                 @endif
-
             </div>
+
+            {{$members->links('frontend.vendor.pagination.custom')}}
         </div>
     </section>
     <div class="mask"></div>
