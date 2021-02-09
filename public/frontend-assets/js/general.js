@@ -1,5 +1,4 @@
 // BUTTON HOVER
-
 $(function () {
     $('.legal-links')
         .on('mouseenter', function (e) {
@@ -20,7 +19,10 @@ $(function () {
 // POPUP
 
 $(window).ready(function () {
-
+    if(bannerSection.getBoundingClientRect().top < innerHeight){
+        numbersUp();
+        count++;
+    }
     var init = function () {
         popup();
         readProductData();
@@ -132,5 +134,46 @@ menuIcon.addEventListener('click', () => {
     mainNavigation.classList.toggle('show-nav');
 })
 
+
+let count=0;
+let bannerSection=document.querySelector('#banner-pros');
+
+window.onscroll=function() {
+    if (bannerSection.getBoundingClientRect().top < innerHeight &&count===0) {
+        count++;
+        numbersUp();
+    }
+}
+
+function numbersUp(){
+    $('.counting').each(function () {
+        var $this = $(this),
+            countTo = processText($this.attr('data-count'))
+
+        $({countNum: $this.text()}).animate({
+                countNum: countTo[0],
+            },
+
+            {
+                duration: 2000,
+                easing: 'linear',
+                step: function () {
+                    $this.text(Math.floor(this.countNum) + countTo[1]);
+                },
+                complete: function () {
+                    $this.text(this.countNum + countTo[1]);
+                }
+
+            })
+    });
+}
+function processText(inputText) {
+    var output = [];
+    var json = inputText.split(' ');
+    json.forEach(function (item) {
+        output = (item.replace(/'/g, '').split(/(\d+)/).filter(Boolean));
+    });
+    return output;
+}
 
 

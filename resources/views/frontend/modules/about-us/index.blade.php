@@ -35,25 +35,25 @@
         <h3 class="large">{{__('frontend.why_client_choose_us')}}</h3>
     </div>
 
-    <section class="pros">
+    <section id="banner-pros" class="pros">
         <div class="overlay">
             <div class="wrapper">
                 <div class="content">
                     @if($banner)
                         <div class="each-pro">
-                            <h1 class="h"> {{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header : ''}}</h1>
+                            <h1 class="h counting" data-count="{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header : ''}}"> {{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header : ''}}</h1>
                             <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text : ''}}</p>
                         </div>
                         <div class="each-pro">
-                            <h1 class="h">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_1 : ''}}</h1>
+                            <h1 class="h counting" data-count="{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_1 : ''}}">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_1 : ''}}</h1>
                             <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text_1 : ''}}</p>
                         </div>
                         <div class="each-pro">
-                            <h1 class="h"> {{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_2 : ''}}</h1>
+                            <h1 class="h counting" data-count="{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_2 : ''}}"> {{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_2 : ''}}</h1>
                             <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text_2 : ''}}</p>
                         </div>
                         <div class="each-pro">
-                            <h1 class="h">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_3 : ''}}</h1>
+                            <h1 class="h counting" data-count="{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_3 : ''}}">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->header_3 : ''}}</h1>
                             <p class="p">{{(count($banner->availableLanguage) > 0) ? $banner->availableLanguage[0]->text_3 : ''}}</p>
                         </div>
                     @endif
