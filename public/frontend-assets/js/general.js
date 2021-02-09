@@ -155,7 +155,7 @@ function numbersUp(){
             },
 
             {
-                duration: 2000,
+                duration: 3000,
                 easing: 'linear',
                 step: function () {
                     $this.text(Math.floor(this.countNum) + countTo[1]);
