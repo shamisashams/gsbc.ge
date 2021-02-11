@@ -19,7 +19,7 @@ $(function () {
 // POPUP
 
 $(window).ready(function () {
-    if(bannerSection.getBoundingClientRect().top < innerHeight){
+    if (bannerSection && bannerSection.getBoundingClientRect().top < innerHeight) {
         numbersUp();
         count++;
     }
@@ -39,7 +39,7 @@ $(window).ready(function () {
             $(window).scrollTop(0);
             $('#quick-view-pop-up').fadeToggle();
             $('#quick-view-pop-up').css({"top": "200px", "left": "calc(50% - 437px)"});
-            $('#quick-view-pop-up').css({"top":"200px", "left":"50%"});
+            $('#quick-view-pop-up').css({"top": "200px", "left": "50%"});
             $('.mask').fadeToggle();
         });
         $('.mask').on('click', function () {
@@ -96,6 +96,7 @@ $(window).ready(function () {
         });
     };
     init();
+
     function setPanel(e) {
         let button = e.target;
         let title = button.previousElementSibling.textContent;
@@ -123,7 +124,6 @@ $(window).ready(function () {
 // $("#quick-view-pop-up").css("width", imgWidth+"px")
 
 
-
 // navbar on mobile
 
 const menuIcon = document.querySelector('.menu-icon');
@@ -135,17 +135,17 @@ menuIcon.addEventListener('click', () => {
 })
 
 
-let count=0;
-let bannerSection=document.querySelector('#banner-pros');
+let count = 0;
+let bannerSection = document.querySelector('#banner-pros');
 
-window.onscroll=function() {
-    if (bannerSection.getBoundingClientRect().top < innerHeight &&count===0) {
+window.onscroll = function () {
+    if (bannerSection && bannerSection.getBoundingClientRect().top < innerHeight && count === 0) {
         count++;
         numbersUp();
     }
 }
 
-function numbersUp(){
+function numbersUp() {
     $('.counting').each(function () {
         var $this = $(this),
             countTo = processText($this.attr('data-count'))
@@ -167,6 +167,7 @@ function numbersUp(){
             })
     });
 }
+
 function processText(inputText) {
     var output = [];
     var json = inputText.split(' ');
