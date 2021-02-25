@@ -24,7 +24,7 @@
                     <p class="blue">{{__('frontend.history_text1')}}</p>
                     <p class="p">{{__('frontend.history_text2')}}</p>
                     <p class="p">{{__('frontend.history_text3')}}</p>
-                    <img class="sign" src="/frontend-assets/gsbc/img/icons/showcase/just-signature.png">
+{{--                    <img class="sign" src="/frontend-assets/gsbc/img/icons/showcase/just-signature.png">--}}
                 </div>
             </div>
         </div>

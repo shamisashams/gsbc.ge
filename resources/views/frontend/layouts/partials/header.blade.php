@@ -88,12 +88,6 @@
                                 <img style="width:50px" src="/frontend-assets/gsbc/img/flags/ge.svg">
                             </a>
                         @endif
-                        @if(app()->getLocale()!=='sa')
-                            <a href="{{route('changeLocalization',['locale'=>'sa','path'=>Request::path()])}}"
-                               class="lang">
-                                <img style="width:50px" src="/frontend-assets/gsbc/img/flags/sa.svg">
-                            </a>
-                        @endif
                         @if(app()->getLocale()!=="ru")
                             <a href="{{route('changeLocalization',['locale'=>'ru','path'=>Request::path()])}}"
                                class="lang">
@@ -140,11 +134,6 @@
                     @if(app()->getLocale()!=="ge")
                         <a href="{{route('changeLocalization',['locale'=>'ge','path'=>Request::path()])}}" class="lang">
                             <img style="width:50px" src="/frontend-assets/gsbc/img/flags/ge.svg">
-                        </a>
-                    @endif
-                    @if(app()->getLocale()!=='sa')
-                        <a href="{{route('changeLocalization',['locale'=>'sa','path'=>Request::path()])}}" class="lang">
-                            <img style="width:50px" src="/frontend-assets/gsbc/img/flags/sa.svg">
                         </a>
                     @endif
                     @if(app()->getLocale()!=="ru")

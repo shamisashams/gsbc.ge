@@ -288,7 +288,7 @@ img {
 }
 
 .header .languages:hover .lg-dd {
-    height: 121px;
+    height: 92px;
     padding-top: 24px;
 }
 
@@ -2199,7 +2199,7 @@ img {
 }
 
 .regulation .para {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 500;
     color: rgb(0, 0, 0);
     margin-bottom: 15px;
@@ -2212,7 +2212,7 @@ img {
 .regulation ul li {
     display: flex;
     align-items: center;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 500;
     color: rgb(0, 0, 0);
     margin: 10px 0;
